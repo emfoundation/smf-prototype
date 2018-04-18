@@ -1,0 +1,9 @@
+// we could look into adding node_modules to the include path for SASS
+@import "node_modules/bulma/sass/utilities/initial-variables";
+@import "node_modules/bulma/sass/utilities/functions";
+
+@import "variables";
+
+@import "node_modules/bulma/bulma";
+
+// add custom elements here
