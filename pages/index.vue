@@ -1,6 +1,9 @@
 <template>
-  <section class="container">
-    <h1>SMF Prototype</h1>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">SMF Prototype</h1>
+      <button class="button is-primary">Do you want to learn?</button>
+    </div>
   </section>
 </template>
 
@@ -11,11 +14,5 @@ export default {
 </script>
 
 <style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+
 </style>
