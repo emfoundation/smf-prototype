@@ -1,8 +1,19 @@
 <template>
   <div>
+    <the-nav/>
     <nuxt/>
   </div>
 </template>
+
+<script>
+import TheNav from '~/components/TheNav.vue';
+
+export default {
+  components: {
+    TheNav
+  }
+}
+</script>
 
 <style>
 html {
