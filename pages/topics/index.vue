@@ -1,6 +1,6 @@
 <template>
   <section class="hero">
-    <Banner :title="title" :subtitle="subtitle" />
+    <banner :title="title" :subtitle="subtitle" />
     <div class="container">
       <nuxt-link to="/" class="back">
         <i class="fas fa-lg fa-angle-left"></i>
@@ -35,11 +35,10 @@ export default {
       Banner,
       CardList
   }
-
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @import '~/assets/scss/main.scss';
 
   .back {

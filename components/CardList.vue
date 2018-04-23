@@ -7,7 +7,7 @@
         </div>
         <div class="card-content">
             <p>{{ item.description }}</p>
-            <button @click="onLoadTopic(item.name)" class="button is-dark">
+            <button @click="onLoadItem(item.name)" class="button is-dark">
             View  
             <i class="fas fa-lg fa-angle-right"></i>
             </button>
@@ -20,11 +20,14 @@
 <script>
 export default {
   props: {
-    items: '',
+    baseUrl: '',
+    items: ''
   },
   methods: {
-    onLoadTopic(id) {
-      this.$router.push('/topics/' + id )
+    onLoadItem(id) {
+      // Sends the user to the base path currently on, with the item param appended onto the end
+      var baseUrl = this.$router.currentRoute.path + '/';
+      this.$router.push(baseUrl + id )
     }
   },
 }

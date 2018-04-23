@@ -35,7 +35,7 @@ export default {
 }
 .hero {
   position: relative;
-  height: 30vh;
+  min-height: 30vh;
   margin-bottom: 50px;
 }
 
