@@ -2,7 +2,7 @@
   <section class="hero is-dark is-secondary">
     <div class="hero-body">
       <div class="container has-text-centered">
-        <h1 class="title is-size-2-desktop ">
+        <h1 class="title is-size-2-desktop is-capitalized">
           {{ title }}
         </h1>
         <h2 class="subtitle">

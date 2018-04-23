@@ -24,18 +24,21 @@ export default {
     items: ''
   },
   methods: {
-    onLoadItem(id) {
+    onLoadItem(slug) {
       // Sends the user to the base path currently on, with the item param appended onto the end
       var baseUrl = this.$router.currentRoute.path + '/';
-      this.$router.push(baseUrl + id )
+      // this.$router.push(this.baseUrl + id )
+      slug = this.$options.filters.kebab(slug);
+      this.$router.push(this.baseUrl + slug);
+
     }
   },
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .columns {
-  margin: 20px auto;
+  margin: 20px auto 50px auto;
 }
 .card {
   height: 300px;
