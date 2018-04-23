@@ -9,15 +9,13 @@
 <style lang="scss" scoped>
 .semicircle-down {
   position: absolute;
+  z-index: -1;
   bottom: -35px;
   left: calc(50% - 50px);
   width: 100px;
   height: 100px;
   border-radius: 50px;
   background-color: inherit;
-  &:hover {
-      cursor: pointer;
-  }
   .fa-angle-down {
     position: absolute;
     left: calc(50% - 6px);

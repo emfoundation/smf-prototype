@@ -36,6 +36,7 @@ export default {
 .hero {
   position: relative;
   height: 30vh;
+  margin-bottom: 50px;
 }
 
 .subtitle {
