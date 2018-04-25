@@ -21,7 +21,10 @@
 export default {
   props: {
     baseUrl: '',
-    items: ''
+    items: {
+      type: Array,
+      required: true
+    }
   },
   methods: {
     onLoadItem(slug) {

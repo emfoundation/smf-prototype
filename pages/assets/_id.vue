@@ -17,9 +17,10 @@ import Banner from '~/components/Banner';
 import BackLink from '~/components/UI/BackLink';
 
 export default {
-  data () {
-    return {
-      title: this.$route.params.id,
+  asyncData (context, callback) {
+    callback(null, {
+      // Asset name would need to be retrieved from the API, for now it is taken from the route
+      title: context.params.id,
       subtitle: 'Props are custom attributes you can register on a component. When a value is passed to a prop attribute, it becomes a property on that component instance. ',
       asset: {
         id: '1',
@@ -32,7 +33,7 @@ export default {
 
         ]
       }
-    }
+    })
   },
   components: {
     Banner,
@@ -45,7 +46,7 @@ export default {
 @import '~/assets/scss/main.scss';
 
 .tags {
-  margin: 2% 0;
+  margin: 2rem 0;
 }
 .tag {
   border: 1px solid grey;
