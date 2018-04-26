@@ -45,5 +45,11 @@ module.exports = {
   /*
   ** SASS compilation
   */
-  css: ['@/assets/scss/main.scss']
+  css: ['@/assets/scss/main.scss'],
+
+  /*
+  ** Plugins & Filters
+  */
+  plugins: ['~plugins/filters.js'],
+
 };
