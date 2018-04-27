@@ -24,6 +24,11 @@ export default {
   components : {
     Banner,
     LearnerjourneyList,
+  },
+  methods : {
+    async getLearnerJourneys () {
+      const learnerJourneys = await this.$axios.$get('http://staging.circulareconomy.space/api/learner-journey/')
+    }
   }
 }
 </script>

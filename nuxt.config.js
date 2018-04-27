@@ -47,6 +47,17 @@ module.exports = {
   */
   css: ['@/assets/scss/main.scss'],
 
+  /* 
+  ** Modules
+  */
+  modules: [
+    '@nuxtjs/axios',
+  ],
+  
+  axios: {
+    // proxyHeaders: false
+  },
+
   /*
   ** Plugins & Filters
   */
