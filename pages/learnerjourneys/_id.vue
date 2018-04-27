@@ -1,6 +1,6 @@
 <template>
   <div>
-      <embeded-content v-bind:currentAssetFile="currentAsset.file"/>
+      <embeded-content v-bind:file="currentAsset.file" v-bind:link="currentAsset.link"/>
       <button @click="previous">Previous</button>
       <button @click="next">Next</button>
       <br>
@@ -33,8 +33,8 @@ export default {
         {
           "id": 170,
           "name": "bar",
-          "file": 'file1',
-          "link": "",
+          "file": "",
+          "link": "https://www.youtube.com/embed/zCRKvDyyHmI",
           "description": "hkjh skjdfh skjdfh skdjfhs kdjfhs kjdhf ",
           "duration": null,
           "creation_date": null,
@@ -53,7 +53,7 @@ export default {
         {
           "id": 169,
           "name": "foo",
-          "file": 'file2',
+          "file": "https://emf-assets-dev.s3.amazonaws.com/media/13/Achieving-a-circular-economy.pdf",
           "link": "",
           "description": "kjh ksjdhf skjdfh skjfhs kdjfhds kfjh",
           "duration": null,
@@ -73,8 +73,8 @@ export default {
         {
           "id": 171,
           "name": "rum",
-          "file": 'file3',
-          "link": "",
+          "file": "",
+          "link": "https://docs.google.com/presentation/d/e/2PACX-1vQeOfMOgIupwLYwoL0oFlhzIuo5ZzSBNzXMR6WxQsfM07Z7CD_InmNhsWitbl4F5lWm1FYSBgkGR5GO/embed?start=false&loop=false&delayms=60000",
           "description": "jh kjhsdf kjshdf kjshdf skjdfh k",
           "duration": null,
           "creation_date": null,
