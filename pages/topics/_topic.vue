@@ -3,7 +3,7 @@
     <banner :title="title" :subtitle="subtitle" />
     <div class="container">
       <back-link link="/topics" />
-      <card-list baseUrl="/assets/" :items="assets"/>
+      <assets-list :items="assets"/>
     </div>
 
   </section> 
@@ -12,7 +12,7 @@
 
 <script>
 import Banner from '~/components/Banner';
-import CardList from '~/components/CardList';
+import AssetsList from '~/components/assets/AssetsList';
 import BackLink from '~/components/UI/BackLink';
 
 export default {
@@ -33,7 +33,7 @@ export default {
   },
   components: {
       Banner,
-      CardList,
+      AssetsList,
       BackLink
   }
 }

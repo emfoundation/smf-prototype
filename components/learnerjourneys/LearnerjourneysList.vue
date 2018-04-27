@@ -7,10 +7,7 @@
         </div>
         <div class="card-content">
             <p>{{ item.description }}</p>
-            <button @click="onLoadItem(item.name)" class="button is-dark">
-            View  
-            <i class="fas fa-lg fa-angle-right"></i>
-            </button>
+            <dark-button :url="learnerjourneyUrl(item.id)" />
         </div>
       </div>
     </div>
@@ -18,24 +15,23 @@
 </template>
 
 <script>
+import DarkButton from '~/components/UI/DarkButton';
+
 export default {
   props: {
-    baseUrl: '',
     items: {
       type: Array,
       required: true
     }
   },
   methods: {
-    onLoadItem(slug) {
-      // Sends the user to the base path currently on, with the item param appended onto the end
-      var baseUrl = this.$router.currentRoute.path + '/';
-      // this.$router.push(this.baseUrl + id )
-      slug = this.$options.filters.kebab(slug);
-      this.$router.push(this.baseUrl + slug);
-
+    learnerjourneyUrl(id) {
+      return "/learnerjourneys/" + id;
     }
   },
+  components: {
+    DarkButton
+  }
 }
 </script>
 

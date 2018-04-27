@@ -3,7 +3,8 @@
     <banner :title="title" :subtitle="subtitle" />
     <div class="container">
       <back-link link="/" />
-      <card-list baseUrl="/topics/" :items="topics"/>
+      <topics-list :items="topics">
+      </topics-list>
     </div>
   </section> 
   
@@ -11,8 +12,9 @@
 
 <script>
 import Banner from '~/components/Banner';
-import CardList from '~/components/CardList';
+import TopicsList from '~/components/topics/TopicsList';
 import BackLink from '~/components/UI/BackLink';
+import DarkButton from '~/components/UI/DarkButton';
 
 export default {
   asyncData (context, callback) {
@@ -29,10 +31,20 @@ export default {
       ]
     })
   },
+  methods: {
+    onLoadItem(slug) {
+      // Sends the user to the base path currently on, with the item param appended onto the end
+      var baseUrl = this.$router.currentRoute.path + '/';
+      // this.$router.push(this.baseUrl + id )
+      slug = this.$options.filters.kebab(slug);
+      this.$router.push(this.baseUrl + slug);
+    }
+  },
   components: {
       Banner,
-      CardList,
-      BackLink
+      TopicsList,
+      BackLink,
+      DarkButton
   }
 }
 </script>

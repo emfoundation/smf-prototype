@@ -1,6 +1,6 @@
 <template>
   <section>
-    <banner :title="title" :subtitle="subtitle" />
+    <banner :title="asset.name" :subtitle="subtitle" />
     <div class="container">
       <back-link link="/"/>
       <p class="date-uploaded has-text-weight-light">Uploaded on {{ asset.dateUploaded }}</p>
@@ -20,7 +20,6 @@ export default {
   asyncData (context, callback) {
     callback(null, {
       // Asset name would need to be retrieved from the API, for now it is taken from the route
-      title: context.params.id,
       subtitle: 'Props are custom attributes you can register on a component. When a value is passed to a prop attribute, it becomes a property on that component instance. ',
       asset: {
         id: '1',
@@ -30,7 +29,6 @@ export default {
         tags: [
           { id: 1, name: "Farming" },
           { id: 2, name: "Ships" },
-
         ]
       }
     })
@@ -39,6 +37,7 @@ export default {
     Banner,
     BackLink
   }
+
 }
 </script>
 

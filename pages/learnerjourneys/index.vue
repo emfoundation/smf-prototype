@@ -1,12 +1,12 @@
 <template>
   <div>
     <banner v-bind:title="title" v-bind:subtitle="subtitle"/>
-    <card-list baseUrl="/learnerjourneys/" v-bind:items="learnerJourneys" />
+    <learnerjourney-list v-bind:items="learnerJourneys" />
   </div>
 </template>
 
 <script>
-import CardList from '~/components/CardList';
+import LearnerjourneyList from '~/components/learnerjourneys/LearnerjourneysList';
 import Banner from '~/components/Banner';
 
 export default {
@@ -23,7 +23,7 @@ export default {
   },
   components : {
     Banner,
-    CardList,
+    LearnerjourneyList,
   }
 }
 </script>
