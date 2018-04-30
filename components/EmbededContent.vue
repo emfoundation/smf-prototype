@@ -1,7 +1,7 @@
 <template>
   <div>
-    <iframe class="embed embed-file" v-if="file" v-bind:src="file" frameborder="0"></iframe>
-    <iframe class="embed embed-link" v-if="link" v-bind:src="link" frameborder="0"></iframe>
+    <iframe class="embed embed-file" v-if="file" v-bind:src="file" frameborder="0" allowFullScreen="allowFullScreen"></iframe>
+    <iframe class="embed embed-link" v-if="link" v-bind:src="link" frameborder="0" allowFullScreen="allowFullScreen"></iframe>
   </div>
 </template>
 

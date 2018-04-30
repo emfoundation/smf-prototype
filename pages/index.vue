@@ -1,12 +1,12 @@
 <template>
   <section class="hero">
-    <div class="columns is-gapless hero-body">
+    <div class="columns is-gapless hero-body p-0">
 
       <section class="column learner">
         <div class="call-to-action">
-            <h1 class="title has-text-secondary">Learning Paths</h1>
+            <h1 class="title pb-4 has-text-secondary">Learning Paths</h1>
             <p class="subtitle has-text-black">Use our curated learning paths to learn challenging subjects guided by professionals</p>
-            <nuxt-link to="/learnerjourneys" class="button is-dark">
+            <nuxt-link to="/learnerjourneys" class="button call-to-action-button is-dark">
               <p>View</p>
               <i class="fas fa-lg fa-angle-right"></i>
             </nuxt-link>           
@@ -15,9 +15,9 @@
 
       <section class="column topic">
         <div class="call-to-action">
-            <h1 class="title has-text-white">Browse by topic</h1>
+            <h1 class="title pb-4 has-text-white">Browse by topic</h1>
             <p class="subtitle has-text-white">Use our curated learning paths to learn challenging subjects guided by professionals</p>
-            <nuxt-link to="/topics" class="button">
+            <nuxt-link to="/topics" class="button call-to-action-button">
               View   
               <i class="fas fa-lg fa-angle-right"></i>
             </nuxt-link>           
@@ -33,9 +33,7 @@
   @import '~/assets/scss/main.scss';
 
   // Mobile-first classes
-  .title {
-    padding-bottom: 1rem;
-  }
+
   .learner {
     height: 200px;
   }
@@ -48,13 +46,10 @@
     align-items: center;
     justify-content: center;
   }
-  .hero-body {
-    padding: 0;
-  }
   .call-to-action {
     padding: 5%;
   }
-  .button {
+  .call-to-action-button {
     border-radius: 30px;
     padding: 25px;
     .is-dark {

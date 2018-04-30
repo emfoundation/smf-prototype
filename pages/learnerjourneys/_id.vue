@@ -4,12 +4,12 @@
     <div class="container mb-5">
       <back-link link="/learnerjourneys"/>
       <embeded-content v-bind:file="currentAsset.file" v-bind:link="currentAsset.link"/>
-      <div class="level">
+      <div class="level is-mobile">
         <div class="level-left">
           <button v-bind:disabled="assetIndex == 0" class="button level-item min-width is-dark" @click="previous">Previous</button>
         </div>
         <div class="level-right">
-          <button v-bind:disabled="assetIndex == assets.length -1" class="button level-item min-width is-dark" @click="next">Next</button>
+          <button v-bind:disabled="assetIndex == assets.length -1" class="button level-item mr-0 min-width is-dark" @click="next">Next</button>
         </div>
       </div>
       <section>
@@ -140,36 +140,7 @@ export default {
 </script>
 
 <style scoped>
-  .border-1 {
-    border: 1px solid grey;
-  }
-  .mb-0 {
-    margin-bottom: 0;
-  }
-  .mb-1 {
-    margin-bottom: 0.25rem;
-  }
-  .mb-2 {
-    margin-bottom: 0.5rem;
-  }
-  .mb-5 {
-    margin-bottom: 2rem;
-  }
-  .mr-1 {
-    margin-right: 0.25rem !important;
-  }
-  .mr-2 {
-    margin-right: 0.5rem !important;
-  }
-  .mr-3 {
-    margin-right: 0.75rem !important;
-  }
-  .mr-4 {
-    margin-right: 1rem !important;
-  }
-  .mt-5 {
-    margin-top: 2rem;
-  }
+  @import '~/assets/scss/main.scss';
   .min-width {
     min-width: 100px;
   }
