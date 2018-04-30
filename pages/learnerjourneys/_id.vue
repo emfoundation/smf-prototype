@@ -13,7 +13,7 @@
         </div>
       </div>
       <section>
-        <p class="has-text-weight-light mb-2">Uploaded on {{ currentAsset.uploaded_at }}</p>
+        <p class="has-text-weight-light mb-2">Uploaded on {{ currentAsset.uploaded_at | verboseDate }}</p>
         <h3 class="title mb-0">Part {{ assetIndex +1 }} of {{ assets.length }}:</h3>
         <h3 class="title">{{ currentAsset.name }}</h3>
         <p v-html="currentAsset.description">{{ currentAsset.description }}</p>
@@ -52,7 +52,7 @@ export default {
           "status": "",
           "type_field": "OT",
           "filetype": "",
-          "uploaded_at": "2018-04-26T14:20:23.598593Z",
+          "uploaded_at": "2017-04-14T14:20:23.598593Z",
           "last_edit_at": null,
           "tags": [2, 5],
           "locations": [],
@@ -72,7 +72,7 @@ export default {
           "status": "",
           "type_field": "OT",
           "filetype": "",
-          "uploaded_at": "2018-04-26T14:20:23.596375Z",
+          "uploaded_at": "2018-01-31T14:20:23.596375Z",
           "last_edit_at": null,
           "tags": [1, 2, 3],
           "locations": [],
@@ -92,7 +92,7 @@ export default {
           "status": "",
           "type_field": "OT",
           "filetype": "",
-          "uploaded_at": "2018-04-26T14:20:23.600082Z",
+          "uploaded_at": "2018-07-23T14:20:23.600082Z",
           "last_edit_at": null,
           "tags": [2, 4, 5],
           "locations": [],
