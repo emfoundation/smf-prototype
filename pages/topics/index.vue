@@ -14,7 +14,6 @@
 import Banner from '~/components/Banner';
 import TopicsList from '~/components/topics/TopicsList';
 import BackLink from '~/components/UI/BackLink';
-import DarkButton from '~/components/UI/DarkButton';
 
 export default {
   asyncData (context, callback) {
@@ -44,7 +43,6 @@ export default {
       Banner,
       TopicsList,
       BackLink,
-      DarkButton
   }
 }
 </script>
