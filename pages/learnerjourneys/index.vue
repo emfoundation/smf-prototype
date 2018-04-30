@@ -1,13 +1,17 @@
 <template>
   <div>
     <banner v-bind:title="title" v-bind:subtitle="subtitle"/>
-    <learnerjourney-list v-bind:items="learnerJourneys" />
+    <div class="container">
+      <back-link link="/" />
+      <learnerjourney-list v-bind:items="learnerJourneys" />
+    </div>
   </div>
 </template>
 
 <script>
 import LearnerjourneyList from '~/components/learnerjourneys/LearnerjourneysList';
 import Banner from '~/components/Banner';
+import BackLink from '~/components/UI/BackLink';
 
 export default {
   data () {
@@ -17,13 +21,14 @@ export default {
       learnerJourneys : [
         { "id": 1, "name": "MyLearnerJourney" },
         { "id": 2, "name": "LearnerJourney2" },
-        { "id": 3, "name": "SuperAdvancedLearnerJourney" },
+        { "id": 3, "name": "Super Advanced Learner Journey" },
       ],
     }
   },
   components : {
     Banner,
     LearnerjourneyList,
+    BackLink,
   },
   methods : {
     async getLearnerJourneys () {
