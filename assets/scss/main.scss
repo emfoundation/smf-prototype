@@ -3,7 +3,12 @@
 @import "node_modules/bulma/sass/utilities/functions";
 
 @import "variables";
+@import "utilities";
+
 
 @import "node_modules/bulma/bulma";
 
-// add custom elements here
+// add bulma overrides elements here
+.container {
+    padding: 0.75rem;
+}

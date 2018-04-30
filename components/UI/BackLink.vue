@@ -13,10 +13,8 @@ export default {
 }
 </script>
 
-<style scoped>
-  .back {
-    margin: 0.75rem;
-  }
+<style lang="scss" scoped>
+  @import '~/assets/scss/main.scss';
 </style>
 
 

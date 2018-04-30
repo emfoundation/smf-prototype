@@ -4,14 +4,13 @@
     <div class="container">
       <back-link link="/"/>
       <p class="date-uploaded has-text-weight-light">Uploaded on {{ asset.dateUploaded }}</p>
-      <p>{{ asset.description }}</p>
+      <p class="mb-5">{{ asset.description }}</p>
       <div class="tags">
-        <span :key="tag.id" v-for="tag in asset.tags" class="tag is-medium">{{ tag.name }}</span>
+        <span :key="tag.id" v-for="tag in asset.tags" class="tag border-1 is-medium">{{ tag.name }}</span>
       </div>
     </div>
   </section>
 </template>
-
 <script>
 import Banner from '~/components/Banner';
 import BackLink from '~/components/UI/BackLink';
@@ -44,18 +43,6 @@ export default {
 <style lang="scss" scoped>
 @import '~/assets/scss/main.scss';
 
-.tags {
-  margin: 2rem 0;
-}
-.tag {
-  border: 1px solid grey;
-}
-.container {
-  padding: 0.75rem;
-  .back {
-    margin-left: 0;
-  }
-}
 .date-uploaded {
   margin: 3% 0;
 }
