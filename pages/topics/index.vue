@@ -2,7 +2,7 @@
   <section class="hero">
     <banner :title="title" :subtitle="subtitle" />
     <div class="container">
-      <back-link link="/" />
+      <back-link class="ml-3" link="/" />
       <topics-list :items="topics">
       </topics-list>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <iframe class="embed embed-file" v-if="file" v-bind:src="file" frameborder="0" allowFullScreen="allowFullScreen"></iframe>
-    <iframe class="embed embed-link" v-if="link" v-bind:src="link" frameborder="0" allowFullScreen="allowFullScreen"></iframe>
+    <iframe class="embed embed-file mt-5" v-if="file" v-bind:src="file " frameborder="0"></iframe>
+    <iframe class="embed embed-link mt-5" v-if="link" v-bind:src="link" frameborder="0"></iframe>
   </div>
 </template>
 
@@ -17,12 +17,16 @@ export default {
 </script>
 
 
-<style scoped>
+<style lang="scss" scoped>
   .embed {
     height: 60vh;
     width: 100%;
     border: 1px solid black;
-    margin: 1rem 0;
+  }
+  .fullscreen {
+    .embed {
+      height: 90vh !important;
+    }
   }
   .embed-file {
   }

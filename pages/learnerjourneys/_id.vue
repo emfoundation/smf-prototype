@@ -3,20 +3,27 @@
     <banner v-bind:title="static_title" v-bind:subtitle='static_subtitle'/>
     <div class="container mb-5">
       <back-link link="/learnerjourneys"/>
-      <embeded-content v-bind:file="currentAsset.file" v-bind:link="currentAsset.link"/>
-      <div class="level is-mobile">
-        <div class="level-left">
-          <button v-bind:disabled="assetIndex == 0" class="button level-item min-width is-dark" @click="previous">Previous</button>
-        </div>
-        <div class="level-right">
-          <button v-bind:disabled="assetIndex == assets.length -1" class="button level-item mr-0 min-width is-dark" @click="next">Next</button>
+      
+      <div id="media-container" class="mb-5">
+        <embeded-content v-bind:file="currentAsset.file" v-bind:link="currentAsset.link"/>
+        <div class="level is-mobile">
+          <div class="level-left">
+            <button v-bind:disabled="assetIndex == 0" class="button min-width is-dark" @click="previous">Previous</button>
+          </div>
+          <div class="level-right">
+            <button id="fullscreen-btn" class="button level-item min-width is-dark fas fa-expand" @click="toggleFullscreen"></button>
+            <button v-bind:disabled="assetIndex == assets.length -1" class="button level-item mr-0 min-width is-dark" @click="next">Next</button>
+          </div>
         </div>
       </div>
+
       <section>
         <p class="has-text-weight-light mb-2">Uploaded on {{ currentAsset.uploaded_at | verboseDate }}</p>
         <h3 class="title mb-0">Part {{ assetIndex +1 }} of {{ assets.length }}:</h3>
         <h3 class="title">{{ currentAsset.name }}</h3>
+
         <p v-html="currentAsset.description">{{ currentAsset.description }}</p>
+
         <p class="has-text-weight-bold mt-5 mb-2">This is about...</p>
         <div class="tags">
           <span class="tag is-medium border-1 mr-3" v-for="tag in currentAsset.tags" v-bind:key="tag">
@@ -24,6 +31,7 @@
           </span>
         </div>
       </section>
+
     </div>
   </div>
 </template>
@@ -100,14 +108,15 @@ export default {
           "collections": []
         }
       ],
-      assetIndex : 0,
       tags : {
         1 : 'CE101',
         2 : 'Circular Fibres',
         3 : 'Biomimicry',
         4 : 'Star Wars',
         5 : 'LoTR',
-      }
+      },
+      assetIndex : 0,
+      isFullscreen: false,
     }
   },
   computed : {
@@ -135,6 +144,51 @@ export default {
       }
       console.log('next ' + this.currentAsset.id);
     },
+    toggleFullscreen () {
+      // Get element that's going to be toggled fullscreen
+      var mediaContainer = document.getElementById("media-container");
+      var fsButton = document.getElementById("fullscreen-btn");
+
+      // Make full screen - different standards for different browsers
+      if (!this.isFullscreen) {
+        this.enterFullscreen(mediaContainer);
+        mediaContainer.className += " fullscreen";
+        fsButton.className += " fa-compress";
+        fsButton.classList.remove("fa-expand");
+      } 
+      // Exit fullscreen
+      else {
+        this.exitFullscreen();
+        mediaContainer.classList.remove("fullscreen");
+        fsButton.classList.remove("fa-compress");
+        fsButton.className +=(" fa-expand");
+      }
+
+      // Toggle state
+      this.isFullscreen = !this.isFullscreen;
+    },
+    enterFullscreen (mediaContainer) {
+      if (mediaContainer.requestFullscreen) {               // Standard
+          mediaContainer.requestFullscreen();
+      } else if (mediaContainer.mozRequestFullScreen) {     // Moz FF
+          mediaContainer.mozRequestFullScreen();
+      } else if (mediaContainer.webkitRequestFullScreen) {  // Safari/Chrome
+          mediaContainer.webkitRequestFullScreen();
+      } else if (mediaContainer.msRequestFullscreen) {      // IE
+          mediaContainer.msRequestFullscreen();
+      }
+    },
+    exitFullscreen () {
+      if (document.exitFullscreen) {
+          document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+      } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+      }
+    }
   }
 }
 </script>

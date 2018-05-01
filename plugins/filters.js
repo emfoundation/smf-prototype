@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import moment from 'moment'
 
 /* Custom global filters, for component filters, use the filters: {} in the components options */
 
