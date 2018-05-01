@@ -1,5 +1,5 @@
 <template>
-    <button id="fullscreen-btn" class="button level-item is-dark fas fa-expand" @click="toggleFullscreen"></button>
+    <button id="fullscreen-btn" class="button fullscreen-button level-item is-dark fas fa-expand" @click="toggleFullscreen"></button>
 </template>
 
 <script>
@@ -86,6 +86,13 @@ export default {
   background-color: $secondary;
   .embed {
       height: 90vh !important;
+  }
+  .media-nav-bar {
+    background-color: $secondary;
+    padding: 0 20px;
+    .fullscreen-button {
+      border: 1px solid grey;
+    }
   }
 }
 </style>

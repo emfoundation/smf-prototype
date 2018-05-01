@@ -5,14 +5,20 @@
       <back-link link="/learnerjourneys"/>
       
       <div id="media-container" class="mb-5" v-bind:class="{ fullscreen: isFullscreen }">
-        <embeded-content id="test" v-bind:file="currentAsset.file" v-bind:link="currentAsset.link"/>
-        <div class="level is-mobile">
+        <embeded-content v-bind:file="currentAsset.file" v-bind:link="currentAsset.link"/>
+        <div class="level is-mobile media-nav-bar">
           <div class="level-left">
-            <button v-bind:disabled="assetIndex == 0" class="button min-width is-dark" @click="previous">Previous</button>
+            <button v-bind:disabled="assetIndex == 0" class="button min-width is-dark fullscreen-button" @click="previous">
+              <span class="fas fa-angle-left mr-2"></span>
+              Previous
+            </button>
           </div>
           <div class="level-right">
             <fullscreen-button v-on:toggle-fullscreen="isFullscreen = $event" />
-            <button v-bind:disabled="assetIndex == assets.length -1" class="button level-item mr-0 min-width is-dark" @click="next">Next</button>
+            <button v-bind:disabled="assetIndex == assets.length -1" class="button level-item mr-0 min-width is-dark fullscreen-button" @click="next">
+              Next  
+              <span class="fas fa-angle-right ml-2"></span>
+            </button>
           </div>
         </div>
       </div>
