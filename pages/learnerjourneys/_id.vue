@@ -4,14 +4,14 @@
     <div class="container mb-5">
       <back-link link="/learnerjourneys"/>
       
-      <div id="media-container" class="mb-5">
-        <embeded-content v-bind:file="currentAsset.file" v-bind:link="currentAsset.link"/>
+      <div id="media-container" class="mb-5" v-bind:class="{ fullscreen: isFullscreen }">
+        <embeded-content id="test" v-bind:file="currentAsset.file" v-bind:link="currentAsset.link"/>
         <div class="level is-mobile">
           <div class="level-left">
             <button v-bind:disabled="assetIndex == 0" class="button min-width is-dark" @click="previous">Previous</button>
           </div>
           <div class="level-right">
-            <button id="fullscreen-btn" class="button level-item min-width is-dark fas fa-expand" @click="toggleFullscreen"></button>
+            <fullscreen-button v-on:toggle-fullscreen="isFullscreen = $event" />
             <button v-bind:disabled="assetIndex == assets.length -1" class="button level-item mr-0 min-width is-dark" @click="next">Next</button>
           </div>
         </div>
@@ -40,6 +40,7 @@
 import BackLink from '~/components/UI/BackLink'
 import Banner from '~/components/Banner'
 import EmbededContent from '~/components/EmbededContent'
+import FullscreenButton from '~/components/UI/FullscreenButton'
 
 export default {
   data () {
@@ -128,6 +129,7 @@ export default {
     BackLink,
     Banner,
     EmbededContent,
+    FullscreenButton
   },
   methods : {
     previous () {
@@ -135,66 +137,18 @@ export default {
       {
         this.assetIndex -= 1;
       }
-      console.log('prev ' + this.currentAsset.id);
     },
     next () {
       if (this.assetIndex < this.assets.length -1)
       {
         this.assetIndex += 1;
       }
-      console.log('next ' + this.currentAsset.id);
     },
-    toggleFullscreen () {
-      // Get element that's going to be toggled fullscreen
-      var mediaContainer = document.getElementById("media-container");
-      var fsButton = document.getElementById("fullscreen-btn");
-
-      // Make full screen - different standards for different browsers
-      if (!this.isFullscreen) {
-        this.enterFullscreen(mediaContainer);
-        mediaContainer.className += " fullscreen";
-        fsButton.className += " fa-compress";
-        fsButton.classList.remove("fa-expand");
-      } 
-      // Exit fullscreen
-      else {
-        this.exitFullscreen();
-        mediaContainer.classList.remove("fullscreen");
-        fsButton.classList.remove("fa-compress");
-        fsButton.className +=(" fa-expand");
-      }
-
-      // Toggle state
-      this.isFullscreen = !this.isFullscreen;
-    },
-    enterFullscreen (mediaContainer) {
-      if (mediaContainer.requestFullscreen) {               // Standard
-          mediaContainer.requestFullscreen();
-      } else if (mediaContainer.mozRequestFullScreen) {     // Moz FF
-          mediaContainer.mozRequestFullScreen();
-      } else if (mediaContainer.webkitRequestFullScreen) {  // Safari/Chrome
-          mediaContainer.webkitRequestFullScreen();
-      } else if (mediaContainer.msRequestFullscreen) {      // IE
-          mediaContainer.msRequestFullscreen();
-      }
-    },
-    exitFullscreen () {
-      if (document.exitFullscreen) {
-          document.exitFullscreen();
-      } else if (document.webkitExitFullscreen) {
-          document.webkitExitFullscreen();
-      } else if (document.mozCancelFullScreen) {
-          document.mozCancelFullScreen();
-      } else if (document.msExitFullscreen) {
-          document.msExitFullscreen();
-      }
-    }
   }
 }
 </script>
 
 <style scoped>
-  @import '~/assets/scss/main.scss';
   .min-width {
     min-width: 100px;
   }

@@ -23,13 +23,4 @@ export default {
     width: 100%;
     border: 1px solid black;
   }
-  .fullscreen {
-    .embed {
-      height: 90vh !important;
-    }
-  }
-  .embed-file {
-  }
-  .embed-link {
-  }
 </style>
