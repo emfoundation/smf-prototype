@@ -19,14 +19,14 @@ export default {
   asyncData (context, callback) {
     callback(null, {
       title: 'Topics',
-      subtitle: 'Props are custom attributes you can register on a component. When a value is passed to a prop attribute, it becomes a property on that component instance. ',
+      subtitle: 'Sed nisi neque, euismod sit amet augue id, cursus consectetur tellus. Praesent finibus facilisis massa. Morbi mattis nisi nibh, eget pulvinar turpis elementum nec. Morbi sit amet semper nunc. Cras at ligula sed turpis varius sodales. ',
       // This would be replaced by a store or API call
       // Get all topics: '/api/tag-groups'
       topics: [
-        { id: 1, name: "Biocycle", description: "This is everything about biocycle, the cycle bio"},
-        { id: 2, name: "Superman", description: "Superman is also known as clark kent, but everybody knows that because he looks the same"},
-        { id: 3, name: "Super", description: "Superman is also known as clark kent, but everybody knows that because he looks the same"},
-        { id: 4, name: "Ice Lollies", description: "Superman is also known as clark kent, but everybody knows that because he looks the same"}
+        { id: 1, name: "Design", description: "Changing the way we think about making products, what if we could redesign everything?"},
+        { id: 2, name: "Materials", description: "Materials affect everyone, it's time for change"},
+        { id: 3, name: "Economics", description: "How does being Circular fit into the Economy? Find out"},
+        { id: 4, name: "Business", description: "Money makes the world go round, lets change that"}
       ]
     })
   },

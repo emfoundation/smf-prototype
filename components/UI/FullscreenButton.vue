@@ -1,5 +1,5 @@
 <template>
-    <button id="fullscreen-btn" class="button level-item min-width is-dark fas fa-expand" @click="toggleFullscreen"></button>
+    <button id="fullscreen-btn" class="button level-item is-dark fas fa-expand" @click="toggleFullscreen"></button>
 </template>
 
 <script>
@@ -80,7 +80,6 @@ export default {
 
 <style lang="scss">
 @import '~/assets/scss/main.scss';
-
 .fullscreen {
   width: 100% !important;
   height: 100% !important;

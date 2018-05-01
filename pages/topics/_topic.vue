@@ -20,14 +20,14 @@ export default {
     callback(null, {
       // topic would need to be retrieved from the API, for now it is taken from the route
       title: context.params.topic,
-      subtitle: 'Props are custom attributes you can register on a component. When a value is passed to a prop attribute, it becomes a property on that component instance. ',
+      subtitle: 'Vestibulum elementum erat et vulputate mattis. Quisque fringilla, massa et ultrices pretium, eros lacus pellentesque augue, nec egestas neque purus volutpat ante. Suspendisse ut metus commodo, bibendum mi eu, accumsan lorem. Quisque non cursus urna, ut accumsan lacus.',
       // This would be replaced by a store or API call
       // API Endpoint needed; '/api/assets/tag-group'
       assets: [
-        { id: 1, name: "Asset1", description: "This is everything about biocycle, the cycle bio"},
-        { id: 2, name: "Asset2", description: "Superman is also known as clark kent, but everybody knows that because he looks the same"},
-        { id: 3, name: "Asset3", description: "Superman is also known as clark kent, but everybody knows that because he looks the same"},
-        { id: 4, name: "Asset4", description: "Superman is also known as clark kent, but everybody knows that because he looks the same"}
+        { id: 1, name: "Conxtech - modular building system", description: "This is everything about biocycle, the cycle bio"},
+        { id: 2, name: "Design for Circular Economy", description: "Superman is also known as clark kent, but everybody knows that because he looks the same"},
+        { id: 3, name: "Regional practice - Japan", description: "Superman is also known as clark kent, but everybody knows that because he looks the same"},
+        { id: 4, name: "Steel in the circular economy", description: "Superman is also known as clark kent, but everybody knows that because he looks the same"}
       ]
     })
   },

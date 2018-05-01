@@ -19,7 +19,7 @@ export default {
 
 <style lang="scss" scoped>
   .embed {
-    height: 60vh;
+    height: 70vh;
     width: 100%;
     border: 1px solid black;
   }

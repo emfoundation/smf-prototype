@@ -4,7 +4,7 @@
     <div class="container">
       <back-link link="/"/>
       <p class="date-uploaded has-text-weight-light">Uploaded on {{ asset.dateUploaded }}</p>
-      <p class="mb-5">{{ asset.description }}</p>
+      <p class="mb-5 main-text">{{ asset.description }}</p>
       <div class="tags">
         <span :key="tag.id" v-for="tag in asset.tags" class="tag border-1 is-medium">{{ tag.name }}</span>
       </div>
@@ -19,12 +19,12 @@ export default {
   asyncData (context, callback) {
     callback(null, {
       // Asset name would need to be retrieved from the API, for now it is taken from the route
-      subtitle: 'Props are custom attributes you can register on a component. When a value is passed to a prop attribute, it becomes a property on that component instance. ',
+      subtitle: 'How can we change our linear ways and kickstart the Circular Economy from the very beginning, by leveraging Design thinking.',
       asset: {
         id: '1',
-        name: 'This is a test asset',
-        description: 'This would be a description about the asset perhaps some text that tells the user why this is the solution to all their problems. Or maybe its not.',
-        dateUploaded: '21/09/2010',
+        name: 'Designing for a Circular Economy',
+        description: 'Maecenas nec libero sit amet diam tincidunt mattis. Ut molestie justo eget turpis sodales aliquam. Phasellus scelerisque sapien fringilla lorem imperdiet, at mattis ligula mollis. Duis lobortis blandit tellus ac ullamcorper. Suspendisse id sem consequat, auctor diam non, sollicitudin ipsum. Ut molestie tincidunt felis, in euismod orci. Suspendisse placerat augue tellus. Suspendisse mollis neque massa, id placerat est fermentum id. Sed ac congue nisi, sed auctor enim. Donec et pharetra libero, nec fermentum erat. Sed vel erat pretium, vestibulum elit ut, suscipit enim. ',
+        dateUploaded: '21st September, 2010',
         tags: [
           { id: 1, name: "Farming" },
           { id: 2, name: "Ships" },
@@ -45,5 +45,8 @@ export default {
 
 .date-uploaded {
   margin: 3% 0;
+}
+.main-text {
+  width: 60%;
 }
 </style>
