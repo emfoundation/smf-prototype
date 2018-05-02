@@ -3,8 +3,7 @@
     <banner :title="title" :subtitle="subtitle" />
     <div class="container">
       <back-link class="ml-3" link="/" />
-      <topics-list :items="topics">
-      </topics-list>
+      <topics-list :items="topics" />
     </div>
   </section> 
   
@@ -29,15 +28,6 @@ export default {
         { id: 4, name: "Business", description: "Money makes the world go round, lets change that"}
       ]
     })
-  },
-  methods: {
-    onLoadItem(slug) {
-      // Sends the user to the base path currently on, with the item param appended onto the end
-      var baseUrl = this.$router.currentRoute.path + '/';
-      // this.$router.push(this.baseUrl + id )
-      slug = this.$options.filters.kebab(slug);
-      this.$router.push(this.baseUrl + slug);
-    }
   },
   components: {
       Banner,
