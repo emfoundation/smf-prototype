@@ -1,6 +1,9 @@
 <template>
   <div class="columns is-multiline">
-    <div :key="item.id" v-for="item in items" class="column is-one-third">
+    <div 
+      :key="item.id" 
+      v-for="item in items" 
+      class="column is-one-third">
       <div class="card">
         <div class="card-header">
             <h2 class="card-header-title title">{{ item.name }}</h2>

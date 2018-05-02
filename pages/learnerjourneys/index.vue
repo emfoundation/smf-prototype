@@ -1,6 +1,9 @@
 <template>
   <div>
-    <banner v-bind:title="title" v-bind:subtitle="subtitle"/>
+    <banner 
+      v-bind:title="title" 
+      v-bind:subtitle="subtitle"
+    />
     <div class="container">
       <back-link class="ml-3" link="/" />
       <learnerjourney-list v-bind:items="learnerJourneys" />
