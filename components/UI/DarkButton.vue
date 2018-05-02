@@ -8,9 +8,9 @@
 <script>
 export default {
   props: {
-    url: ''
+    url: ""
   }
-}
+};
 </script>
 
 <style scoped>
@@ -18,4 +18,3 @@ i {
   margin-left: 10px;
 }
 </style>
-

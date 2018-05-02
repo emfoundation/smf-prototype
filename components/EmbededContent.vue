@@ -8,19 +8,18 @@
 
 <script>
 export default {
-  props : {
-    file : String,
-    link : String,
+  props: {
+    file: String,
+    link: String
   }
-
-}
+};
 </script>
 
 
 <style lang="scss" scoped>
-  .embed {
-    height: 70vh;
-    width: 100%;
-    border: 1px solid black;
-  }
+.embed {
+  height: 70vh;
+  width: 100%;
+  border: 1px solid black;
+}
 </style>

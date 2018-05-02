@@ -25,15 +25,12 @@
 </template>
 
 <script>
-export default {
-  
-}
+export default {};
 </script>
 
 
 <style lang="scss" scoped>
-@import '~/assets/scss/main.scss';
-
+@import "~/assets/scss/main.scss";
 
 .navbar-brand {
   width: 100%;
@@ -73,4 +70,3 @@ strong {
   font-weight: 900;
 }
 </style>
-

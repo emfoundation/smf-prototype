@@ -15,21 +15,21 @@
 </template>
 
 <script>
-import SemicircleDown from '~/components/UI/SemicircleDown.vue';
+import SemicircleDown from "~/components/UI/SemicircleDown.vue";
 export default {
   props: {
-    title: '',
-    subtitle: ''
+    title: "",
+    subtitle: ""
   },
   components: {
     SemicircleDown
   }
-}
+};
 </script>
 
 
 <style lang="scss" scoped>
-@import '~/assets/scss/main.scss';
+@import "~/assets/scss/main.scss";
 .is-secondary {
   background-color: $secondary !important;
 }
@@ -51,4 +51,3 @@ export default {
   }
 }
 </style>
-

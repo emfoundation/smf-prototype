@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import DarkButton from '~/components/UI/DarkButton';
+import DarkButton from "~/components/UI/DarkButton";
 
 export default {
   props: {
@@ -35,7 +35,7 @@ export default {
   components: {
     DarkButton
   }
-}
+};
 </script>
 
 <style scoped>
@@ -57,4 +57,3 @@ i {
   margin-left: 10px;
 }
 </style>
-

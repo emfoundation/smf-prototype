@@ -9,7 +9,7 @@
             <nuxt-link to="/learnerjourneys" class="button call-to-action-button is-dark">
               <p>View</p>
               <i class="fas fa-lg fa-angle-right"></i>
-            </nuxt-link>           
+            </nuxt-link>
         </div>
       </section>
 
@@ -18,52 +18,54 @@
             <h1 class="title pb-4 has-text-white">Browse by topic</h1>
             <p class="subtitle has-text-white">Find out what you want to know by choosing the topics that interest you the most.</p>
             <nuxt-link to="/topics" class="button call-to-action-button">
-              View   
+              View
               <i class="fas fa-lg fa-angle-right"></i>
-            </nuxt-link>           
+            </nuxt-link>
         </div>
-     
+
       </section>
-    
+
     </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
-  @import '~/assets/scss/main.scss';
+@import "~/assets/scss/main.scss";
 
-  // Mobile-first classes
+// Mobile-first classes
 
-  .learner {
-    height: 200px;
-  }
-  .topic {
+.learner {
+  height: 200px;
+}
+.topic {
+  background-color: $secondary;
+}
+.learner,
+.topic {
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.call-to-action {
+  padding: 5%;
+}
+.call-to-action-button {
+  border-radius: 30px;
+  padding: 25px;
+  .is-dark {
     background-color: $secondary;
+    color: $white;
   }
-  .learner, .topic {
-    height: 45vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  i {
+    margin-left: 10px;
   }
-  .call-to-action {
-    padding: 5%;
-  }
-  .call-to-action-button {
-    border-radius: 30px;
-    padding: 25px;
-    .is-dark {
-      background-color: $secondary;
-      color: $white;
-    }
-    i {
-      margin-left: 10px;
-    }
-  }
+}
 
-// Tablet size and above 
+// Tablet size and above
 @include tablet() {
-  .learner, .topic {
+  .learner,
+  .topic {
     height: 90vh;
   }
   .call-to-action {

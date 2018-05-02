@@ -8,14 +8,11 @@
 <script>
 export default {
   props: {
-    link: ''
+    link: ""
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  @import '~/assets/scss/main.scss';
+@import "~/assets/scss/main.scss";
 </style>
-
-
-
