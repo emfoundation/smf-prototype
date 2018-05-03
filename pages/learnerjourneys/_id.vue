@@ -8,8 +8,8 @@
 
       <div
         id="media-container"
-        :class="{ fullscreen: isFullscreen }" >
-        class="mb-5"
+        :class="{ fullscreen: isFullscreen }"
+        class="mb-5">
         <embeded-content
           :file="currentAsset.file"
           :link="currentAsset.link"
