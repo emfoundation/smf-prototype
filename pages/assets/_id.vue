@@ -1,12 +1,17 @@
 <template>
   <section>
-    <banner :title="asset.name" :subtitle="subtitle" />
+    <banner
+      :title="asset.name"
+      :subtitle="subtitle" />
     <div class="container">
       <back-link link="/"/>
       <p class="date-uploaded has-text-weight-light">Uploaded on {{ asset.dateUploaded }}</p>
       <p class="mb-5 main-text">{{ asset.description }}</p>
       <div class="tags">
-        <span :key="tag.id" v-for="tag in asset.tags" class="tag border-1 is-medium">{{ tag.name }}</span>
+        <span
+          v-for="tag in asset.tags"
+          :key="tag.id"
+          class="tag border-1 is-medium">{{ tag.name }}</span>
       </div>
     </div>
   </section>

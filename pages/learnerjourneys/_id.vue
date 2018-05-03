@@ -1,38 +1,40 @@
 <template>
   <div>
-    <banner v-bind:title="static_title" v-bind:subtitle='static_subtitle'/>
+    <banner
+      :title="static_title"
+      :subtitle="static_subtitle"/>
     <div class="container mb-5">
       <back-link link="/learnerjourneys"/>
-      
-      <div 
+
+      <div
         id="media-container"
-        class="mb-5" 
         :class="{ fullscreen: isFullscreen }" >
-        <embeded-content 
-          v-bind:file="currentAsset.file" 
-          v-bind:link="currentAsset.link" 
+        class="mb-5"
+        <embeded-content
+          :file="currentAsset.file"
+          :link="currentAsset.link"
         />
         <div class="level is-mobile media-nav-bar">
           <div class="level-left">
-            <button 
-              class="button min-width is-dark fullscreen-button" 
-              v-bind:disabled="assetIndex == 0" 
+            <button
+              :disabled="assetIndex == 0"
+              class="button min-width is-dark fullscreen-button"
               @click="previous" >
-              <span class="fas fa-angle-left mr-2"></span>
+              <span class="fas fa-angle-left mr-2"/>
               Previous
             </button>
           </div>
           <div class="level-right">
-            <fullscreen-button 
-              :isFullscreen="isFullscreen" 
-              @is-fullscreen="isFullscreen = $event" 
+            <fullscreen-button
+              :is-fullscreen="isFullscreen"
+              @is-fullscreen="isFullscreen = $event"
             />
-            <button 
+            <button
+              :disabled="assetIndex == assets.length -1"
               class="button level-item mr-0 min-width is-dark fullscreen-button"
-              v-bind:disabled="assetIndex == assets.length -1"
               @click="next" >
-              Next  
-              <span class="fas fa-angle-right ml-2"></span>
+              Next
+              <span class="fas fa-angle-right ml-2"/>
             </button>
           </div>
         </div>
@@ -43,11 +45,16 @@
         <h3 class="title mb-0">Part {{ assetIndex +1 }} of {{ assets.length }}:</h3>
         <h3 class="title">{{ currentAsset.name }}</h3>
 
-        <p class="main-text" v-html="currentAsset.description">{{ currentAsset.description }}</p>
+        <p
+          class="main-text"
+          v-html="currentAsset.description">{{ currentAsset.description }}</p>
 
         <p class="has-text-weight-bold mt-5 mb-2">This is about...</p>
         <div class="tags">
-          <span class="tag is-medium border-1 mr-3" v-for="tag in currentAsset.tags" v-bind:key="tag">
+          <span
+            v-for="tag in currentAsset.tags"
+            :key="tag"
+            class="tag is-medium border-1 mr-3" >
             {{ tags[tag] }}
           </span>
         </div>
@@ -64,6 +71,12 @@ import EmbededContent from "~/components/EmbededContent";
 import FullscreenButton from "~/components/UI/FullscreenButton";
 
 export default {
+  components: {
+    BackLink,
+    Banner,
+    EmbededContent,
+    FullscreenButton
+  },
   data() {
     return {
       static_title: "What is the Circular Economy?",
@@ -173,12 +186,6 @@ export default {
     currentAsset() {
       return this.assets[this.assetIndex];
     }
-  },
-  components: {
-    BackLink,
-    Banner,
-    EmbededContent,
-    FullscreenButton
   },
   methods: {
     previous() {

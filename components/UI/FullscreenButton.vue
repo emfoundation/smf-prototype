@@ -1,15 +1,15 @@
 <template>
-    <button 
-      :class="isFullscreen ? 'fa-compress' : 'fa-expand'" 
-      class="button fullscreen-button level-item is-dark fas"
-      @click="toggleFullscreen">
-    </button>
+  <button
+    :class="isFullscreen ? 'fa-compress' : 'fa-expand'"
+    class="button fullscreen-button level-item is-dark fas"
+    @click="toggleFullscreen"/>
 </template>
 
 <script>
 export default {
   props: {
     fullscreenContainerID: {
+      type: String,
       default: "media-container"
     },
     isFullscreen: {

@@ -1,16 +1,16 @@
 <template>
   <div class="columns is-multiline">
-    <div 
-      :key="item.id" 
-      v-for="item in items" 
+    <div
+      v-for="item in items"
+      :key="item.id"
       class="column is-one-third" >
       <div class="card">
         <div class="card-header">
-            <h2 class="card-header-title title">{{ item.name }}</h2>
+          <h2 class="card-header-title title">{{ item.name }}</h2>
         </div>
         <div class="card-content">
-            <p>{{ item.description }}</p>
-            <dark-button :url="learnerjourneyUrl(item.id)" />
+          <p>{{ item.description }}</p>
+          <dark-button :url="learnerjourneyUrl(item.id)" />
         </div>
       </div>
     </div>
@@ -21,6 +21,9 @@
 import DarkButton from "~/components/UI/DarkButton";
 
 export default {
+  components: {
+    DarkButton
+  },
   props: {
     items: {
       type: Array,
@@ -31,9 +34,6 @@ export default {
     learnerjourneyUrl(id) {
       return "/learnerjourneys/" + id;
     }
-  },
-  components: {
-    DarkButton
   }
 };
 </script>

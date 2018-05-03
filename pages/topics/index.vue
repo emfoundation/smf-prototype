@@ -1,8 +1,12 @@
 <template>
   <section class="hero">
-    <banner :title="title" :subtitle="subtitle" />
+    <banner 
+      :title="title" 
+      :subtitle="subtitle" />
     <div class="container">
-      <back-link class="ml-3" link="/" />
+      <back-link 
+        class="ml-3" 
+        link="/" />
       <topics-list :items="topics" />
     </div>
   </section> 

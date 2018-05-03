@@ -10,19 +10,25 @@
         </h2>
       </div>
     </div>
-    <semicircle-down></semicircle-down>
+    <semicircle-down/>
   </section>
 </template>
 
 <script>
 import SemicircleDown from "~/components/UI/SemicircleDown.vue";
 export default {
-  props: {
-    title: "",
-    subtitle: ""
-  },
   components: {
     SemicircleDown
+  },
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+    subtitle: {
+      type: String,
+      required: true
+    }
   }
 };
 </script>

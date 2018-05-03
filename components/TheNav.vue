@@ -1,26 +1,40 @@
 <template>
-  <nav class="navbar is-light" role="navigation" aria-label="main-navigation">
-      <div class="navbar-brand">
-        <nuxt-link to="/">
-          <img src="~/static/images/emf-logo.png" alt="The Ellen MacArthur Foundation Logo" class="emf-logo">
-        </nuxt-link>
+  <nav 
+    class="navbar is-light" 
+    role="navigation" 
+    aria-label="main-navigation">
+    <div class="navbar-brand">
+      <nuxt-link to="/">
+        <img 
+          src="~/static/images/emf-logo.png" 
+          alt="The Ellen MacArthur Foundation Logo" 
+          class="emf-logo">
+      </nuxt-link>
 
-        <nuxt-link to="/" class="navbar-item">
-          <h2 class="is-size-4-tablet"><strong>CE</strong> Learning</h2>
-        </nuxt-link>
+      <nuxt-link 
+        to="/" 
+        class="navbar-item">
+        <h2 class="is-size-4-tablet"><strong>CE</strong> Learning</h2>
+      </nuxt-link>
 
-        <nuxt-link to="/search" class="navbar-item navbar-search is-secondary">
-          <span class="icon is-size-6">
-            <i class="fas fa-lg fa-search"></i>
-          </span>
-        </nuxt-link>
+      <nuxt-link 
+        to="/search" 
+        class="navbar-item navbar-search is-secondary">
+        <span class="icon is-size-6">
+          <i class="fas fa-lg fa-search"/>
+        </span>
+      </nuxt-link>
 
-        <a role="button" class="navbar-item navbar-burger" aria-label="menu" aria-expanded="false">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
+      <a 
+        role="button" 
+        class="navbar-item navbar-burger" 
+        aria-label="menu" 
+        aria-expanded="false">
+        <span aria-hidden="true"/>
+        <span aria-hidden="true"/>
+        <span aria-hidden="true"/>
+      </a>
+    </div>
   </nav>  
 </template>
 

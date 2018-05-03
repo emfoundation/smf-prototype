@@ -1,9 +1,9 @@
 <template>
-    <a class="semicircle-down"> 
-        <span class="icon is-size-6">
-        <i class="fas fa-lg fa-angle-down"></i>
-        </span>
-    </a>
+  <a class="semicircle-down"> 
+    <span class="icon is-size-6">
+      <i class="fas fa-lg fa-angle-down"/>
+    </span>
+  </a>
 </template>
 
 <style lang="scss" scoped>

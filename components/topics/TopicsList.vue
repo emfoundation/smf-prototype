@@ -1,16 +1,16 @@
 <template>
   <div class="columns is-multiline">
-    <div 
-      :key="item.id" 
-      v-for="item in items" 
+    <div
+      v-for="item in items"
+      :key="item.id"
       class="column is-one-third">
       <div class="card">
         <div class="card-header">
-            <h2 class="card-header-title title">{{ item.name }}</h2>
+          <h2 class="card-header-title title">{{ item.name }}</h2>
         </div>
         <div class="card-content">
-            <p>{{ item.description }}</p>
-            <dark-button :url="topicUrl(item.name)" />
+          <p>{{ item.description }}</p>
+          <dark-button :url="topicUrl(item.name)" />
         </div>
       </div>
     </div>
@@ -21,6 +21,9 @@
 import DarkButton from "~/components/UI/DarkButton";
 
 export default {
+  components: {
+    DarkButton
+  },
   props: {
     items: {
       type: Array,
@@ -32,9 +35,6 @@ export default {
       name = this.$options.filters.kebab(name);
       return "/topics/" + name;
     }
-  },
-  components: {
-    DarkButton
   }
 };
 </script>
