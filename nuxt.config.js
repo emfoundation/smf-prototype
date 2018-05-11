@@ -57,10 +57,7 @@ module.exports = {
   /*
   ** Modules
   */
-  modules: [
-    "@nuxtjs/axios",
-    "@nuxtjs/dotenv"
-  ],
+  modules: ["@nuxtjs/axios", "@nuxtjs/dotenv"],
 
   axios: {
     // proxyHeaders: false
@@ -69,5 +66,5 @@ module.exports = {
   /*
   ** Plugins & Filters
   */
-  plugins: ["~plugins/filters.js"],
+  plugins: ["~plugins/filters.js"]
 };
