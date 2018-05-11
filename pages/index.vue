@@ -6,8 +6,8 @@
         <div class="call-to-action">
           <h1 class="title pb-4 has-text-secondary">Learning Paths</h1>
           <p class="subtitle has-text-black">Use our bespoke guided learning paths to learn challenging subjects curated by professionals.</p>
-          <nuxt-link 
-            to="/learnerjourneys" 
+          <nuxt-link
+            to="/learnerjourneys"
             class="button call-to-action-button is-dark">
             <p>View</p>
             <i class="fas fa-lg fa-angle-right"/>
@@ -17,10 +17,10 @@
 
       <section class="column topic">
         <div class="call-to-action">
-          <h1 class="title pb-4 has-text-white">Browse by topic</h1>
+          <h1 class="title pb-4 has-text-white">Discover our Big Questions</h1>
           <p class="subtitle has-text-white">Find out what you want to know by choosing the topics that interest you the most.</p>
-          <nuxt-link 
-            to="/topics" 
+          <nuxt-link
+            to="/questions"
             class="button call-to-action-button">
             View
             <i class="fas fa-lg fa-angle-right"/>
