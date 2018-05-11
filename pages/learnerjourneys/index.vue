@@ -8,7 +8,6 @@
       <back-link
         class="ml-3"
         link="/" />
-      <button @click="post">FOO</button>
       <learnerjourney-list :items="learnerJourneys" />
     </div>
   </div>
@@ -37,26 +36,7 @@ export default {
       .$get("http://staging.circulareconomy.space/api/learner-journey/")
       .then(res => ({ learnerJourneys: res }))
       .catch(console.error);
-  },
-  computed: {
-    loadedTags() {
-      return this.$store.getters.loadedTags;
-    }
-  },
-  // methods: {
-  //   async getLearnerJourneys() {
-  //     const learnerJourneys = await this.$axios.$get(
-  //       "http://staging.circulareconomy.space/api/learner-journey/"
-  //     );
-  //   },
-  //   post() {
-  //     this.$axios.post("https://smf-prototype.firebaseio.com/posts.json", {
-  //       name: "George",
-  //       age: 34,
-  //       eyeColour: "Green, no blue"
-  //     });
-  //   }
-  // }
+  }
 };
 </script>
 

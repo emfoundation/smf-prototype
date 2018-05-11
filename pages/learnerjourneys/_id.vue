@@ -21,7 +21,7 @@
             <button
               :disabled="assetIndex == 0"
               class="button min-width is-dark fullscreen-button"
-              @click="previous" >
+              @click=" assetIndex > 0 ? assetIndex -= 1 : 0" >
               <span class="fas fa-angle-left mr-2"/>
               Previous
             </button>
@@ -34,7 +34,7 @@
             <button
               :disabled="assetIndex == assets.length -1"
               class="button level-item mr-0 min-width is-dark fullscreen-button"
-              @click="next" >
+              @click=" assetIndex < assets.length - 1 ? assetIndex += 1 : 0" >
               Next
               <span class="fas fa-angle-right ml-2"/>
             </button>
@@ -51,16 +51,7 @@
           class="main-text"
           v-html="currentAsset.description">{{ currentAsset.description }}</p>
 
-        <p class="has-text-weight-bold mt-5 mb-2">This is about...</p>
-        <div class="tags">
-          <span
-            v-for="tag in currentAsset.tags"
-            :key="tag"
-            class="tag is-medium border-1 mr-3" >
-            {{ tags[tag] }}
-          </span>
-        </div>
-      </section>
+      <AssetTags :tags="currentAsset.tags"/></section>
 
     </div>
     <div
@@ -74,6 +65,7 @@
 </template>
 
 <script>
+import AssetTags from "~/components/assets/AssetTags";
 import BackLink from "~/components/UI/BackLink";
 import Banner from "~/components/Banner";
 import EmbededContent from "~/components/EmbededContent";
@@ -81,6 +73,7 @@ import FullscreenButton from "~/components/UI/FullscreenButton";
 
 export default {
   components: {
+    AssetTags,
     BackLink,
     Banner,
     EmbededContent,
@@ -91,13 +84,6 @@ export default {
       static_title: "What is the Circular Economy?",
       static_subtitle:
         "Begin your journey of circular enlightenment by following our reccomended tour of the most relevant circular economy info",
-      tags: {
-        1: "Fashion",
-        2: "Circular Fibres",
-        3: "Design Thinking",
-        4: "Biocycle",
-        5: "IoT"
-      },
       assetIndex: 0,
       isFullscreen: false
     };
@@ -110,23 +96,13 @@ export default {
   asyncData(context) {
     return context.$axios
       .$get(
-        "http://staging.circulareconomy.space/api/assets/collection/1/learner-journey/" +
+        "http://staging.circulareconomy.space/api/assets/collection/" +
+          process.env.SMF_COLLECTION_ID +
+          "/learner-journey/" +
           context.params.id
       )
       .then(res => ({ assets: res }))
       .catch(console.error);
-  },
-  methods: {
-    previous() {
-      if (this.assetIndex > 0) {
-        this.assetIndex -= 1;
-      }
-    },
-    next() {
-      if (this.assetIndex < this.assets.length - 1) {
-        this.assetIndex += 1;
-      }
-    }
   }
 };
 </script>
