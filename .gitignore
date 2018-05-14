@@ -12,3 +12,6 @@ dist
 
 # Dev Environments
 .vscode
+
+# Environment Variables
+.env

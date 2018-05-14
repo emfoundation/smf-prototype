@@ -57,7 +57,7 @@ module.exports = {
   /*
   ** Modules
   */
-  modules: ["@nuxtjs/axios"],
+  modules: ["@nuxtjs/axios", "@nuxtjs/dotenv"],
 
   axios: {
     // proxyHeaders: false
