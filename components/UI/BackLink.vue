@@ -1,7 +1,7 @@
 <template>
   <nuxt-link
     :to="link"
-    class="back has-text-dark has-text-weight-bold">
+    class="back has-text-white has-text-weight-light has-background-dark">
     <i class="fas fa-lg fa-angle-left"/>
     <slot>Back</slot>
   </nuxt-link>
@@ -20,4 +20,9 @@ export default {
 
 <style lang="scss" scoped>
 @import "~/assets/scss/main.scss";
+.back {
+  width: 80px;
+  padding: 5px 10px;
+  margin-left: 5rem;
+}
 </style>

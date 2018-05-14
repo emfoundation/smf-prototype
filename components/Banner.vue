@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-dark is-secondary">
+  <section class="hero is-dark is-dark">
     <div class="hero-body">
       <div class="container has-text-centered">
         <h1 class="title is-size-2-desktop is-capitalized">
@@ -10,16 +10,11 @@
         </h2>
       </div>
     </div>
-    <semicircle-down/>
   </section>
 </template>
 
 <script>
-import SemicircleDown from "~/components/UI/SemicircleDown.vue";
 export default {
-  components: {
-    SemicircleDown
-  },
   props: {
     title: {
       type: String,
@@ -27,7 +22,7 @@ export default {
     },
     subtitle: {
       type: String,
-      required: true
+      default: ""
     }
   }
 };
@@ -41,8 +36,7 @@ export default {
 }
 .hero {
   position: relative;
-  min-height: 30vh;
-  margin-bottom: 50px;
+  // min-height: 10vh;
 }
 
 .subtitle {
