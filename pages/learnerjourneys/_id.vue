@@ -23,7 +23,7 @@
               class="button min-width is-dark fullscreen-button"
               @click=" assetIndex > 0 ? assetIndex -= 1 : 0" >
               <span class="fas fa-angle-left mr-2"/>
-              Previous
+              Previous Chapter
             </button>
           </div>
           <div class="level-right">
@@ -35,7 +35,7 @@
               :disabled="assetIndex == assets.length -1"
               class="button level-item mr-0 min-width is-dark fullscreen-button"
               @click=" assetIndex < assets.length - 1 ? assetIndex += 1 : 0" >
-              Next
+              Next Chapter
               <span class="fas fa-angle-right ml-2"/>
             </button>
           </div>
@@ -44,7 +44,7 @@
 
       <section>
         <p class="has-text-weight-light mb-2">Uploaded on {{ currentAsset.uploaded_at | verboseDate }}</p>
-        <h3 class="title mb-0">Part {{ assetIndex +1 }} of {{ assets.length }}:</h3>
+        <h3 class="title mb-0">Chapter {{ assetIndex +1 }} of {{ assets.length }}:</h3>
         <h3 class="title">{{ currentAsset.name }}</h3>
 
         <p

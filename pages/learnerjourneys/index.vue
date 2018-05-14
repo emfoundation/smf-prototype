@@ -8,7 +8,6 @@
       <back-link
         class="ml-3"
         link="/" />
-      <button @click="post">FOO</button>
       <learnerjourney-list :items="learnerJourneys" />
     </div>
   </div>
