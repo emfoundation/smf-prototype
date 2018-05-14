@@ -33,7 +33,7 @@ export default {
   },
   asyncData(context) {
     return context.$axios
-      .$get("http://staging.circulareconomy.space/api/learner-journey/")
+      .$get(process.env.API_BASE_URL + "learner-journey/")
       .then(res => ({ learnerJourneys: res }))
       .catch(console.error);
   }

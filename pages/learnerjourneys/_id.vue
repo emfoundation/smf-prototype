@@ -96,10 +96,12 @@ export default {
   asyncData(context) {
     return context.$axios
       .$get(
-        "http://staging.circulareconomy.space/api/assets/collection/" +
+        process.env.API_BASE_URL +
+          "/assets/collection/" +
           process.env.SMF_COLLECTION_ID +
           "/learner-journey/" +
-          context.params.id
+          context.params.id +
+          "/"
       )
       .then(res => ({ assets: res }))
       .catch(console.error);
