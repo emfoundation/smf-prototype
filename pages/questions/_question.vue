@@ -1,17 +1,17 @@
 <template>
   <section class="hero">
-    <banner 
-      :title="title" 
+    <banner
+      :title="title"
       :subtitle="subtitle" />
     <div class="container">
-      <back-link 
-        class="ml-3" 
-        link="/topics" />
+      <back-link
+        class="ml-3"
+        link="/questions" />
       <assets-list :items="assets"/>
     </div>
 
-  </section> 
-  
+  </section>
+
 </template>
 
 <script>
@@ -22,8 +22,8 @@ import BackLink from "~/components/UI/BackLink";
 export default {
   asyncData(context, callback) {
     callback(null, {
-      // topic would need to be retrieved from the API, for now it is taken from the route
-      title: context.params.topic,
+      // question would need to be retrieved from the API, for now it is taken from the route
+      title: context.params.question,
       subtitle:
         "Vestibulum elementum erat et vulputate mattis. Quisque fringilla, massa et ultrices pretium, eros lacus pellentesque augue, nec egestas neque purus volutpat ante. Suspendisse ut metus commodo, bibendum mi eu, accumsan lorem. Quisque non cursus urna, ut accumsan lacus.",
       // This would be replaced by a store or API call
