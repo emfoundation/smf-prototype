@@ -7,9 +7,9 @@
       class="ml-3"
       link="/questions" />
     <div class="">
-      <double-answer-block/>
-      <single-answer-block/>
-      <triple-answer-block/>
+      <answer-block :answers="answers.slice(0,2)" />
+      <answer-block :answers="answers.slice(2,3)" />
+      <answer-block :answers="answers.slice(0,3)" />
       <!-- <assets-list :items="answers"/> -->
     </div>
 
@@ -21,9 +21,7 @@
 import Banner from "~/components/Banner";
 import AssetsList from "~/components/assets/AssetsList";
 import BackLink from "~/components/UI/BackLink";
-import SingleAnswerBlock from "~/components/questions/answers/SingleAnswerBlock";
-import DoubleAnswerBlock from "~/components/questions/answers/DoubleAnswerBlock";
-import TripleAnswerBlock from "~/components/questions/answers/TripleAnswerBlock";
+import AnswerBlock from "~/components/questions/answers/AnswerBlock";
 
 export default {
   asyncData(context, callback) {
@@ -57,6 +55,12 @@ export default {
           name: "Steel in the circular economy",
           description:
             "Superman is also known as clark kent, but everybody knows that because he looks the same"
+        },
+        {
+          id: 5,
+          name: "Making music circular",
+          description:
+            "Superman is also known as clark kent, but everybody knows that because he looks the same"
         }
       ]
     });
@@ -65,9 +69,7 @@ export default {
     Banner,
     AssetsList,
     BackLink,
-    SingleAnswerBlock,
-    DoubleAnswerBlock,
-    TripleAnswerBlock
+    AnswerBlock
   }
 };
 </script>
