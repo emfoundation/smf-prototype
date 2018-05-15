@@ -13,7 +13,7 @@
         <div class="column left-border">
           <p class="mb-4">{{ item.description }}</p>
           <!-- <dark-button :url="questionUrl(item.name)" /> -->
-          <nuxt-link :to="questionUrl(item.name)">
+          <nuxt-link :to="questionUrl(item.id)">
             <p class="subtitle">View
               <i class="fas fa-chevron-circle-right fa-lg arrow"/>
 
@@ -39,9 +39,8 @@ export default {
     }
   },
   methods: {
-    questionUrl(name) {
-      name = this.$options.filters.kebab(name);
-      return "/questions/" + name;
+    questionUrl(id) {
+      return "/questions/" + id;
     }
   }
 };

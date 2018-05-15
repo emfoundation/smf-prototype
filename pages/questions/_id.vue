@@ -3,11 +3,14 @@
     <banner
       :title="title"
       :subtitle="subtitle" />
-    <div class="container">
-      <back-link
-        class="ml-3"
-        link="/questions" />
-      <assets-list :items="assets"/>
+    <back-link
+      class="ml-3"
+      link="/questions" />
+    <div class="">
+      <double-answer-block/>
+      <single-answer-block/>
+      <triple-answer-block/>
+      <!-- <assets-list :items="answers"/> -->
     </div>
 
   </section>
@@ -18,17 +21,20 @@
 import Banner from "~/components/Banner";
 import AssetsList from "~/components/assets/AssetsList";
 import BackLink from "~/components/UI/BackLink";
+import SingleAnswerBlock from "~/components/questions/answers/SingleAnswerBlock";
+import DoubleAnswerBlock from "~/components/questions/answers/DoubleAnswerBlock";
+import TripleAnswerBlock from "~/components/questions/answers/TripleAnswerBlock";
 
 export default {
   asyncData(context, callback) {
     callback(null, {
-      // question would need to be retrieved from the API, for now it is taken from the route
-      title: context.params.question,
+      // question title & subtitle would need to be retrieved from the API, for now it is taken from the route
+      title: context.params.id,
       subtitle:
         "Vestibulum elementum erat et vulputate mattis. Quisque fringilla, massa et ultrices pretium, eros lacus pellentesque augue, nec egestas neque purus volutpat ante. Suspendisse ut metus commodo, bibendum mi eu, accumsan lorem. Quisque non cursus urna, ut accumsan lacus.",
       // This would be replaced by a store or API call
       // API Endpoint needed; '/api/assets/tag-group'
-      assets: [
+      answers: [
         {
           id: 1,
           name: "Conxtech - modular building system",
@@ -58,7 +64,10 @@ export default {
   components: {
     Banner,
     AssetsList,
-    BackLink
+    BackLink,
+    SingleAnswerBlock,
+    DoubleAnswerBlock,
+    TripleAnswerBlock
   }
 };
 </script>

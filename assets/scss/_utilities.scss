@@ -59,10 +59,35 @@
   padding: 0.75rem !important;
 }
 
-// ----- Padding Bottom ---- //
-.pb-4 {
-  padding-bottom: 1rem;
+// ----- Padding Top ---- //
+.pt-0 {
+  padding-top: 0 !important;
 }
+.pt-8 {
+  padding-top: 5rem !important;
+}
+
+// ----- Padding Right ---- //
+.pr-6 {
+  padding-right: 3rem !important;
+}
+
+// ----- Padding Bottom ---- //
+.pb-1 {
+  padding-bottom: 0.25 !important;
+}
+.pb-4 {
+  padding-bottom: 1rem !important;
+}
+.pb-8 {
+  padding-bottom: 5rem !important;
+}
+
+// ----- Padding Left ---- //
+.pr-6 {
+  padding-left: 3rem !important;
+}
+
 
 
 ///// ===== Border ===== /////
