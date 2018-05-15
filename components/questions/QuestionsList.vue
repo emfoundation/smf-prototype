@@ -49,13 +49,15 @@ export default {
 <style lang="scss" scoped>
 .question {
   overflow: hidden;
+  background-size: cover;
 }
 .question-body {
   padding: 9rem 9rem;
+  transition: 0.5s;
 }
 .overlay-light {
   .question-body {
-    background: rgba(222, 222, 222, 0.8);
+    background: rgba(222, 222, 222, 0.6);
     &:hover {
       background: rgba(222, 222, 222, 0.9);
     }
@@ -63,7 +65,7 @@ export default {
 }
 .overlay-dark {
   .question-body {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.6);
     &:hover {
       background: rgba(0, 0, 0, 0.9);
     }

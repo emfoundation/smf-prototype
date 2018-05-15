@@ -12,8 +12,8 @@
       <quote-block :quote="quote" />
 
       <answer-block
-        v-for="row in middleAnswerBlock"
-        :key="row"
+        v-for="(row,index) in middleAnswerBlock"
+        :key="index"
         :answers="row" />
 
       <answer-block :answers="lastAnswerBlock" />
@@ -42,61 +42,50 @@ export default {
         {
           id: 1,
           name: "Conxtech - modular building system",
-          description: "This is everything about biocycle, the cycle bio"
+          description: "This is everything about biocycle, the cycle bio",
+          thumbnail: "https://placeimg.com/640/480/animals"
         },
         {
           id: 2,
           name: "Design for Circular Economy",
           description:
-            "Superman is also known as clark kent, but everybody knows that because he looks the same"
+            "Superman is also known as clark kent, but everybody knows that because he looks the same",
+          thumbnail: "https://placeimg.com/640/480/tech"
         },
         {
           id: 3,
           name: "Regional practice - Japan",
           description:
-            "Superman is also known as clark kent, but everybody knows that because he looks the same"
+            "Superman is also known as clark kent, but everybody knows that because he looks the same",
+          thumbnail: "https://placeimg.com/640/480/people"
         },
         {
           id: 4,
           name: "Steel in the circular economy",
           description:
-            "Superman is also known as clark kent, but everybody knows that because he looks the same"
+            "Superman is also known as clark kent, but everybody knows that because he looks the same",
+          thumbnail: "https://placeimg.com/640/480/nature"
         },
         {
           id: 5,
           name: "Making music circular",
           description:
-            "Superman is also known as clark kent, but everybody knows that because he looks the same"
+            "Superman is also known as clark kent, but everybody knows that because he looks the same",
+          thumbnail: "https://placeimg.com/640/480/arch"
         },
         {
           id: 6,
-          name: "Making music circular",
+          name: "Making music circular 2",
           description:
-            "Superman is also known as clark kent, but everybody knows that because he looks the same"
+            "Superman is also known as clark kent, but everybody knows that because he looks the same",
+          thumbnail: "https://placeimg.com/640/480/animals"
         },
         {
           id: 7,
-          name: "Steel in the circular economy",
+          name: "Steel in the circular economy 2",
           description:
-            "Superman is also known as clark kent, but everybody knows that because he looks the same"
-        },
-        {
-          id: 8,
-          name: "Making music circular",
-          description:
-            "Superman is also known as clark kent, but everybody knows that because he looks the same"
-        },
-        {
-          id: 9,
-          name: "Making music circular",
-          description:
-            "Superman is also known as clark kent, but everybody knows that because he looks the same"
-        },
-        {
-          id: 10,
-          name: "Making music circular",
-          description:
-            "Superman is also known as clark kent, but everybody knows that because he looks the same"
+            "Superman is also known as clark kent, but everybody knows that because he looks the same",
+          thumbnail: "https://placeimg.com/640/480/arch"
         }
       ],
       quote: {
@@ -123,7 +112,7 @@ export default {
       } else {
         var middle = this.answers.slice(2, -remainder);
       }
-      var rows = middle.length / 3;
+      var rows = Math.floor(middle.length / 3);
       var middleSegments = [];
       for (var i = 0; i < rows; i++) {
         middleSegments.push(middle.slice(i * 3, i * 3 + 3));
