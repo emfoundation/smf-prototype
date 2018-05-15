@@ -28,6 +28,6 @@ export default {
 
 <style lang="scss" scoped>
 .answer {
-  min-height: 300px;
+  height: 300px;
 }
 </style>
