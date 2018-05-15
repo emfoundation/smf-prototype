@@ -33,7 +33,7 @@ export default {
   },
   asyncData(context) {
     return context.$axios
-      .$get(process.env.API_BASE_URL + "learner-journey/")
+      .$get(process.env.API_BASE_URL + "learner-journeys/")
       .then(res => ({ learnerJourneys: res }))
       .catch(console.error);
   }

@@ -61,6 +61,9 @@
       <back-link link="/learnerjourneys"/>
       <h1>Sorry, this Learner Journey has no Chapters! Please come back later...</h1>
     </div>
+    <!-- {{ chapters }}
+    <br>
+    {{ assets }} -->
   </div>
 </template>
 
@@ -85,7 +88,8 @@ export default {
       static_subtitle:
         "Begin your journey of circular enlightenment by following our reccomended tour of the most relevant circular economy info",
       assetIndex: 0,
-      isFullscreen: false
+      isFullscreen: false,
+      assets: []
     };
   },
   computed: {
@@ -94,17 +98,76 @@ export default {
     }
   },
   asyncData(context) {
-    return context.$axios
-      .$get(
-        process.env.API_BASE_URL +
-          "/assets/collection/" +
-          process.env.SMF_COLLECTION_ID +
-          "/learner-journey/" +
-          context.params.id +
-          "/"
-      )
-      .then(res => ({ assets: res }))
-      .catch(console.error);
+    // return context.$axios
+    //   .get(
+    //     process.env.API_BASE_URL +
+    //       "/chapters/collection/" +
+    //       process.env.SMF_COLLECTION_ID +
+    //       "/learner-journey/" +
+    //       context.params.id +
+    //       "/"
+    //   )
+    //   .then(res => {
+    //     return { chapters: res.data };
+    //   })
+    //   .catch(console.error);
+
+    let promiseToMake = [
+      context.$axios.get("http://staging.circulareconomy.space/api/assets/26"),
+      context.$axios.get("http://staging.circulareconomy.space/api/assets/25")
+    ];
+
+    let promises = Promise.all(promiseToMake);
+
+    return (
+      promises
+        .then(res => console.log(res[0].data, res[1].data))
+
+        // return Promise.all([
+        //   context.$axios.get(
+        //     process.env.API_BASE_URL +
+        //       "/chapters/collection/" +
+        //       process.env.SMF_COLLECTION_ID +
+        //       "/learner-journey/" +
+        //       context.params.id +
+        //       "/"
+        //   ),
+        //   context.$axios.get(process.env.API_BASE_URL + "/assets/25/")
+        // ])
+        //   .then(res => {
+        //     // return {
+        //     //   chapters: chaptersRes.data,
+        //     //   assets: assetsRes.data
+        //     // };
+        //     console.log(res.data);
+        //   })
+        .catch(console.error)
+    );
+    // .get(
+    //   process.env.API_BASE_URL +
+    //     "/chapters/collection/" +
+    //     process.env.SMF_COLLECTION_ID +
+    //     "/learner-journey/" +
+    //     context.params.id +
+    //     "/"
+    // )
+    // .then(res => {
+    //   let assets = context.$axios.get(
+    //     process.env.API_BASE_URL + "/assets/25/"
+    //   );
+    //   console.log(assets);
+    //   return {
+    //     chapters: res.data,
+    //     assets: assets
+    //   };
+    // })
+    // .then(res => {
+    //   return {
+    //     chapters: res.chapters,
+    //     assets: res.assets
+    //   };
+    // })
+    // .catch(console.error);
   }
 };
 </script>
