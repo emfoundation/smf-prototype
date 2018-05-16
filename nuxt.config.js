@@ -9,11 +9,11 @@ module.exports = {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "SMF Prototype" }
     ],
-    link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    script: [
       {
-        rel: "stylesheet",
-        href: "https://use.fontawesome.com/releases/v5.0.10/css/all.css",
+        defer: true,
+        src: "https://use.fontawesome.com/releases/v5.0.13/js/all.js",
         crossorigin: "anonymous"
       }
     ]
