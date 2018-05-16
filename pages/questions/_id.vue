@@ -4,7 +4,6 @@
       :title="title"
       :subtitle="subtitle" />
     <back-link
-      class="ml-3"
       link="/questions" />
     <div class="">
       <answer-block :answers="firstAnswerBlock" />
