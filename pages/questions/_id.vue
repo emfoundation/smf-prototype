@@ -89,7 +89,8 @@ export default {
       ],
       quote: {
         quote: "Very profound thoughts",
-        author: "Mert"
+        author: "Mert",
+        thumbnail: "https://placeimg.com/640/480/arch"
       }
     });
   },
