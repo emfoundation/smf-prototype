@@ -1,8 +1,12 @@
 <template>
   <button
-    :class="isFullscreen ? 'fa-compress' : 'fa-expand'"
-    class="button fullscreen-button level-item is-dark fas"
-    @click="toggleFullscreen"/>
+    class="button fullscreen-button level-item is-dark "
+    @click="toggleFullscreen">
+    <span
+      :class="isFullscreen ? 'fa-compress' : 'fa-expand'"
+      class="fas"
+    />
+  </button>
 </template>
 
 <script>
@@ -61,7 +65,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~/assets/scss/main.scss";
+@import "@/assets/scss/main.scss";
+
 .fullscreen {
   width: 100% !important;
   height: 100% !important;

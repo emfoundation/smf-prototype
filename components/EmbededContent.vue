@@ -31,9 +31,17 @@ export default {
 
 
 <style lang="scss" scoped>
+@import "@/assets/scss/main.scss";
 .embed {
-  height: 70vh;
+  height: 30vh;
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid $light-grey;
+}
+
+@include tablet {
+  .embed {
+    height: 70vh;
+    width: 90%;
+  }
 }
 </style>

@@ -34,7 +34,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "~/assets/scss/main.scss";
+@import "@/assets/scss/main.scss";
 
 // Mobile-first classes
 
@@ -59,7 +59,7 @@
   padding: 25px;
   .is-dark {
     background-color: $secondary;
-    color: $white;
+    color: white;
   }
   i {
     margin-left: 10px;
