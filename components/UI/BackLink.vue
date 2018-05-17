@@ -19,7 +19,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~/assets/scss/main.scss";
 .back {
   width: 80px;
   padding: 5px 10px;
