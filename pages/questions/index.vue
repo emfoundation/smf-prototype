@@ -29,29 +29,25 @@ export default {
           name: "This could be the question, but what IS the question?",
           description:
             "Changing the way we think about making products, what if we could redesign everything?",
-          thumbnail:
-            "https://www.publicdomainpictures.net/pictures/150000/velka/banner-header-tapete-145002399028x.jpg"
+          thumbnail: "https://placeimg.com/1000/480/animals"
         },
         {
           id: 2,
           name: "Materials",
           description: "Materials affect everyone, it's time for change",
-          thumbnail:
-            "https://www.imperial.ac.uk/ImageCropToolT4/imageTool/uploaded-images/shutterstock_64199689--tojpeg_1408098461475_x2.jpg"
+          thumbnail: "https://placeimg.com/1000/480/tech"
         },
         {
           id: 3,
           name: "Economics",
           description: "How does being Circular fit into the Economy? Find out",
-          thumbnail:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr0LmSaimz7OODkIPCmCKNpRcgVxBFHQp-V7aCwfYOtcMw1NXXmA"
+          thumbnail: "https://placeimg.com/1000/480/people"
         },
         {
           id: 4,
           name: "Business",
           description: "Money makes the world go round, lets change that",
-          thumbnail:
-            "https://www.publicdomainpictures.net/pictures/150000/velka/banner-header-tapete-145002399028x.jpg"
+          thumbnail: "https://placeimg.com/1000/480/arch"
         }
       ]
     });

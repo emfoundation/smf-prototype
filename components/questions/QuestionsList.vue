@@ -13,7 +13,7 @@
         <div class="column left-border">
           <p class="mb-4">{{ item.description }}</p>
           <!-- <dark-button :url="questionUrl(item.name)" /> -->
-          <nuxt-link :to="questionUrl(item.name)">
+          <nuxt-link :to="questionUrl(item.id)">
             <p class="subtitle">View
               <i class="fas fa-chevron-circle-right fa-lg arrow"/>
 
@@ -39,9 +39,8 @@ export default {
     }
   },
   methods: {
-    questionUrl(name) {
-      name = this.$options.filters.kebab(name);
-      return "/questions/" + name;
+    questionUrl(id) {
+      return "/questions/" + id;
     }
   }
 };
@@ -50,13 +49,15 @@ export default {
 <style lang="scss" scoped>
 .question {
   overflow: hidden;
+  background-size: cover;
 }
 .question-body {
   padding: 9rem 9rem;
+  transition: 0.5s;
 }
 .overlay-light {
   .question-body {
-    background: rgba(222, 222, 222, 0.8);
+    background: rgba(222, 222, 222, 0.6);
     &:hover {
       background: rgba(222, 222, 222, 0.9);
     }
@@ -64,7 +65,7 @@ export default {
 }
 .overlay-dark {
   .question-body {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.6);
     &:hover {
       background: rgba(0, 0, 0, 0.9);
     }
