@@ -12,10 +12,6 @@
         id="media-container"
         :class="{ fullscreen: isFullscreen }"
         class="mb-5">
-        <!-- <embeded-content
-          :file="currentAsset.file"
-          :link="currentAsset.link"
-        /> -->
         <div class="level is-mobile media-nav-bar">
           <div class="level-left">
             <button
@@ -45,14 +41,19 @@
       <section>
         <!-- <p class="has-text-weight-light mb-2">Uploaded on {{ currentAsset.uploaded_at | verboseDate }}</p> -->
         <h3 class="title mb-0">Chapter {{ chapterIndex +1 }} of {{ chapters.length }}:</h3>
-        <h3 class="title">{{ currentChapter.name }}</h3>
+        <h3 class="title">{{ currentChapter.title }}</h3>
 
-        <!-- <p
-        class="main-text"
-        v-html="currentChapter.description">{{ currentChapter.description }}</p> -->
+        <p
+          class="main-text"
+          v-html="currentChapter.description">{{ currentChapter.description }}</p>
 
+        <embeded-content
+          :file="currentAsset.file"
+          :link="currentAsset.link"
+        />
 
-        <!-- <AssetTags :tags="currentAsset.tags"/> -->
+        <h4>This is about...</h4>
+        <AssetTags :tags="currentAsset.tags"/>
 
       </section>
     </div>
@@ -63,14 +64,14 @@
       <back-link link="/learnerjourneys"/>
       <h1>Sorry, this Learner Journey has no Chapters! Please come back later...</h1>
     </div>
-    Asset ID: {{ currentAssetID }}
+    <!-- Asset ID: {{ currentAssetID }}
     <br>
     Asset: {{ currentAsset }}
     <br>
     <br>
     ALL Chapters: {{ chapters }}
     <br>
-    ALL Assets: {{ assets }}
+    ALL Assets: {{ assets }} -->
   </div>
 </template>
 
