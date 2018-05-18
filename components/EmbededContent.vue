@@ -1,20 +1,30 @@
 <template>
-  <div>
-    <iframe
-      v-if="file"
+  <div class="embed mt-5 mb-5">
+    <img
+      v-if="isImage"
       :src="file"
-      class="embed embed-file mt-5"
-      frameborder="0"/>
+      alt=""
+      class="embed-image" >
     <iframe
-      v-if="link"
-      :src="link"
-      class="embed embed-link mt-5"
-      frameborder="0"/>
+      v-else-if="file"
+      :src="file "
+      class="embed-file"
+      frameborder="0"
+      allowfullscreen />
+    <div
+      v-else-if="link"
+      class="responsive-helper">
+      <iframe
+        :src="link"
+        class="embed-link"
+        frameborder="0"
+        allowfullscreen />
+    </div>
   </div>
 </template>
 
 
-<script>
+    <script>
 export default {
   props: {
     file: {
@@ -25,23 +35,44 @@ export default {
       type: String,
       default: ""
     }
+  },
+  computed: {
+    isImage() {
+      return this.file != null
+        ? this.file.match(/\.(jpeg|jpg|gif|png)$/) != null
+        : false;
+    }
   }
 };
 </script>
 
 
-<style lang="scss" scoped>
+    <style lang="scss" scoped>
 @import "@/assets/scss/main.scss";
-.embed {
-  height: 30vh;
+
+.embed-image,
+.embed-file,
+.embed-link {
+  height: 100%;
   width: 100%;
-  border: 1px solid $light-grey;
+}
+.responsive-helper {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+.embed-link {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 @include tablet {
   .embed {
-    height: 70vh;
-    width: 90%;
+    width: 80%;
   }
 }
 </style>
