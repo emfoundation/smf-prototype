@@ -47,12 +47,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/main.scss";
 .question {
   overflow: hidden;
   background-size: cover;
 }
 .question-body {
-  padding: 9rem 9rem;
+  padding: 3rem 3rem;
   transition: 0.5s;
 }
 .overlay-light {
@@ -72,6 +73,11 @@ export default {
   }
   .arrow {
     color: white;
+  }
+}
+@include tablet() {
+  .question-body {
+    padding: 9rem 9rem;
   }
 }
 </style>

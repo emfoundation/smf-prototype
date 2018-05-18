@@ -9,7 +9,7 @@
           {{ subtitle }}
         </h2>
       </div>
-      <div class="container pb-0">
+      <div class="container back-container pb-0">
         <back-link :link="backTo"/>
       </div>
     </div>
@@ -51,6 +51,9 @@ export default {
   margin-top: 20px !important;
   margin-left: 2%;
   margin-right: 2%;
+}
+.back-container {
+  z-index: 5;
 }
 @include tablet() {
   .subtitle {

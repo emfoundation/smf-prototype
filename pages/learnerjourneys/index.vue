@@ -5,9 +5,7 @@
       :subtitle="subtitle"
       back-to="/"
     />
-    <div class="container">
-      <learnerjourney-list :items="learnerJourneys" />
-    </div>
+    <learnerjourney-list :items="learnerJourneys" />
   </div>
 </template>
 
