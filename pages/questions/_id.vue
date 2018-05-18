@@ -2,9 +2,9 @@
   <section class="hero">
     <banner
       :title="title"
-      :subtitle="subtitle" />
-    <back-link
-      link="/questions" />
+      :subtitle="subtitle"
+      back-to="/questions"
+    />
     <div class="">
       <answer-block :answers="firstAnswerBlock" />
 
@@ -24,7 +24,6 @@
 
 <script>
 import Banner from "~/components/Banner";
-import BackLink from "~/components/UI/BackLink";
 import AnswerBlock from "~/components/questions/answers/AnswerBlock";
 import QuoteBlock from "~/components/questions/answers/QuoteBlock";
 
@@ -96,7 +95,6 @@ export default {
   },
   components: {
     Banner,
-    BackLink,
     AnswerBlock,
     QuoteBlock
   },

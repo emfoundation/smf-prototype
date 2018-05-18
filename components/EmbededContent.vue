@@ -2,7 +2,7 @@
   <div>
     <iframe
       v-if="file"
-      :src="file "
+      :src="file"
       class="embed embed-file mt-5"
       frameborder="0"/>
     <iframe

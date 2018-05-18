@@ -2,9 +2,9 @@
   <section>
     <banner
       :title="asset.name"
-      :subtitle="subtitle" />
+      :subtitle="subtitle"
+      :back-to="'/questions/' + $route.query.q" />
     <div class="container">
-      <back-link link="/"/>
       <div
         id="media-container"
         :class="{ fullscreen: isFullscreen }">
@@ -38,7 +38,6 @@
 </template>
 <script>
 import Banner from "~/components/Banner";
-import BackLink from "~/components/UI/BackLink";
 import EmbededContent from "~/components/EmbededContent";
 import FullscreenButton from "~/components/UI/FullscreenButton";
 
@@ -81,7 +80,6 @@ export default {
   },
   components: {
     Banner,
-    BackLink,
     EmbededContent,
     FullscreenButton
   },

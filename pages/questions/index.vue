@@ -2,9 +2,8 @@
   <section class="hero">
     <banner
       :title="title"
+      back-to="/"
     />
-    <back-link
-      link="/" />
     <questions-list :items="questions" />
   </section>
 
@@ -54,8 +53,7 @@ export default {
   },
   components: {
     Banner,
-    QuestionsList,
-    BackLink
+    QuestionsList
   }
 };
 </script>

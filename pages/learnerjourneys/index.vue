@@ -3,26 +3,20 @@
     <banner
       :title="title"
       :subtitle="subtitle"
+      back-to="/"
     />
-    <div class="container">
-      <back-link
-        class="ml-3"
-        link="/" />
-      <learnerjourney-list :items="learnerJourneys" />
-    </div>
+    <learnerjourney-list :items="learnerJourneys" />
   </div>
 </template>
 
 <script>
 import LearnerjourneyList from "~/components/learnerjourneys/LearnerjourneysList";
 import Banner from "~/components/Banner";
-import BackLink from "~/components/UI/BackLink";
 
 export default {
   components: {
     Banner,
-    LearnerjourneyList,
-    BackLink
+    LearnerjourneyList
   },
   data() {
     return {
