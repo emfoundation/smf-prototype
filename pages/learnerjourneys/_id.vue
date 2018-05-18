@@ -1,8 +1,8 @@
 <template>
   <div>
     <banner
-      :title="static_title"
-      :subtitle="static_subtitle"
+      :title="learnerJourney.name"
+      :subtitle="learnerJourney.description"
       back-to="/learnerjourneys/"/>
     <div
       v-if="currentChapter"
@@ -70,26 +70,17 @@
           />
         </div>
 
-        <section>
-          <h4>This is about...</h4>
+        <section v-if="currentAsset.tags.length > 0">
+          <h4 class="mb-2">This is about...</h4>
           <AssetTags :tags="currentAsset.tags"/>
         </section>
       </div>
     </div>
     <div
       v-else
-      class="container mb-5"
-    >
+      class="container mb-5">
       <h1>Sorry, this Learner Journey has no Chapters! Please come back later...</h1>
     </div>
-    <!-- Asset ID: {{ currentAssetID }}
-    <br>
-    Asset: {{ currentAsset }}
-    <br>
-    <br>
-    ALL Chapters: {{ chapters }}
-    <br>
-    ALL Assets: {{ assets }} -->
   </div>
 </template>
 
@@ -150,6 +141,12 @@ export default {
           "/learner-journey/" +
           context.params.id +
           "/"
+      ),
+      context.$axios.get(
+        process.env.API_BASE_URL +
+          "/learner-journeys/" +
+          context.params.id +
+          "/"
       )
     ];
 
@@ -161,10 +158,12 @@ export default {
           res[0].data.constructor === Array ? res[0].data : [res[0].data];
         let assets =
           res[1].data.constructor === Array ? res[1].data : [res[1].data];
+        let learnerJourney = res[2].data;
 
         return {
           chapters: chapters,
-          assets: assets
+          assets: assets,
+          learnerJourney: learnerJourney
         };
       })
       .catch(console.error);
