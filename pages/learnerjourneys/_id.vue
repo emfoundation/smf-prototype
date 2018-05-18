@@ -2,8 +2,8 @@
   <div>
     <banner
       :title="static_title"
-      :subtitle="static_subtitle"/>
-    <back-link link="/learnerjourneys"/>
+      :subtitle="static_subtitle"
+      back-to="/learnerjourneys/"/>
     <div
       v-if="currentChapter"
       class="mb-5">
@@ -37,7 +37,7 @@
                 </div>
                 <div class="container chapter-nav-info pt-2">
                   <div class="">
-                    {{ currentChapter.title }}
+                    {{ getChapterTitle(index) }}
                   </div>
                 </div>
               </div>
@@ -95,7 +95,6 @@
 
 <script>
 import AssetTags from "~/components/assets/AssetTags";
-import BackLink from "~/components/UI/BackLink";
 import Banner from "~/components/Banner";
 import EmbededContent from "~/components/EmbededContent";
 import FullscreenButton from "~/components/UI/FullscreenButton";
@@ -103,7 +102,6 @@ import FullscreenButton from "~/components/UI/FullscreenButton";
 export default {
   components: {
     AssetTags,
-    BackLink,
     Banner,
     EmbededContent,
     FullscreenButton
@@ -130,6 +128,11 @@ export default {
       }
     }
   },
+  methods: {
+    getChapterTitle: function(index) {
+      return this.chapters[index].title;
+    }
+  },
   asyncData(context) {
     let getRequests = [
       context.$axios.get(
@@ -137,14 +140,16 @@ export default {
           "/chapters/collection/" +
           process.env.SMF_COLLECTION_ID +
           "/learner-journey/" +
-          context.params.id
+          context.params.id +
+          "/"
       ),
       context.$axios.get(
         process.env.API_BASE_URL +
           "/assets/collection/" +
           process.env.SMF_COLLECTION_ID +
           "/learner-journey/" +
-          context.params.id
+          context.params.id +
+          "/"
       )
     ];
 

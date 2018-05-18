@@ -8,7 +8,7 @@
         <h3 class="is-size-3 mb-2 answer-text answer-title">{{ answer.name }}</h3>
         <p class="mb-2 answer-text">{{ answer.description }}</p>
         <nuxt-link
-          to="/assets/1"
+          :to="{ path: '/assets/' + answer.id, query: { q: $route.params.id }}"
           class="is-pulled-right">
           <p class="subtitle">
             <i class="fas fa-chevron-circle-right fa-lg arrow"/>
@@ -18,7 +18,6 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   props: {
