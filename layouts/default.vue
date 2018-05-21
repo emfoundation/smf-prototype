@@ -1,7 +1,17 @@
 <template>
   <div>
-    <the-nav/>
+    <header>
+      <the-nav/>
+    </header>
     <nuxt/>
+    <footer class="pt-3 has-background-black has-text-white is-size-6">
+      <div class="container">
+
+        Charity Registration No.: 1130306, OSCR Registration No.: SC043120, Company No.: 6897785
+        <br >
+        © Copyright 2017 Ellen MacArthur Foundation. All Rights Reserved
+      </div>
+    </footer>
   </div>
 </template>
 
