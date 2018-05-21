@@ -1,6 +1,6 @@
 <template>
-  <section class="hero is-dark is-dark">
-    <div class="hero-body pb-0">
+  <section class="hero is-dark is-primary banner">
+    <div class="hero-body has-text-white pb-0">
       <div class="container has-text-centered">
         <h1 class="title is-size-2-desktop is-capitalized">
           {{ title }}
@@ -44,8 +44,7 @@ export default {
 <style lang="scss" scoped>
 @import "~/assets/scss/main.scss";
 
-.is-secondary {
-  background-color: $secondary !important;
+.banner {
 }
 .subtitle {
   margin-top: 20px !important;
