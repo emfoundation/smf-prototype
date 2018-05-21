@@ -9,13 +9,16 @@
       <div class="columns learningpath-body">
         <div class="column">
           <h2 class="title has-text-weight-bold">{{ item.name }}</h2>
+          <div class="duration mt-3 pb-1">
+            <i class="fas fa-clock has-text-weight-normal is-size-2"/>
+            <p class="ml-2 is-pulled-right duration-text">{{ item.duration }}h</p>
+          </div>
         </div>
         <div class="column left-border">
           <p class="mb-4">{{ item.description }}</p>
           <nuxt-link :to="learningpathUrl(item.id)">
             <p class="subtitle">View
               <i class="fas fa-chevron-circle-right fa-lg arrow"/>
-
             </p>
           </nuxt-link>
         </div>
@@ -74,6 +77,13 @@ export default {
   .arrow {
     color: white;
   }
+}
+.duration {
+  height: 41px;
+  width: 70px;
+}
+.duration-text {
+  margin-top: 8px;
 }
 @include tablet() {
   .learningpath-body {
