@@ -4,11 +4,11 @@
 
       <section class="column learner">
         <div class="call-to-action">
-          <h1 class="title pb-4 has-text-secondary">Learning Paths</h1>
-          <p class="subtitle has-text-black">Use our bespoke guided learning paths to learn challenging subjects curated by professionals.</p>
+          <h1 class="title pb-4 has-text-white">Learning Paths</h1>
+          <p class="subtitle has-text-white">Use our bespoke guided learning paths to learn challenging subjects curated by professionals.</p>
           <nuxt-link
             to="/learnerjourneys"
-            class="button call-to-action-button is-dark">
+            class="button call-to-action-button">
             <p>View</p>
             <i class="fas fa-lg fa-angle-right"/>
           </nuxt-link>
@@ -21,7 +21,7 @@
           <p class="subtitle has-text-white">Find out what you want to know by choosing the topics that interest you the most.</p>
           <nuxt-link
             to="/questions"
-            class="button call-to-action-button">
+            class="button call-to-action-button is-dark">
             View
             <i class="fas fa-lg fa-angle-right"/>
           </nuxt-link>
@@ -40,9 +40,10 @@
 
 .learner {
   height: 200px;
+  background-color: $emf;
 }
 .topic {
-  background-color: $secondary;
+  background-color: $primary;
 }
 .learner,
 .topic {

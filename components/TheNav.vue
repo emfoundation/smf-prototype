@@ -4,7 +4,9 @@
     role="navigation"
     aria-label="main-navigation">
     <div class="navbar-brand">
-      <nuxt-link to="/">
+      <nuxt-link
+        to="/"
+        class="navbar-item">
         <img
           src="~/static/images/emf-logo.png"
           alt="The Ellen MacArthur Foundation Logo"
@@ -50,11 +52,9 @@ $navbar-divider-background-color: red;
 .navbar-brand {
   width: 100%;
   padding-left: 2vw;
-
   .emf-logo {
-    margin-top: 1.5rem;
     opacity: 1;
-    height: 3rem;
+    max-height: 100%;
     &:hover {
       opacity: 0.6;
     }
