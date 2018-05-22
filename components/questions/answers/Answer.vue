@@ -6,20 +6,22 @@
       class="answer">
       <div class="answer-body pt-6 pr-6 pb-8 pl-6 card">
         <h3 class="is-size-3 mb-2 answer-text answer-title">{{ answer.name }}</h3>
-        <p class="mb-2 answer-text">{{ answer.description }}</p>
-        <nuxt-link
-          :to="{ path: '/assets/' + answer.id, query: { q: $route.params.id }}"
-          class="is-pulled-right">
-          <p class="subtitle">
-            <i class="fas fa-chevron-circle-right fa-lg arrow"/>
-          </p>
-        </nuxt-link>
+        <p class="mb-5 answer-text">{{ answer.description }}</p>
+        <text-circle-button
+          :link="{ path: '/assets/' + answer.id, query: { q: $route.params.id }}"
+          :is-primary="true"
+          :is-small="true">View</text-circle-button>
       </div>
     </div>
   </div>
 </template>
 <script>
+import TextCircleButton from "~/components/UI/buttons/TextCircleButton";
+
 export default {
+  components: {
+    TextCircleButton
+  },
   props: {
     answer: {
       type: Object,

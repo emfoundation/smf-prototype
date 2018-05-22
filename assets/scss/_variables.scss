@@ -8,9 +8,10 @@ $light-grey: #F4F4F4;
 // SMF Custom variables
 $smf-border: 5px solid white;
 $smf-border-thin: 2px solid white;
+$font-primary: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // Bulma customised variables
-$family-sans-serif: proxima-nova;
+$family-sans-serif: $font-primary;
 $text: $secondary;
 
 

@@ -13,7 +13,8 @@
             <h1 class="title is-2 pb-4 has-text-white">Let us <strong>Guide You</strong></h1>
             <p class="subtitle has-text-white">Use our bespoke guided learning paths to learn challenging subjects curated by professionals.</p>
           </div>
-          <text-circle-button link="/learning-paths">Yes Please</text-circle-button>
+          <text-circle-button
+            link="/learning-paths">Yes Please</text-circle-button>
         </div>
       </section>
 
@@ -89,8 +90,7 @@ export default {
   }
   .learner,
   .question {
-    // height: 100%;
-    padding-top: 8rem !important;
+    padding-top: 10rem !important;
     .call-to-action {
       padding-top: 8rem;
     }
@@ -112,7 +112,7 @@ export default {
   }
   .circle {
     position: absolute;
-    left: calc(50vw - 71px);
+    left: calc(50vw - 75px);
     top: 15vh;
     width: 130px;
     height: 130px;

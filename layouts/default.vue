@@ -27,6 +27,7 @@ export default {
 <style lang="scss">
 @import "~/assets/scss/main.scss";
 html {
+  font-family: $font-primary;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
