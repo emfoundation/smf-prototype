@@ -7,7 +7,7 @@
           <h1 class="title pb-4 has-text-white">Learning Paths</h1>
           <p class="subtitle has-text-white">Use our bespoke guided learning paths to learn challenging subjects curated by professionals.</p>
           <nuxt-link
-            to="/learnerjourneys"
+            to="/learning-paths"
             class="button call-to-action-button">
             <p>View</p>
             <i class="fas fa-lg fa-angle-right"/>

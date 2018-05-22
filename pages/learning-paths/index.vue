@@ -5,7 +5,7 @@
       :subtitle="subtitle"
       back-to="/"
     />
-    <single-item-row :items="learnerJourneys" />
+    <single-item-row :items="learningPaths" />
   </div>
 </template>
 
@@ -20,15 +20,14 @@ export default {
   },
   data() {
     return {
-      title: "Learner Journeys",
-      subtitle:
-        "Pick a journey that interests you, and get on track to become a CE wizz"
+      title: "Let us Guide You",
+      subtitle: "Pick a Learning Path"
     };
   },
   asyncData(context) {
     return context.$axios
       .$get(process.env.API_BASE_URL + "learner-journeys/")
-      .then(res => ({ learnerJourneys: res }))
+      .then(res => ({ learningPaths: res }))
       .catch(console.error);
   }
 };
