@@ -25,19 +25,20 @@
             </div>
             <div class="duration pb-1">
               <i class="fas fa-clock has-text-weight-normal is-size-2"/>
-              <p class="ml-2 has-text-weight-bold is-pulled-right duration-text">{{ item.duration }}h</p>
+              <p class="has-text-weight-bold is-size-5 is-pulled-right duration-text">{{ item.duration }} h</p>
             </div>
           </div>
         </div>
         <div class="column is-half left-border p0 right-column">
           <p class="mb-4">{{ item.description }}</p>
-          <nuxt-link :to="itemUrl(item.id)">
+          <!-- <nuxt-link :to="itemUrl(item.id)">
             <p class="subtitle">Start
               <span class="icon">
                 <i class="fas fa-chevron-circle-right fa-lg arrow has-text-primary"/>
               </span>
             </p>
-          </nuxt-link>
+          </nuxt-link> -->
+          <text-circle-button :link="itemUrl(item.id)">Start</text-circle-button>
         </div>
       </div>
     </div>
@@ -45,8 +46,12 @@
 </template>
 
 <script>
+import TextCircleButton from "~/components/UI/buttons/TextCircleButton";
+
 export default {
-  components: {},
+  components: {
+    TextCircleButton
+  },
   props: {
     items: {
       type: Array,
@@ -87,10 +92,10 @@ export default {
 .duration {
   display: inline-block;
   height: 41px;
-  width: 70px;
+  width: 85px;
 }
 .duration-text {
-  margin-top: 8px;
+  margin-top: 5px;
 }
 .parts {
   margin-top: 9px;

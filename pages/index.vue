@@ -1,6 +1,11 @@
 <template>
-  <section class="hero">
-    <div class="columns is-gapless hero-body p-0">
+  <section class="hero home">
+    <div class="circle is-hidden-mobile">
+      <div class="subtitle is-4">
+        Please <br >Pick
+      </div>
+    </div>
+    <div class="columns hero-body home-body p-0">
 
       <section class="column learner">
         <div class="call-to-action">
@@ -8,12 +13,7 @@
             <h1 class="title is-2 pb-4 has-text-white">Let us <strong>Guide You</strong></h1>
             <p class="subtitle has-text-white">Use our bespoke guided learning paths to learn challenging subjects curated by professionals.</p>
           </div>
-          <nuxt-link
-            to="/learning-paths"
-            class="button call-to-action-button">
-            <p>View</p>
-            <i class="fas fa-lg fa-angle-right"/>
-          </nuxt-link>
+          <text-circle-button link="/learning-paths">Yes Please</text-circle-button>
         </div>
       </section>
 
@@ -23,12 +23,10 @@
             <h1 class="title is-2 pb-4 has-text-white">Explore for <strong>Yourself</strong></h1>
             <p class="subtitle has-text-white">Find out what you want to know by choosing the questions that interest you the most.</p>
           </div>
-          <nuxt-link
-            to="/questions"
-            class="button call-to-action-button is-dark">
-            View
-            <i class="fas fa-lg fa-angle-right"/>
-          </nuxt-link>
+          <text-circle-button
+            :is-primary-colour="false"
+            link="/questions"
+            class="tablet-pulled-right">Explore</text-circle-button>
         </div>
 
       </section>
@@ -37,26 +35,38 @@
   </section>
 </template>
 
+<script>
+import TextCircleButton from "~/components/UI/buttons/TextCircleButton";
+
+export default {
+  components: {
+    TextCircleButton
+  }
+};
+</script>
+
 <style lang="scss" scoped>
 @import "@/assets/scss/main.scss";
 
 // Mobile-first classes
-.learner {
-  height: 200px;
-  background-color: $emf;
-}
-.question {
-  background-color: $primary;
+
+.home-body {
+  height: 100%;
 }
 .learner,
 .question {
-  height: 45vh;
   display: flex;
-  align-items: center;
   justify-content: center;
   strong {
     font-weight: 900;
   }
+}
+.learner {
+  background-color: $emf;
+  padding-top: 8rem !important;
+}
+.question {
+  background-color: $primary;
 }
 .call-to-action {
   padding: 3rem 3rem;
@@ -72,12 +82,18 @@
     margin-left: 10px;
   }
 }
-
 // Tablet size and above
 @include tablet() {
+  .home {
+    height: 100vh;
+  }
   .learner,
   .question {
-    height: 90vh;
+    // height: 100%;
+    padding-top: 8rem !important;
+    .call-to-action {
+      padding-top: 8rem;
+    }
   }
   .learner {
     .content {
@@ -93,6 +109,20 @@
   }
   .call-to-action {
     padding: 3rem 6rem;
+  }
+  .circle {
+    position: absolute;
+    left: calc(50vw - 71px);
+    top: 15vh;
+    width: 130px;
+    height: 130px;
+    border-radius: 65px;
+    background-color: white;
+    text-align: center;
+    padding-top: 35px;
+  }
+  .tablet-pulled-right {
+    float: right;
   }
 }
 </style>

@@ -3,10 +3,9 @@
     <header>
       <the-nav/>
     </header>
-    <nuxt/>
+    <nuxt />
     <footer class="pt-3 has-background-black has-text-white is-size-6">
       <div class="container">
-
         Charity Registration No.: 1130306, OSCR Registration No.: SC043120, Company No.: 6897785
         <br >
         © Copyright 2017 Ellen MacArthur Foundation. All Rights Reserved
@@ -27,10 +26,7 @@ export default {
 
 <style lang="scss">
 @import "~/assets/scss/main.scss";
-
 html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
