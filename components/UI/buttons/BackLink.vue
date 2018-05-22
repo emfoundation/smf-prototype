@@ -1,12 +1,14 @@
 <template>
-  <nuxt-link
-    :to="link"
-    class="back-container has-background-white">
-    <div class="back-button has-text-dark has-text-weight-light ">
-      <i class="fas fa-lg fa-angle-left mr-2"/>
-      <slot>Back</slot>
-    </div>
-  </nuxt-link>
+  <div class="back-container has-background-white">
+    <nuxt-link
+      :to="link"
+    >
+      <div class="back-button has-text-dark has-text-weight-light ">
+        <i class="fas fa-lg fa-angle-left mr-2"/>
+        <slot>Back</slot>
+      </div>
+    </nuxt-link>
+  </div>
 </template>
 
 <script>

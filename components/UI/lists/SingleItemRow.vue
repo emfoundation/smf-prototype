@@ -21,11 +21,11 @@
               </span>
               <span
                 v-if="item.parts > 1"
-                class="is-size-6 ml-2 mr-5 mb-1">{{ item.parts }} parts</span>
+                class="is-size-6 has-text-weight-bold ml-2 mr-5 mb-1">{{ item.parts }} parts</span>
             </div>
             <div class="duration pb-1">
               <i class="fas fa-clock has-text-weight-normal is-size-2"/>
-              <p class="ml-2 is-pulled-right duration-text">{{ item.duration }}h</p>
+              <p class="ml-2 has-text-weight-bold is-pulled-right duration-text">{{ item.duration }}h</p>
             </div>
           </div>
         </div>
@@ -55,7 +55,6 @@ export default {
   },
   methods: {
     itemUrl(id) {
-      console.log(this.$route);
       return this.$route.path + "/" + id;
     }
   }
@@ -63,12 +62,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/main.scss";
+@import "~/assets/scss/main.scss";
 
 .item {
   overflow: hidden;
   background-size: cover;
-  border-bottom: 5px solid white;
+  border-bottom: $smf-border;
 }
 .item-body {
   transition: 0.5s;

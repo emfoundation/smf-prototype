@@ -4,8 +4,10 @@
 
       <section class="column learner">
         <div class="call-to-action">
-          <h1 class="title pb-4 has-text-white">Learning Paths</h1>
-          <p class="subtitle has-text-white">Use our bespoke guided learning paths to learn challenging subjects curated by professionals.</p>
+          <div class="content">
+            <h1 class="title is-2 pb-4 has-text-white">Let us <strong>Guide You</strong></h1>
+            <p class="subtitle has-text-white">Use our bespoke guided learning paths to learn challenging subjects curated by professionals.</p>
+          </div>
           <nuxt-link
             to="/learning-paths"
             class="button call-to-action-button">
@@ -15,10 +17,12 @@
         </div>
       </section>
 
-      <section class="column topic">
+      <section class="column question">
         <div class="call-to-action">
-          <h1 class="title pb-4 has-text-white">Discover our Big Questions</h1>
-          <p class="subtitle has-text-white">Find out what you want to know by choosing the topics that interest you the most.</p>
+          <div class="content">
+            <h1 class="title is-2 pb-4 has-text-white">Explore for <strong>Yourself</strong></h1>
+            <p class="subtitle has-text-white">Find out what you want to know by choosing the questions that interest you the most.</p>
+          </div>
           <nuxt-link
             to="/questions"
             class="button call-to-action-button is-dark">
@@ -37,23 +41,25 @@
 @import "@/assets/scss/main.scss";
 
 // Mobile-first classes
-
 .learner {
   height: 200px;
   background-color: $emf;
 }
-.topic {
+.question {
   background-color: $primary;
 }
 .learner,
-.topic {
+.question {
   height: 45vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  strong {
+    font-weight: 900;
+  }
 }
 .call-to-action {
-  padding: 5%;
+  padding: 3rem 3rem;
 }
 .call-to-action-button {
   border-radius: 30px;
@@ -70,11 +76,23 @@
 // Tablet size and above
 @include tablet() {
   .learner,
-  .topic {
+  .question {
     height: 90vh;
   }
+  .learner {
+    .content {
+      padding-left: 1rem;
+      border-left: $smf-border-thin;
+    }
+  }
+  .question {
+    .content {
+      padding-right: 1rem;
+      border-right: 2px solid white;
+    }
+  }
   .call-to-action {
-    padding: 30%;
+    padding: 3rem 6rem;
   }
 }
 </style>

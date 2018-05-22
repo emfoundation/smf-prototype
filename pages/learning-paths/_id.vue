@@ -3,7 +3,7 @@
     <banner
       :title="learnerJourney.name"
       :subtitle="learnerJourney.description"
-      back-to="/learnerjourneys/"/>
+      back-to="/learning-paths/"/>
     <div
       v-if="currentChapter"
       class="mb-5">
