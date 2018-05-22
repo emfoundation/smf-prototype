@@ -4,7 +4,7 @@
     <div
       class="hero-body has-text-white pb-0">
       <div class="container has-text-centered">
-        <h1 class="title is-size-2-desktop is-capitalized">
+        <h1 class="title is-size-1-desktop has-text-weight-bold">
           {{ title }}
         </h1>
         <h2 class="subtitle">
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import BackLink from "~/components/UI/BackLink";
+import BackLink from "~/components/UI/buttons/BackLink";
 
 export default {
   components: {

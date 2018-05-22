@@ -1,16 +1,17 @@
 <template>
   <section>
     <div
-      v-for="(item, index) in items"
+      v-for="item in items"
       :key="item.id"
       :style="{ backgroundImage: 'url(' + item.thumbnail + ')' }"
-      :class="(index % 2 == 0 ? 'overlay-light is-light' : 'overlay-dark is-dark')"
-      class="hero is-medium learningpath">
-      <div class="columns learningpath-body">
-        <div class="column">
-          <h2 class="title has-text-weight-bold">{{ item.name }}</h2>
-          <div class="info">
-            <div class="chapters is-pulled-left mb-4">
+      class="hero is-medium item overlay-dark is-dark">
+      <div class="columns item-body">
+        <div class="column is-half left-column">
+          <h2 class="title is-1 has-text-weight-bold">{{ item.name }}</h2>
+          <div
+            v-if="item.parts"
+            class="info">
+            <div class="parts is-pulled-left mb-4">
               <span
                 v-for="(dot,index) in item.parts"
                 :key="index">
@@ -28,11 +29,13 @@
             </div>
           </div>
         </div>
-        <div class="column left-border">
+        <div class="column is-half left-border p0 right-column">
           <p class="mb-4">{{ item.description }}</p>
-          <nuxt-link :to="learningpathUrl(item.id)">
-            <p class="subtitle">View
-              <i class="fas fa-chevron-circle-right fa-lg arrow"/>
+          <nuxt-link :to="itemUrl(item.id)">
+            <p class="subtitle">Start
+              <span class="icon">
+                <i class="fas fa-chevron-circle-right fa-lg arrow has-text-primary"/>
+              </span>
             </p>
           </nuxt-link>
         </div>
@@ -42,12 +45,8 @@
 </template>
 
 <script>
-import DarkButton from "~/components/UI/DarkButton";
-
 export default {
-  components: {
-    DarkButton
-  },
+  components: {},
   props: {
     items: {
       type: Array,
@@ -55,8 +54,9 @@ export default {
     }
   },
   methods: {
-    learningpathUrl(id) {
-      return "/learnerjourneys/" + id;
+    itemUrl(id) {
+      console.log(this.$route);
+      return this.$route.path + "/" + id;
     }
   }
 };
@@ -65,27 +65,20 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/scss/main.scss";
 
-.learningpath {
+.item {
   overflow: hidden;
   background-size: cover;
+  border-bottom: 5px solid white;
 }
-.learningpath-body {
+.item-body {
   transition: 0.5s;
   padding: 3rem 3rem;
 }
-.overlay-light {
-  .learningpath-body {
-    background: rgba(222, 222, 222, 0.6);
-    &:hover {
-      background: rgba(222, 222, 222, 0.9);
-    }
-  }
-}
 .overlay-dark {
-  .learningpath-body {
-    background: rgba(0, 0, 0, 0.6);
+  .item-body {
+    background: rgba($emf, 0.6);
     &:hover {
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba($emf, 0.9);
     }
   }
   .arrow {
@@ -100,7 +93,7 @@ export default {
 .duration-text {
   margin-top: 8px;
 }
-.chapters {
+.parts {
   margin-top: 9px;
   padding-top: 1px;
 }
@@ -116,8 +109,17 @@ export default {
   background-color: white;
 }
 @include tablet() {
-  .learningpath-body {
-    padding: 9rem 9rem;
+  .item-body {
+    padding: 6rem 9rem;
+  }
+  .left-border {
+    border-left: 2px solid white;
+  }
+  .left-column {
+    padding-right: 3rem;
+  }
+  .right-column {
+    padding-left: 3rem;
   }
 }
 </style>

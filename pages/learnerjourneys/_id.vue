@@ -64,7 +64,7 @@
           id="media-container"
           :class="{ fullscreen: isFullscreen }"
           class="mb-5">
-          <embeded-content
+          <embedded-content
             :file="currentAsset.file"
             :link="currentAsset.link"
           />
@@ -87,14 +87,14 @@
 <script>
 import AssetTags from "~/components/assets/AssetTags";
 import Banner from "~/components/Banner";
-import EmbededContent from "~/components/EmbededContent";
-import FullscreenButton from "~/components/UI/FullscreenButton";
+import EmbeddedContent from "~/components/assets/EmbeddedContent";
+import FullscreenButton from "~/components/UI/buttons/FullscreenButton";
 
 export default {
   components: {
     AssetTags,
     Banner,
-    EmbededContent,
+    EmbeddedContent,
     FullscreenButton
   },
   data() {

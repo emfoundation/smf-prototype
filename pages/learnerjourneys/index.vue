@@ -5,18 +5,18 @@
       :subtitle="subtitle"
       back-to="/"
     />
-    <learnerjourney-list :items="learnerJourneys" />
+    <single-item-row :items="learnerJourneys" />
   </div>
 </template>
 
 <script>
-import LearnerjourneyList from "~/components/learnerjourneys/LearnerjourneysList";
+import SingleItemRow from "~/components/UI/lists/SingleItemRow";
 import Banner from "~/components/Banner";
 
 export default {
   components: {
     Banner,
-    LearnerjourneyList
+    SingleItemRow
   },
   data() {
     return {

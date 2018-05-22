@@ -8,7 +8,7 @@
       <div
         id="media-container"
         :class="{ fullscreen: isFullscreen }">
-        <embeded-content
+        <embedded-content
           :file="
           asset.file"
           :link="asset.link"
@@ -38,8 +38,8 @@
 </template>
 <script>
 import Banner from "~/components/Banner";
-import EmbededContent from "~/components/EmbededContent";
-import FullscreenButton from "~/components/UI/FullscreenButton";
+import EmbeddedContent from "~/components/assets/EmbeddedContent";
+import FullscreenButton from "~/components/UI/buttons/FullscreenButton";
 
 export default {
   asyncData(context, callback) {
@@ -80,7 +80,7 @@ export default {
   },
   components: {
     Banner,
-    EmbededContent,
+    EmbeddedContent,
     FullscreenButton
   },
   data() {

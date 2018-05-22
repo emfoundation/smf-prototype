@@ -4,15 +4,14 @@
       :title="title"
       back-to="/"
     />
-    <questions-list :items="questions" />
+    <single-item-row :items="questions" />
   </section>
 
 </template>
 
 <script>
 import Banner from "~/components/Banner";
-import QuestionsList from "~/components/questions/QuestionsList";
-import BackLink from "~/components/UI/BackLink";
+import SingleItemRow from "~/components/UI/lists/SingleItemRow";
 
 export default {
   asyncData(context, callback) {
@@ -53,7 +52,7 @@ export default {
   },
   components: {
     Banner,
-    QuestionsList
+    SingleItemRow
   }
 };
 </script>
