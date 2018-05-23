@@ -49,7 +49,9 @@ export default {
 
     <style lang="scss" scoped>
 @import "@/assets/scss/main.scss";
-
+.embed {
+  background-color: $light-grey;
+}
 .embed-image,
 .embed-file,
 .embed-link {
@@ -68,11 +70,5 @@ export default {
   height: 100%;
   width: 100%;
   position: absolute;
-}
-
-@include tablet {
-  .embed {
-    width: 80%;
-  }
 }
 </style>

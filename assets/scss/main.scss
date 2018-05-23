@@ -10,9 +10,9 @@
 
 // custom universal classes
 .wrap {
-  padding: 3rem 3rem;
+  padding: 2rem 3rem;
   @include tablet() {
-    padding: 3rem 4rem;
+    padding: 3rem 9rem;
   }
   @include desktop() {
     padding: 3rem 6rem;

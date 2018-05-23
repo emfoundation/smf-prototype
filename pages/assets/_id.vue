@@ -5,38 +5,22 @@
       :subtitle="subtitle"
       :back-to="'/questions/' + $route.query.q" />
     <div class="wrap">
-      <div
-        id="media-container"
-        :class="{ fullscreen: isFullscreen }">
-        <embedded-content
-          :file="
-          asset.file"
-          :link="asset.link"
-        />
-        <div class="level is-mobile media-nav-bar">
-          <div class="level-left"/>
-          <div class="level-right">
-            <fullscreen-button
-              :is-fullscreen="isFullscreen"
-              @is-fullscreen="isFullscreen = $event"
-            />
-          </div>
-        </div>
-      </div>
-      <p class="date-uploaded has-text-weight-light">Uploaded on {{ asset.dateUploaded }}</p>
+      <h3 class="title">{{ asset.name }}</h3>
       <p class="mb-5 main-text">{{ asset.description }}</p>
-      <div class="tags">
-        <span
-          v-for="tag in asset.tags"
-          :key="tag.id"
-          class="tag border-1 is-medium">
-          {{ tags[tag] }}
-        </span>
-      </div>
+      <embedded-content
+        :file="
+        asset.file"
+        :link="asset.link"
+      />
+      <section v-if="asset.tags.length > 0">
+        <h4 class="mb-2">This is about...</h4>
+        <AssetTags :tags="asset.tags"/>
+      </section>
     </div>
   </section>
 </template>
 <script>
+import AssetTags from "~/components/assets/AssetTags";
 import Banner from "~/components/Banner";
 import EmbeddedContent from "~/components/assets/EmbeddedContent";
 import FullscreenButton from "~/components/UI/buttons/FullscreenButton";
@@ -79,6 +63,7 @@ export default {
     });
   },
   components: {
+    AssetTags,
     Banner,
     EmbeddedContent,
     FullscreenButton
@@ -92,10 +77,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~/assets/scss/main.scss";
+
 .date-uploaded {
   margin: 3% 0;
 }
-.main-text {
-  width: 60%;
+@include tablet() {
+  .main-text {
+    width: 80%;
+  }
 }
 </style>

@@ -205,7 +205,7 @@ export default {
 }
 @include tablet() {
   .main-text {
-    width: 60%;
+    width: 80%;
   }
   .pagination-previous,
   .pagination-next {
