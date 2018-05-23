@@ -6,11 +6,12 @@
     <div class="navbar-brand smf-navbar-brand">
       <nuxt-link
         to="/"
-        class="navbar-item">
-        <img
+        class="navbar-item logo-item">
+        <div class="emf-logo"/>
+        <!-- <img
           src="~/static/images/emf-logo.png"
           alt="The Ellen MacArthur Foundation Logo"
-          class="emf-logo">
+          class="emf-logo"> -->
       </nuxt-link>
       <nuxt-link
         to="/search"
@@ -50,16 +51,25 @@ $navbar-divider-background-color: red;
   background-color: transparent;
   z-index: 10;
   box-shadow: none;
+  // overflow: hidden;
 }
 .smf-navbar-brand {
   width: 100%;
   padding-left: 2vw;
   height: 4rem;
+  .logo-item {
+    padding-bottom: 0;
+  }
   .emf-logo {
+    background-image: url("~/assets/images/emf-logo_no-text.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     opacity: 1;
-    max-height: 100%;
+    transition: $smf-transition;
+    width: 55px;
+    height: 53px;
     &:hover {
-      opacity: 0.6;
+      opacity: 0.8;
     }
   }
   .rotated {
@@ -95,6 +105,15 @@ $navbar-divider-background-color: red;
     .icon {
       margin-left: auto;
       margin-right: auto;
+    }
+  }
+}
+@include tablet() {
+  .smf-navbar-brand {
+    .emf-logo {
+      background-image: url("~/assets/images/emf-logo.png");
+      width: 206px;
+      height: 53px;
     }
   }
 }

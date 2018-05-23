@@ -8,11 +8,12 @@
         <div class="call-to-action wrap">
           <nuxt-link to="/learning-paths">
             <div class="home-box">
-              <h1 class="title is-2 pb-4 has-text-white">Let us <strong>Guide You</strong></h1>
+              <h1 class="title is-2 pb-4 has-text-white has-text-weight-normal">Let us <strong>Guide You</strong></h1>
               <p class="subtitle has-text-white">Use our bespoke guided learning paths to learn challenging subjects curated by professionals.</p>
             </div>
           </nuxt-link>
           <text-circle-button
+            text-colour="light"
             link="/learning-paths">Yes Please</text-circle-button>
         </div>
         <div class="circle is-hidden-mobile">
@@ -26,12 +27,13 @@
         <div class="call-to-action wrap">
           <nuxt-link to="/questions" >
             <div class="home-box">
-              <h1 class="title is-2 pb-4 has-text-white">Explore for <strong>Yourself</strong></h1>
+              <h1 class="title is-2 pb-4 has-text-white has-text-weight-normal">Explore for <strong>Yourself</strong></h1>
               <p class="subtitle has-text-white">Find out what you want to know by choosing the questions that interest you the most.</p>
             </div>
           </nuxt-link>
           <text-circle-button
-            :is-primary-colour="false"
+            text-colour="light"
+            circle-colour="secondary"
             link="/questions"
             class="tablet-pulled-right">Explore</text-circle-button>
         </div>
@@ -128,10 +130,8 @@ export default {
     left: calc(
       100% - #{$circle-radius}
     ); // Interpolated variable - see https://github.com/sass/sass/issues/818
-    width: $circle-radius * 2;
-    height: $circle-radius * 2;
-    border-radius: $circle-radius;
     padding-top: $circle-radius / 2;
+    @include circle($circle-radius);
   }
   .tablet-pulled-right {
     float: right;

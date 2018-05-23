@@ -4,7 +4,7 @@
 
 @import "variables";
 @import "utilities";
-
+@import "mixins";
 
 @import "node_modules/bulma/bulma";
 
@@ -15,7 +15,7 @@
     padding: 3rem 4rem;
   }
   @include desktop() {
-    padding: 3rem 9rem;
+    padding: 3rem 6rem;
   }
 }
 // add bulma overrides elements here

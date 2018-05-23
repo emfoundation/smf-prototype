@@ -30,6 +30,8 @@ export default {
   position: relative;
 }
 html {
+  width: 100%;
+  overflow-x: hidden;
   font-family: $font-primary;
   font-size: 16px;
   word-spacing: 1px;

@@ -7,7 +7,7 @@
       back-to="/"
     />
     <intro-text
-      heading="What's a learning path?"
+      heading="What's a learning path?.."
       text="Nullam nec semper urna. Fusce eu dui et arcu ullamcorper tincidunt et quis erat. Suspendisse feugiat ligula at fermentum ultrices. Nunc in nunc fermentum, viverra augue vel, auctor sapien. Donec sed turpis porttitor, tempor nunc lobortis, suscipit nisi. Nullam quis justo vel purus gravida vestibulum nec rutrum nunc. Morbi aliquam eget arcu sit amet hendrerit. Aenean non massa nisl. In ut arcu at odio tincidunt mollis vitae id lectus. " />
     <single-item-row :items="learningPaths" />
   </div>

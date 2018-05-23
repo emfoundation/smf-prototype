@@ -2,8 +2,13 @@
   <section class="hero">
     <banner
       :title="title"
+      :subtitle="subtitle"
+      :image="bannerImage"
       back-to="/"
     />
+    <intro-text
+      heading="Why all the big questions?.."
+      text="Nullam nec semper urna. Fusce eu dui et arcu ullamcorper tincidunt et quis erat. Suspendisse feugiat ligula at fermentum ultrices. Nunc in nunc fermentum, viverra augue vel, auctor sapien. Donec sed turpis porttitor, tempor nunc lobortis, suscipit nisi. Nullam quis justo vel purus gravida vestibulum nec rutrum nunc. Morbi aliquam eget arcu sit amet hendrerit. Aenean non massa nisl. In ut arcu at odio tincidunt mollis vitae id lectus. " />
     <single-item-row :items="questions" />
   </section>
 
@@ -12,13 +17,15 @@
 <script>
 import Banner from "~/components/Banner";
 import SingleItemRow from "~/components/UI/lists/SingleItemRow";
+import IntroText from "~/components/UI/blocks/IntroText";
 
 export default {
   asyncData(context, callback) {
     callback(null, {
       title: "Big Questions",
-      subtitle:
-        "Sed nisi neque, euismod sit amet augue id, cursus consectetur tellus. Praesent finibus facilisis massa. Morbi mattis nisi nibh, eget pulvinar turpis elementum nec. Morbi sit amet semper nunc. Cras at ligula sed turpis varius sodales. ",
+      subtitle: "Pick a Big Question",
+      bannerImage: "https://placeimg.com/1000/300/arch",
+
       // This would be replaced by a store or API call
       // Get all questions: '/api/tag-groups'
       questions: [
@@ -52,7 +59,8 @@ export default {
   },
   components: {
     Banner,
-    SingleItemRow
+    SingleItemRow,
+    IntroText
   }
 };
 </script>

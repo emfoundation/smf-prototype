@@ -1,13 +1,14 @@
 <template>
   <section>
     <div
-      v-for="item in items"
+      v-for="(item, index) in items"
       :key="item.id"
       :style="{ backgroundImage: 'url(' + item.thumbnail + ')' }"
-      class="hero is-medium item overlay-dark is-dark">
+      :class="index % 2 == 0 ? 'overlay-white is-light' : 'overlay-blue is-dark'"
+      class="hero is-medium item">
       <div class="columns item-body">
         <div class="column is-half left-column">
-          <h2 class="title is-1 has-text-weight-bold">{{ item.name }}</h2>
+          <h2 class="title is-1 has-text-weight-normal">{{ item.name }}</h2>
           <div
             v-if="item.parts"
             class="info">
@@ -31,14 +32,10 @@
         </div>
         <div class="column is-half left-border p0 right-column">
           <p class="mb-4">{{ item.description }}</p>
-          <!-- <nuxt-link :to="itemUrl(item.id)">
-            <p class="subtitle">Start
-              <span class="icon">
-                <i class="fas fa-chevron-circle-right fa-lg arrow has-text-primary"/>
-              </span>
-            </p>
-          </nuxt-link> -->
-          <text-circle-button :link="itemUrl(item.id)">Start</text-circle-button>
+          <text-circle-button
+            :circle-colour="index % 2 ==0 ? 'primary' : 'white'"
+            :text-colour="index % 2 ==0 ? 'dark' : 'light'"
+            :link="itemUrl(item.id)">Start</text-circle-button>
         </div>
       </div>
     </div>
@@ -78,11 +75,22 @@ export default {
   transition: $smf-transition;
   padding: 3rem 3rem;
 }
-.overlay-dark {
+.overlay-blue {
   .item-body {
-    background: rgba($emf, 0.6);
+    background: rgba($primary, 0.8);
     &:hover {
-      background: rgba($emf, 0.9);
+      background: rgba($primary, 0.9);
+    }
+  }
+  .arrow {
+    color: white;
+  }
+}
+.overlay-white {
+  .item-body {
+    background: rgba(white, 0.8);
+    &:hover {
+      background: rgba(white, 0.9);
     }
   }
   .arrow {
@@ -118,6 +126,11 @@ export default {
   }
   .left-border {
     border-left: 2px solid white;
+  }
+  .overlay-white {
+    .left-border {
+      border-left: 2px solid $secondary;
+    }
   }
   .left-column {
     padding-right: 3rem;

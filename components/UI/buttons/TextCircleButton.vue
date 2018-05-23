@@ -2,14 +2,18 @@
   <nuxt-link
     :to="link"
     class="circle-button">
-    <p class="subtitle has-text-white has-text-weight-bold">
-      <slot/>
-      <span
-        :class="{ 'is-primary': isPrimaryColour, 'is-small': isSmall }"
-        class="icon circle ml-4">
-        <i class="fas fa-chevron-right arrow has-text-white"/>
-      </span>
-    </p>
+    <div
+      :class="[{'is-small': isSmall }, textColour, circleColour]">
+      <div class="subtitle has-text-weight-bold">
+        <span class="link-text">
+          <slot/>
+        </span>
+        <span
+          class="icon circle ml-4">
+          <i class="fas fa-chevron-right arrow"/>
+        </span>
+      </div>
+    </div>
   </nuxt-link>
 </template>
 
@@ -24,9 +28,13 @@ export default {
       type: Boolean,
       default: false
     },
-    isPrimaryColour: {
-      type: Boolean,
-      default: true
+    textColour: {
+      type: String,
+      default: "dark"
+    },
+    circleColour: {
+      type: String,
+      default: "primary"
     }
   }
 };
@@ -34,27 +42,44 @@ export default {
 
 <style lang="scss" scoped>
 @import "~/assets/scss/main.scss";
+
+.arrow {
+  color: white;
+}
 .circle {
   transition: $smf-transition;
   background: $emf;
-  height: 60px;
-  width: 60px;
-  border-radius: 30px;
-}
-.circle.is-primary {
-  background: $primary;
+  @include circle(30px);
 }
 .circle-button {
   &:hover {
     .circle {
-      background: darken($emf, 20%);
+      opacity: 0.5;
     }
-    .circle.is-primary {
-      background: darken($primary, 20%);
-    }
+    // .primary .circle {
+    // }
   }
 }
-.circle.is-small {
+.primary .circle {
+  background: $primary;
+}
+.secondary .circle {
+  background: $secondary;
+}
+.white .circle {
+  background: white;
+}
+.white .arrow {
+  color: $primary;
+}
+
+.dark .link-text {
+  color: $secondary;
+}
+.light .link-text {
+  color: white;
+}
+.is-small .circle {
   height: 30px;
   width: 30px;
   border-radius: 15px;

@@ -1,10 +1,18 @@
 <template>
   <article
-    class="intro-container columns mb-0">
-    <h3 class="title is-3 column is-one-third has-text-white">
-      {{ heading }}
-    </h3>
-    <p class="column intro-text has-text-white">{{ text }}</p>
+    class="intro-container mb-0">
+    <div class="columns">
+      <div class="column is-one-third">
+        <h3 class="title is-2 has-text-weight-bold">
+          {{ heading }}
+        </h3>
+      </div>
+      <div class="column intro-text">
+        <p>
+          {{ text }}
+        </p>
+      </div>
+    </div>
   </article>
 </template>
 
@@ -28,15 +36,16 @@ export default {
 
 .intro-container {
   padding: 2rem 3rem;
-  background-color: $emf;
-  border-bottom: $smf-border;
 }
 @include tablet() {
   .intro-container {
     padding: 3rem 9rem;
   }
   .intro-text {
-    padding-left: 2rem;
+    p {
+      padding-left: 1rem;
+      border-left: 2px solid $primary;
+    }
   }
 }
 </style>
