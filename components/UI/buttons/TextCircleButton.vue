@@ -1,6 +1,7 @@
 <template>
   <nuxt-link
-    :to="link">
+    :to="link"
+    class="circle-button">
     <p class="subtitle has-text-white has-text-weight-bold">
       <slot/>
       <span
@@ -33,8 +34,8 @@ export default {
 
 <style lang="scss" scoped>
 @import "~/assets/scss/main.scss";
-
 .circle {
+  transition: $smf-transition;
   background: $emf;
   height: 60px;
   width: 60px;
@@ -42,6 +43,16 @@ export default {
 }
 .circle.is-primary {
   background: $primary;
+}
+.circle-button {
+  &:hover {
+    .circle {
+      background: darken($emf, 20%);
+    }
+    .circle.is-primary {
+      background: darken($primary, 20%);
+    }
+  }
 }
 .circle.is-small {
   height: 30px;

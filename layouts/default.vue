@@ -4,8 +4,8 @@
       <the-nav/>
     </header>
     <nuxt />
-    <footer class="pt-3 has-background-black has-text-white is-size-6">
-      <div class="container">
+    <footer class="smf-footer pt-3 has-background-black has-text-white is-size-6">
+      <div class="wrap">
         Charity Registration No.: 1130306, OSCR Registration No.: SC043120, Company No.: 6897785
         <br >
         © Copyright 2017 Ellen MacArthur Foundation. All Rights Reserved
@@ -26,6 +26,9 @@ export default {
 
 <style lang="scss">
 @import "~/assets/scss/main.scss";
+.smf-footer {
+  position: relative;
+}
 html {
   font-family: $font-primary;
   font-size: 16px;

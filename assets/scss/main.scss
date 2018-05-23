@@ -8,6 +8,16 @@
 
 @import "node_modules/bulma/bulma";
 
+// custom universal classes
+.wrap {
+  padding: 3rem 3rem;
+  @include tablet() {
+    padding: 3rem 4rem;
+  }
+  @include desktop() {
+    padding: 3rem 9rem;
+  }
+}
 // add bulma overrides elements here
 .container {
     padding: 0.75rem;

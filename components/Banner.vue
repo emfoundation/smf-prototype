@@ -13,9 +13,10 @@
             {{ subtitle }}
           </h2>
         </div>
-        <back-link
-          :link="backTo"
-          class="back-container" />
+        <div class="back-alignment">
+          <back-link
+            :link="backTo" />
+        </div>
       </div>
     </div>
   </section>
@@ -74,14 +75,14 @@ export default {
   margin-left: 2%;
   margin-right: 2%;
 }
-.back-container {
+.back-alignment {
   margin-left: 1.5rem;
 }
 @include tablet() {
   .subtitle {
     margin: 20px 15%;
   }
-  .back-container {
+  .back-alignment {
     margin-left: 7.5rem;
   }
 }

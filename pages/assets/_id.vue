@@ -4,7 +4,7 @@
       :title="asset.name"
       :subtitle="subtitle"
       :back-to="'/questions/' + $route.query.q" />
-    <div class="container">
+    <div class="wrap">
       <div
         id="media-container"
         :class="{ fullscreen: isFullscreen }">

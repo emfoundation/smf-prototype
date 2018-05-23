@@ -1,14 +1,12 @@
 <template>
-  <div class="back-container has-background-white">
-    <nuxt-link
-      :to="link"
-    >
+  <nuxt-link :to="link">
+    <div class="back-container has-background-white">
       <div class="back-button has-text-dark has-text-weight-light ">
         <i class="fas fa-lg fa-angle-left mr-2"/>
         <slot>Back</slot>
       </div>
-    </nuxt-link>
-  </div>
+    </div>
+  </nuxt-link>
 </template>
 
 <script>
@@ -23,15 +21,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~/assets/scss/main.scss";
+
 .back-container {
   width: 100px;
   padding: 0.75rem;
   text-align: center;
-  transition: 0.5s;
+  transition: $smf-transition;
   background-color: white;
 }
 .back-container:hover {
-  transition: 0.5s;
+  transition: $smf-transition;
   background-color: darkgrey !important;
 }
 </style>

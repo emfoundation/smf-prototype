@@ -5,10 +5,13 @@ $secondary: #333;
 $emf: #495062;
 $light-grey: #F4F4F4;
 
-// SMF Custom variables
+// SMF Custom global variables
+$font-primary: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 $smf-border: 5px solid white;
 $smf-border-thin: 2px solid white;
-$font-primary: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$smf-transition: 0.5s;
 
 // Bulma customised variables
 $family-sans-serif: $font-primary;
