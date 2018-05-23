@@ -3,10 +3,10 @@
     <div class="column pt-0">
       <div
         :style="{ backgroundImage: 'url(' + quote.thumbnail + ')' }"
-        class="overlay-dark answer">
+        class="overlay-blue answer">
         <div class="pt-6 pr-6 pb-8 pl-6 card answer-body">
           <h3 class="is-size-4 has-text-weight-bold is-italic mb-2 answer-text">"{{ quote.quote }}"</h3>
-          <p class="mb-2 answer-text">- {{ quote.author }}</p>
+          <p class="mb-2 answer-text">{{ quote.author }}</p>
         </div>
       </div>
     </div>
@@ -27,17 +27,16 @@ export default {
 
 <style lang="scss" scoped>
 @import "~/assets/scss/main.scss";
-
+.answer {
+  background-repeat: no-repeat;
+}
 .answer-body {
   height: 300px;
   transition: $smf-transition;
 }
-.overlay-dark {
+.overlay-blue {
   .answer-body {
-    background: rgba(0, 0, 0, 0.6);
-    &:hover {
-      background: rgba(0, 0, 0, 0.9);
-    }
+    background: rgba($primary, 0.9);
   }
   .arrow {
     color: white;
@@ -45,5 +44,10 @@ export default {
   .answer-text {
     color: white;
   }
+}
+.quote-mark {
+  font-size: 100px;
+  font-weight: 900;
+  font-style: italic;
 }
 </style>

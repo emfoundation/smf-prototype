@@ -2,8 +2,7 @@
   <div class="column pt-0">
     <div
       :style="{ backgroundImage: 'url(' + answer.thumbnail + ')' }"
-      :class="(answer.id % 2 == 0 ? 'overlay-light is-light' : 'overlay-dark is-dark')"
-      class="answer">
+      class="answer overlay-light">
       <div class="answer-body pt-6 pr-6 pb-8 pl-6 card">
         <h3 class="is-size-3 mb-2 answer-text answer-title">{{ answer.name }}</h3>
         <p class="mb-5 answer-text">{{ answer.description }}</p>
@@ -56,24 +55,24 @@ export default {
 }
 .overlay-light {
   .answer-body {
-    background: rgba(222, 222, 222, 0.6);
+    background: rgba(222, 222, 222, 0.75);
     &:hover {
       background: rgba(222, 222, 222, 0.9);
     }
   }
 }
-.overlay-dark {
-  .answer-body {
-    background: rgba(0, 0, 0, 0.6);
-    &:hover {
-      background: rgba(0, 0, 0, 0.9);
-    }
-  }
-  .arrow {
-    color: white;
-  }
-  .answer-text {
-    color: white;
-  }
-}
+// .overlay-dark {
+//   .answer-body {
+//     background: rgba(0, 0, 0, 0.6);
+//     &:hover {
+//       background: rgba(0, 0, 0, 0.9);
+//     }
+//   }
+//   .arrow {
+//     color: white;
+//   }
+//   .answer-text {
+//     color: white;
+//   }
+// }
 </style>

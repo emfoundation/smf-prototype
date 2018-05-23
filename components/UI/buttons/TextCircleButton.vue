@@ -56,15 +56,13 @@ export default {
     .circle {
       opacity: 0.5;
     }
-    // .primary .circle {
-    // }
   }
 }
 .primary .circle {
   background: $primary;
 }
 .secondary .circle {
-  background: $secondary;
+  background: $emf;
 }
 .white .circle {
   background: white;
