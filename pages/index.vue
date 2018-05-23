@@ -2,11 +2,6 @@
   <section
     :style="{ backgroundImage: 'url(' + image + ')' }"
     class="hero home">
-    <div class="circle is-hidden-mobile">
-      <div class="subtitle is-4">
-        Please <br >Pick
-      </div>
-    </div>
     <div class="columns hero-body home-body p-0">
 
       <section class="column learner">
@@ -19,6 +14,11 @@
           </nuxt-link>
           <text-circle-button
             link="/learning-paths">Yes Please</text-circle-button>
+        </div>
+        <div class="circle is-hidden-mobile">
+          <div class="subtitle is-4">
+            Please <br >Pick
+          </div>
         </div>
       </section>
 
@@ -103,6 +103,7 @@ export default {
     }
   }
   .learner {
+    position: relative;
     .home-box {
       padding-left: 1rem;
       border-left: $smf-border-thin;
@@ -118,15 +119,19 @@ export default {
     padding-bottom: 2rem;
   }
   .circle {
+    $circle-radius: 60px;
+
     position: absolute;
-    left: calc(50vw - 75px);
-    top: 15vh;
-    width: 130px;
-    height: 130px;
-    border-radius: 65px;
     background-color: white;
     text-align: center;
-    padding-top: 35px;
+    top: 7rem;
+    left: calc(
+      100% - #{$circle-radius}
+    ); // Interpolated variable - see https://github.com/sass/sass/issues/818
+    width: $circle-radius * 2;
+    height: $circle-radius * 2;
+    border-radius: $circle-radius;
+    padding-top: $circle-radius / 2;
   }
   .tablet-pulled-right {
     float: right;

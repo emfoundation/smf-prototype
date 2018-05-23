@@ -3,7 +3,7 @@
     class="navbar smf-navbar"
     role="navigation"
     aria-label="main-navigation">
-    <div class="navbar-brand">
+    <div class="navbar-brand smf-navbar-brand">
       <nuxt-link
         to="/"
         class="navbar-item">
@@ -51,9 +51,10 @@ $navbar-divider-background-color: red;
   z-index: 10;
   box-shadow: none;
 }
-.navbar-brand {
+.smf-navbar-brand {
   width: 100%;
   padding-left: 2vw;
+  height: 4rem;
   .emf-logo {
     opacity: 1;
     max-height: 100%;
@@ -62,15 +63,16 @@ $navbar-divider-background-color: red;
     }
   }
   .rotated {
-    transform: translate(30px, -20px) rotate(20deg);
+    transform: translate(18px, -33px) rotate(16deg);
     background-color: white;
-    padding-top: 30px;
+    padding-top: 36px;
+    padding-left: 7px;
     width: 100px;
     height: 100px;
   }
   // Bulma override
   .smf-burger {
-    transform: rotate(-20deg);
+    transform: rotate(-16deg);
     position: relative;
     margin-left: 0;
     .filling {

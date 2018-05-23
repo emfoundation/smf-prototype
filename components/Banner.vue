@@ -83,6 +83,11 @@ export default {
     margin: 20px 15%;
   }
   .back-alignment {
+    margin-left: 2.5rem;
+  }
+}
+@include desktop() {
+  .back-alignment {
     margin-left: 7.5rem;
   }
 }
