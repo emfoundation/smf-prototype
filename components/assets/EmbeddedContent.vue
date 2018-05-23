@@ -47,12 +47,12 @@ export default {
 </script>
 
 
-    <style lang="scss" scoped>
+<style lang="scss" scoped>
 @import "@/assets/scss/main.scss";
+
 .embed {
   background-color: $light-grey;
 }
-.embed-image,
 .embed-file,
 .embed-link {
   height: 100%;

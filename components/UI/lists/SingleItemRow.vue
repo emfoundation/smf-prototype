@@ -75,28 +75,6 @@ export default {
   transition: $smf-transition;
   padding: 3rem 3rem;
 }
-.overlay-blue {
-  .item-body {
-    background: rgba($primary, 0.8);
-    &:hover {
-      background: rgba($primary, 0.9);
-    }
-  }
-  .arrow {
-    color: white;
-  }
-}
-.overlay-white {
-  .item-body {
-    background: rgba(white, 0.8);
-    &:hover {
-      background: rgba(white, 0.9);
-    }
-  }
-  .arrow {
-    color: white;
-  }
-}
 .duration {
   display: inline-block;
   height: 41px;
@@ -119,6 +97,34 @@ export default {
 }
 .dot.is-active {
   background-color: white;
+}
+.overlay-blue {
+  .item-body {
+    background: rgba($primary, 0.8);
+    &:hover {
+      background: rgba($primary, 0.9);
+    }
+  }
+  .arrow {
+    color: white;
+  }
+}
+.overlay-white {
+  .item-body {
+    background: rgba(white, 0.8);
+    &:hover {
+      background: rgba(white, 0.9);
+    }
+  }
+  .arrow {
+    color: white;
+  }
+  .dot {
+    border: 1px solid $secondary;
+  }
+  .dot.is-active {
+    background-color: $secondary;
+  }
 }
 @include tablet() {
   .item-body {
