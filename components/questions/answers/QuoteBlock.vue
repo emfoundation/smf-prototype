@@ -30,7 +30,7 @@ export default {
 
 .answer-body {
   height: 300px;
-  transition: 0.5s;
+  transition: $smf-transition;
 }
 .overlay-dark {
   .answer-body {

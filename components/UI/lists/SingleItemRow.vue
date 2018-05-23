@@ -75,7 +75,7 @@ export default {
   border-bottom: $smf-border;
 }
 .item-body {
-  transition: 0.5s;
+  transition: $smf-transition;
   padding: 3rem 3rem;
 }
 .overlay-dark {

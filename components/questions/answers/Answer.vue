@@ -39,7 +39,7 @@ export default {
   background-size: cover;
 }
 .answer-body {
-  transition: 0.5s;
+  transition: $smf-transition;
   height: 350px;
   @include tablet() {
     height: 400px;
