@@ -4,7 +4,7 @@
     class="hero is-dark is-primary banner">
     <div class="overlay-dark">
       <div
-        class="hero-body banner-body has-text-white pb-0 ">
+        class="hero-body banner-body has-text-white">
         <div class="container has-text-centered">
           <h1 class="title is-size-1-desktop has-text-weight-bold">
             {{ title }}
@@ -56,7 +56,7 @@ export default {
 
 .banner {
   position: relative;
-  min-height: 35vh;
+  min-height: 40vh;
   border-bottom: $smf-border;
   background-size: cover;
   background-repeat: no-repeat;

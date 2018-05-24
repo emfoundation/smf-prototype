@@ -2,10 +2,12 @@
   <section class="hero">
     <banner
       :title="title"
-      :subtitle="subtitle"
       back-to="/questions"
     />
-    <div class="">
+    <intro-text
+      :text="subtitle"
+      heading="Why all the big questions?.."/>
+    <div>
       <answer-block :answers="firstAnswerBlock" />
 
       <quote-block :quote="quote" />
@@ -26,12 +28,13 @@
 import Banner from "~/components/Banner";
 import AnswerBlock from "~/components/questions/answers/AnswerBlock";
 import QuoteBlock from "~/components/questions/answers/QuoteBlock";
+import IntroText from "~/components/UI/blocks/IntroText";
 
 export default {
   asyncData(context, callback) {
     callback(null, {
       // question title & subtitle would need to be retrieved from the API, for now it is taken from the route
-      title: context.params.id,
+      title: "What is the meaning of life?",
       subtitle:
         "Vestibulum elementum erat et vulputate mattis. Quisque fringilla, massa et ultrices pretium, eros lacus pellentesque augue, nec egestas neque purus volutpat ante. Suspendisse ut metus commodo, bibendum mi eu, accumsan lorem. Quisque non cursus urna, ut accumsan lacus.",
       // This would be replaced by a store or API call
@@ -96,7 +99,8 @@ export default {
   components: {
     Banner,
     AnswerBlock,
-    QuoteBlock
+    QuoteBlock,
+    IntroText
   },
   computed: {
     firstAnswerBlock() {

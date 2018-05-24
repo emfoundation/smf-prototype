@@ -86,4 +86,9 @@ export default {
     width: 80%;
   }
 }
+@include fullhd() {
+  .main-text {
+    width: 60%;
+  }
+}
 </style>

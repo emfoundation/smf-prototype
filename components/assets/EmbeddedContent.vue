@@ -50,13 +50,11 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/scss/main.scss";
 
-.embed {
-  background-color: $light-grey;
-}
 .embed-file,
 .embed-link {
   height: 100%;
   width: 100%;
+  background-color: $light-grey;
 }
 .responsive-helper {
   overflow: hidden;

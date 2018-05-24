@@ -2,12 +2,11 @@
   <div>
     <banner
       :title="learnerJourney.name"
-      :subtitle="learnerJourney.description"
       back-to="/learning-paths"/>
     <div
       v-if="currentChapter"
       class="mb-5">
-      <div class="chapter-nav-background mb-5">
+      <div class="chapter-nav-background mb-3">
         <div class="wrap pt-0 pb-0">
           <nav
             class="pagination is-large"
@@ -60,7 +59,7 @@
       </div>
       <div class="wrap">
 
-        <h3 class="title has-text-weight-bold mb-0 mt-3">Chapter {{ chapterIndex + 1 }} of {{ chapters.length }}:</h3>
+        <h3 class="title is-5 mb-2 has-text-weight-bold mt-3">Chapter {{ chapterIndex + 1 }} of {{ chapters.length }}:</h3>
         <h3 class="title">{{ currentChapter.title }}</h3>
         <p
           class="main-text">{{ currentChapter.description }}</p>
@@ -82,8 +81,8 @@
     </div>
     <div
       v-else
-      class="wrap mb-5">
-      <h1>Sorry, this Learner Journey has no Chapters! Please come back later...</h1>
+      class="wrap mb-5 empty-page">
+      <h1 class="title is-4 is-italic has-text-centered">Sorry, this Learning Path has no Chapters! Please come back later...</h1>
     </div>
   </div>
 </template>
@@ -181,6 +180,9 @@ export default {
 .min-width {
   width: 100px;
 }
+.empty-page {
+  height: 50vh;
+}
 .chapter-nav-background {
   height: 52px;
   background-color: $light-grey;
@@ -230,6 +232,11 @@ export default {
         display: block;
       }
     }
+  }
+}
+@include fullhd() {
+  .main-text {
+    width: 60%;
   }
 }
 </style>

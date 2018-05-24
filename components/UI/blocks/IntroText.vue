@@ -1,6 +1,6 @@
 <template>
   <article
-    class="wrap mb-0">
+    class="wrap mb-4 mt-4">
     <div class="columns">
       <div class="column is-one-third">
         <h3 class="title is-2 has-text-weight-bold">
