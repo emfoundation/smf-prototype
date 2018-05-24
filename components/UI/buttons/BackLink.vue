@@ -24,6 +24,8 @@ export default {
 @import "~/assets/scss/main.scss";
 
 .back-container {
+  position: absolute;
+  bottom: 0;
   width: 100px;
   padding: 0.75rem;
   text-align: center;

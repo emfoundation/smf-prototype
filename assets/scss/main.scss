@@ -12,10 +12,13 @@
 .wrap {
   padding: 2rem 3rem;
   @include tablet() {
-    padding: 3rem 9rem;
+    padding: 3rem 4rem;
   }
   @include desktop() {
     padding: 3rem 6rem;
+  }
+  @include fullhd() {
+    padding: 5rem 9rem;
   }
 }
 // add bulma overrides elements here

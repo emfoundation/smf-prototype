@@ -1,6 +1,6 @@
 <template>
   <article
-    class="intro-container mb-0">
+    class="wrap mb-0">
     <div class="columns">
       <div class="column is-one-third">
         <h3 class="title is-2 has-text-weight-bold">
@@ -34,13 +34,7 @@ export default {
 <style lang="scss" scoped>
 @import "~/assets/scss/main.scss";
 
-.intro-container {
-  padding: 2rem 3rem;
-}
 @include tablet() {
-  .intro-container {
-    padding: 3rem 9rem;
-  }
   .intro-text {
     p {
       padding-left: 1rem;

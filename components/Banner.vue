@@ -56,7 +56,7 @@ export default {
 
 .banner {
   position: relative;
-  min-height: 30vh;
+  min-height: 35vh;
   border-bottom: $smf-border;
   background-size: cover;
   background-repeat: no-repeat;
@@ -68,7 +68,7 @@ export default {
 }
 .overlay-dark {
   background: rgba($primary, 0.6);
-  height: 100%;
+  min-height: inherit;
 }
 .subtitle {
   margin-top: 20px !important;
@@ -87,6 +87,11 @@ export default {
   }
 }
 @include desktop() {
+  .back-alignment {
+    margin-left: 4.5rem;
+  }
+}
+@include fullhd() {
   .back-alignment {
     margin-left: 7.5rem;
   }

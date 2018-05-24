@@ -6,7 +6,7 @@
       :style="{ backgroundImage: 'url(' + item.thumbnail + ')' }"
       :class="index % 2 == 0 ? 'overlay-white is-light' : 'overlay-blue is-dark'"
       class="hero is-medium item">
-      <div class="columns item-body">
+      <div class="columns item-body wrap">
         <div class="column is-half left-column">
           <h2 class="title is-1 has-text-weight-normal">{{ item.name }}</h2>
           <div
@@ -73,7 +73,7 @@ export default {
 }
 .item-body {
   transition: $smf-transition;
-  padding: 3rem 3rem;
+  // padding: 3rem 3rem;
 }
 .duration {
   display: inline-block;
@@ -127,9 +127,6 @@ export default {
   }
 }
 @include tablet() {
-  .item-body {
-    padding: 6rem 9rem;
-  }
   .left-border {
     border-left: 2px solid white;
   }
