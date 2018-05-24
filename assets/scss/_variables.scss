@@ -1,10 +1,24 @@
-// DAM interface colour, just to test
+///////// VARIABLES //////////
+// Colour Pallette //
 $primary: #1C9BD6;
 $secondary: #333;
 $emf: #495062;
 $light-grey: #F4F4F4;
 
+// SMF Custom global variables
+$base-font-size: 16px;
+$font-primary: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$smf-border: 5px solid white;
+$smf-border-thin: 2px solid white;
+
+$smf-transition: 0.5s;
+
 // Bulma customised variables
-$navbar-height: 5rem;
+$family-sans-serif: $font-primary;
+$text: $secondary;
+
+
+$navbar-height: 4rem;
 $pagination-current-background-color: $primary;
 $pagination-current-border-color: white;

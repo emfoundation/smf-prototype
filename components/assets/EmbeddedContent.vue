@@ -47,14 +47,14 @@ export default {
 </script>
 
 
-    <style lang="scss" scoped>
+<style lang="scss" scoped>
 @import "@/assets/scss/main.scss";
 
-.embed-image,
 .embed-file,
 .embed-link {
   height: 100%;
   width: 100%;
+  background-color: $light-grey;
 }
 .responsive-helper {
   overflow: hidden;
@@ -68,11 +68,5 @@ export default {
   height: 100%;
   width: 100%;
   position: absolute;
-}
-
-@include tablet {
-  .embed {
-    width: 80%;
-  }
 }
 </style>

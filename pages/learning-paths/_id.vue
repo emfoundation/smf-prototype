@@ -2,13 +2,12 @@
   <div>
     <banner
       :title="learnerJourney.name"
-      :subtitle="learnerJourney.description"
-      back-to="/learnerjourneys/"/>
+      back-to="/learning-paths"/>
     <div
       v-if="currentChapter"
       class="mb-5">
-      <div class="chapter-nav-background mt-5 mb-5">
-        <div class="container p-0">
+      <div class="chapter-nav-background mb-3">
+        <div class="wrap pt-0 pb-0">
           <nav
             class="pagination is-large"
             role="navigation"
@@ -24,7 +23,9 @@
             <ul class="pagination-list chapter-nav">
               <div
                 class="pagination-link chapter-nav-link is-marginless chapter-part">
-                Chapter:
+                <span class="is-size-5 has-text-weight-bold">
+                  Chapter:
+                </span>
               </div>
               <div
                 v-for="(chapter,index) in chapters"
@@ -33,7 +34,9 @@
                 class="pagination-link chapter-nav-link is-marginless"
                 @click="chapterIndex = index">
                 <div>
-                  {{ index + 1 }}
+                  <span class="is-size-5">
+                    {{ index + 1 }}
+                  </span>
                 </div>
                 <div class="container chapter-nav-info pt-2">
                   <div class="">
@@ -54,9 +57,9 @@
           </nav>
         </div>
       </div>
-      <div class="container">
+      <div class="wrap">
 
-        <h3 class="title has-text-weight-bold mb-0 mt-3">Chapter {{ chapterIndex + 1 }} of {{ chapters.length }}:</h3>
+        <h3 class="title is-5 mb-2 has-text-weight-bold mt-3">Chapter {{ chapterIndex + 1 }} of {{ chapters.length }}:</h3>
         <h3 class="title">{{ currentChapter.title }}</h3>
         <p
           class="main-text">{{ currentChapter.description }}</p>
@@ -64,7 +67,7 @@
           id="media-container"
           :class="{ fullscreen: isFullscreen }"
           class="mb-5">
-          <embeded-content
+          <embedded-content
             :file="currentAsset.file"
             :link="currentAsset.link"
           />
@@ -78,8 +81,8 @@
     </div>
     <div
       v-else
-      class="container mb-5">
-      <h1>Sorry, this Learner Journey has no Chapters! Please come back later...</h1>
+      class="wrap mb-5 empty-page">
+      <h1 class="title is-4 is-italic has-text-centered">Sorry, this Learning Path has no Chapters! Please come back later...</h1>
     </div>
   </div>
 </template>
@@ -87,14 +90,14 @@
 <script>
 import AssetTags from "~/components/assets/AssetTags";
 import Banner from "~/components/Banner";
-import EmbededContent from "~/components/EmbededContent";
-import FullscreenButton from "~/components/UI/FullscreenButton";
+import EmbeddedContent from "~/components/assets/EmbeddedContent";
+import FullscreenButton from "~/components/UI/buttons/FullscreenButton";
 
 export default {
   components: {
     AssetTags,
     Banner,
-    EmbededContent,
+    EmbeddedContent,
     FullscreenButton
   },
   data() {
@@ -177,6 +180,9 @@ export default {
 .min-width {
   width: 100px;
 }
+.empty-page {
+  height: 50vh;
+}
 .chapter-nav-background {
   height: 52px;
   background-color: $light-grey;
@@ -201,7 +207,7 @@ export default {
 }
 @include tablet() {
   .main-text {
-    width: 60%;
+    width: 80%;
   }
   .pagination-previous,
   .pagination-next {
@@ -226,6 +232,11 @@ export default {
         display: block;
       }
     }
+  }
+}
+@include fullhd() {
+  .main-text {
+    width: 60%;
   }
 }
 </style>

@@ -3,7 +3,7 @@
     <span
       v-for="tag in tags"
       :key="tag"
-      class="tag is-medium border-1 mr-3" >
+      class="tag is-primary is-medium mr-3" >
       {{ loadedTags.find(loadedTag => loadedTag.id === tag).name }}
     </span>
   </div>
