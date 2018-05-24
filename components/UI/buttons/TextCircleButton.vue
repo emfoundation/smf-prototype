@@ -28,10 +28,12 @@ export default {
       type: Boolean,
       default: false
     },
+    // Options 'light' or 'dark' [default]
     textColour: {
       type: String,
       default: "dark"
     },
+    // Options 'primary' [default], 'secondary' or 'white'
     circleColour: {
       type: String,
       default: "primary"
