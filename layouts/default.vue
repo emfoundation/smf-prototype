@@ -26,6 +26,7 @@ export default {
 
 <style lang="scss">
 @import "~/assets/scss/main.scss";
+
 .smf-footer {
   position: relative;
 }
@@ -33,7 +34,7 @@ html {
   width: 100%;
   overflow-x: hidden;
   font-family: $font-primary;
-  font-size: 16px;
+  font-size: $base-font-size;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
