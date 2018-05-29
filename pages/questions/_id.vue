@@ -31,76 +31,50 @@ import QuoteBlock from "~/components/questions/answers/QuoteBlock";
 import IntroText from "~/components/UI/blocks/IntroText";
 
 export default {
-  asyncData(context, callback) {
-    callback(null, {
-      // question title & subtitle would need to be retrieved from the API, for now it is taken from the route
-      title: "What is the meaning of life?",
-      subtitle:
-        "Vestibulum elementum erat et vulputate mattis. Quisque fringilla, massa et ultrices pretium, eros lacus pellentesque augue, nec egestas neque purus volutpat ante. Suspendisse ut metus commodo, bibendum mi eu, accumsan lorem. Quisque non cursus urna, ut accumsan lacus.",
-      // This would be replaced by a store or API call
-      // API Endpoint needed; '/api/assets/tag-group'
-      answers: [
-        {
-          id: 1,
-          name: "Conxtech - modular building system",
-          description: "This is everything about biocycle, the cycle bio",
-          thumbnail: "https://placeimg.com/640/480/animals"
-        },
-        {
-          id: 2,
-          name: "Design for Circular Economy",
-          description:
-            "Superman is also known as clark kent, but everybody knows that because he looks the same",
-          thumbnail: "https://placeimg.com/640/480/tech"
-        },
-        {
-          id: 3,
-          name: "Regional practice - Japan",
-          description:
-            "Superman is also known as clark kent, but everybody knows that because he looks the same",
-          thumbnail: "https://placeimg.com/640/480/people"
-        },
-        {
-          id: 4,
-          name: "Steel in the circular economy",
-          description:
-            "Superman is also known as clark kent, but everybody knows that because he looks the same",
-          thumbnail: "https://placeimg.com/640/480/nature"
-        },
-        {
-          id: 5,
-          name: "Making music circular",
-          description:
-            "Superman is also known as clark kent, but everybody knows that because he looks the same",
-          thumbnail: "https://placeimg.com/640/480/arch"
-        },
-        {
-          id: 6,
-          name: "Making music circular 2",
-          description:
-            "Superman is also known as clark kent, but everybody knows that because he looks the same",
-          thumbnail: "https://placeimg.com/640/480/animals"
-        },
-        {
-          id: 7,
-          name: "Steel in the circular economy 2",
-          description:
-            "Superman is also known as clark kent, but everybody knows that because he looks the same",
-          thumbnail: "https://placeimg.com/640/480/arch"
-        }
-      ],
-      quote: {
-        quote: "Very profound thoughts",
-        author: "Mert",
-        thumbnail: "https://placeimg.com/640/480/arch"
-      }
-    });
+  asyncData(context) {
+    let getRequests = [
+      context.$axios.get(
+        process.env.API_BASE_URL + "/questions/" + context.params.id + "/"
+      ),
+      context.$axios.get(
+        process.env.API_BASE_URL +
+          "/answers/collection/" +
+          process.env.SMF_COLLECTION_ID +
+          "/question/" +
+          context.params.id +
+          "/"
+      )
+    ];
+
+    let returnedData = Promise.all(getRequests);
+
+    return returnedData
+      .then(res => {
+        let title = res[0].data.name;
+        let subtitle = res[0].data.description;
+        let quote = {
+          text: res[0].data.quote,
+          source: res[0].data.quote_source
+        };
+        let answers = res[1].data;
+
+        return {
+          title,
+          subtitle,
+          answers,
+          quote
+        };
+      })
+      .catch(console.error);
   },
   components: {
     Banner,
     AnswerBlock,
     QuoteBlock,
     IntroText
+  },
+  data() {
+    return {};
   },
   computed: {
     firstAnswerBlock() {
