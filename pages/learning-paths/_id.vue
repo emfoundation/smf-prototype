@@ -102,9 +102,6 @@ export default {
   },
   data() {
     return {
-      static_title: "What is the Circular Economy?",
-      static_subtitle:
-        "Begin your journey of circular enlightenment by following our reccomended tour of the most relevant circular economy info",
       chapterIndex: 0,
       isFullscreen: false
     };
