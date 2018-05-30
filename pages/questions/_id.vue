@@ -1,12 +1,12 @@
 <template>
   <section class="hero">
     <banner
-      :title="title"
+      :title="name"
       back-to="/questions"
     />
     <intro-text
-      :text="subtitle"
-      heading="Why all the big questions?.."/>
+      :text="introText"
+      :heading="introTitle"/>
     <div>
       <answer-block :answers="firstAnswerBlock" />
 
@@ -50,17 +50,19 @@ export default {
 
     return returnedData
       .then(res => {
-        let title = res[0].data.name;
-        let subtitle = res[0].data.description;
+        let name = res[0].data.name;
+        let introTitle = res[0].data.intro_title;
+        let introText = res[0].data.intro_text;
+        let answers = res[1].data;
         let quote = {
           text: res[0].data.quote,
           source: res[0].data.quote_source
         };
-        let answers = res[1].data;
 
         return {
-          title,
-          subtitle,
+          name,
+          introTitle,
+          introText,
           answers,
           quote
         };
