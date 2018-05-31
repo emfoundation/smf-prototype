@@ -5,12 +5,12 @@
       class="answer overlay-light">
       <div class="answer-body pt-6 pr-6 pb-8 pl-6 card">
         <h3 class="is-size-3 mb-2 answer-text answer-title">{{ answer.title }}</h3>
-        <p class="mb-5 answer-text">{{ answer.tile_description }}FOO</p>
+        <p class="mb-5 answer-text">{{ answer.tile_description }}</p>
         <text-circle-button
-          :link="{ path: '/answers/' + '1', query: { q: $route.params.id }}"
+          :link="{ path: '/answers/' + answer.id, query: { q: $route.params.id }}"
           :is-primary="true"
           :is-small="true">View</text-circle-button>
-        <p>{{ answer.format }}</p>
+          <!-- <p>{{ answer.format }}</p> -->
       </div>
     </div>
   </div>

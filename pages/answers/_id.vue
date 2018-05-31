@@ -6,12 +6,12 @@
       :back-to="'/questions/' + $route.query.q" />
     <div class="wrap">
       <h3 class="title">{{ answer.title }}</h3>
+      <p class="mb-5 main-text">{{ answer.description }}</p>
       <embedded-content
         :file="
         asset.file"
         :link="asset.link"
       />
-      <p class="mb-5 main-text">{{ answer.description }}</p>
       <section v-if="asset.tags.length > 0">
         <h4 class="mb-2">This is about...</h4>
         <AssetTags :tags="asset.tags"/>
@@ -61,12 +61,12 @@ export default {
   //     }
   //   });
   // },
-  // components: {
-  //   AssetTags,
-  //   Banner,
-  //   EmbeddedContent,
-  //   FullscreenButton
-  // },
+  components: {
+    AssetTags,
+    Banner,
+    EmbeddedContent,
+    FullscreenButton
+  },
   data() {
     return {
       isFullscreen: false
@@ -90,7 +90,8 @@ export default {
       .then(res => {
         let question = res[0];
         let answer = res[1];
-        let asset = res[2];
+        console.log(res[2][0]);
+        let asset = res[2][0];
 
         return {
           question,
