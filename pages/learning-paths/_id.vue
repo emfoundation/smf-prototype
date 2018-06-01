@@ -61,17 +61,11 @@
 
         <h3 class="title is-5 mb-2 has-text-weight-bold mt-3">Chapter {{ chapterIndex + 1 }} of {{ chapters.length }}:</h3>
         <h3 class="title">{{ currentChapter.title }}</h3>
-        <p
-          class="main-text">{{ currentChapter.description }}</p>
-        <div
-          id="media-container"
-          :class="{ fullscreen: isFullscreen }"
-          class="mb-5">
-          <embedded-content
-            :file="currentAsset.file"
-            :link="currentAsset.link"
-          />
-        </div>
+        <embedded-content
+          :file="currentAsset.file"
+          :link="currentAsset.link"
+        />
+        <p class="main-text mb-5">{{ currentChapter.description }}</p>
 
         <section v-if="currentAsset.tags.length > 0">
           <h4 class="mb-2">This is about...</h4>
@@ -161,9 +155,9 @@ export default {
         let learnerJourney = res[2].data;
 
         return {
-          chapters: chapters,
-          assets: assets,
-          learnerJourney: learnerJourney
+          chapters,
+          assets,
+          learnerJourney
         };
       })
       .catch(console.error);

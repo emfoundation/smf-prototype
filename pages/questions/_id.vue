@@ -8,16 +8,24 @@
       :text="introText"
       :heading="introTitle"/>
     <div>
-      <answer-block :answers="firstAnswerBlock" />
+      <div v-if="answers.length >= minAnswers">
+        <answer-block :answers="firstAnswerBlock" />
 
-      <quote-block :quote="quote" />
+        <quote-block :quote="quote" />
 
-      <answer-block
-        v-for="(row,index) in middleAnswerBlock"
-        :key="index"
-        :answers="row" />
+        <answer-block
+          v-for="(row,index) in middleAnswerBlock"
+          :key="index"
+          :answers="row" />
 
-      <answer-block :answers="lastAnswerBlock" />
+        <answer-block :answers="lastAnswerBlock" />
+      </div>
+      <div
+        v-else>
+        <p>
+          Answers coming soon!
+        </p>
+      </div>
     </div>
 
   </section>
@@ -34,11 +42,11 @@ export default {
   asyncData(context) {
     let getRequests = [
       context.$axios.get(
-        process.env.API_BASE_URL + "/questions/" + context.params.id + "/"
+        process.env.API_BASE_URL + "questions/" + context.params.id + "/"
       ),
       context.$axios.get(
         process.env.API_BASE_URL +
-          "/answers/collection/" +
+          "answers/collection/" +
           process.env.SMF_COLLECTION_ID +
           "/question/" +
           context.params.id +
@@ -76,29 +84,40 @@ export default {
     IntroText
   },
   data() {
-    return {};
+    return {
+      minAnswers: 5
+    };
   },
   computed: {
     firstAnswerBlock() {
-      return this.answers.slice(0, 2);
+      if (this.answers.length >= this.minAnswers) {
+        return this.answers.slice(0, 2);
+      }
+      return "";
     },
     middleAnswerBlock() {
-      var length = this.answers.length;
-      var remainder = (length - 2) % 3;
-      if (remainder == 0) {
-        var middle = this.answers.slice(2, length);
-      } else {
-        var middle = this.answers.slice(2, -remainder);
+      if (this.answers.length >= this.minAnswers) {
+        var length = this.answers.length;
+        var remainder = (length - 2) % 3;
+        if (remainder == 0) {
+          var middle = this.answers.slice(2, length);
+        } else {
+          var middle = this.answers.slice(2, -remainder);
+        }
+        var rows = Math.floor(middle.length / 3);
+        var middleSegments = [];
+        for (var i = 0; i < rows; i++) {
+          middleSegments.push(middle.slice(i * 3, i * 3 + 3));
+        }
+        return middleSegments;
       }
-      var rows = Math.floor(middle.length / 3);
-      var middleSegments = [];
-      for (var i = 0; i < rows; i++) {
-        middleSegments.push(middle.slice(i * 3, i * 3 + 3));
-      }
-      return middleSegments;
+      return "";
     },
     lastAnswerBlock() {
-      return this.answers.slice(this.middleAnswerBlock.length * 3 + 2);
+      if (this.answers.length >= this.minAnswers) {
+        return this.answers.slice(this.middleAnswerBlock.length * 3 + 2);
+      }
+      return "";
     }
   }
 };
