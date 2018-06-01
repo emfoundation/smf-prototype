@@ -7,25 +7,23 @@
     <intro-text
       :text="introText"
       :heading="introTitle"/>
-    <div>
-      <div v-if="answers.length >= minAnswers">
-        <answer-block :answers="firstAnswerBlock" />
+    <div v-if="answers.length >= minAnswers">
+      <answer-block :answers="firstAnswerBlock" />
 
-        <quote-block :quote="quote" />
+      <quote-block :quote="quote" />
 
-        <answer-block
-          v-for="(row,index) in middleAnswerBlock"
-          :key="index"
-          :answers="row" />
+      <answer-block
+        v-for="(row,index) in middleAnswerBlock"
+        :key="index"
+        :answers="row" />
 
-        <answer-block :answers="lastAnswerBlock" />
-      </div>
-      <div
-        v-else>
-        <p>
-          Answers coming soon!
-        </p>
-      </div>
+      <answer-block :answers="lastAnswerBlock" />
+    </div>
+    <div
+      v-else>
+      <p>
+        Answers coming soon!
+      </p>
     </div>
 
   </section>
@@ -61,18 +59,23 @@ export default {
         let name = res[0].data.name;
         let introTitle = res[0].data.intro_title;
         let introText = res[0].data.intro_text;
-        let answers = res[1].data;
         let quote = {
           text: res[0].data.quote,
-          source: res[0].data.quote_source
+          source: res[0].data.quote_source,
+          thumbnail: res[0].data.thumbnail ? res[0].data.thumbnail : ""
         };
+        let answers = res[1].data;
+        answers.forEach(
+          answer =>
+            (answer.thumbnail = answer.thumbnail ? answer.thumbnail : "")
+        );
 
         return {
           name,
           introTitle,
           introText,
-          answers,
-          quote
+          quote,
+          answers
         };
       })
       .catch(console.error);
