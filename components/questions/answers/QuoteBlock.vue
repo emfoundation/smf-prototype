@@ -5,8 +5,8 @@
         :style="{ backgroundImage: 'url(' + quote.thumbnail + ')' }"
         class="overlay-blue answer">
         <div class="pt-6 pr-6 pb-8 pl-6 card answer-body">
-          <h3 class="is-size-4 has-text-weight-bold is-italic mb-2 answer-text">"{{ quote.quote }}"</h3>
-          <p class="mb-2 answer-text">{{ quote.author }}</p>
+          <h3 class="is-size-4 has-text-weight-bold is-italic mb-2 answer-text">"{{ quote.text }}"</h3>
+          <p class="mb-2 answer-text">{{ quote.source }}</p>
         </div>
       </div>
     </div>
@@ -29,6 +29,7 @@ export default {
 @import "~/assets/scss/main.scss";
 .answer {
   background-repeat: no-repeat;
+  background-size: cover;
 }
 .answer-body {
   height: 300px;
