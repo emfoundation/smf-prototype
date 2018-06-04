@@ -20,22 +20,17 @@
           <i class="fas fa-lg fa-search"/>
         </span>
       </nuxt-link>
-      <div class="rotated">
-        <a
-          role="button"
-          class="navbar-item navbar-burger smf-burger has-text-black is-large"
-          aria-label="menu"
-          aria-expanded="false">
-          <span
-            class="filling"
-            aria-hidden="true"/>
-          <span
-            class="filling"
-            aria-hidden="true"/>
-          <span
-            class="filling"
-            aria-hidden="true"/>
-        </a>
+      <div class="container-overflow-hidden">
+        <div class="rotated">
+          <nuxt-link
+            to="/about"
+            class="navbar-item navbar-burger smf-burger is-large has-text-dark has-text-weight-semibold"
+            aria-label="about"
+            aria-expanded="false">
+            <slot>About</slot>
+            <i class="fas fa-lg fa-angle-right ml-2 mr-2"/>
+          </nuxt-link>
+        </div>
       </div>
     </div>
   </nav>
@@ -51,7 +46,6 @@ $navbar-divider-background-color: red;
   background-color: transparent;
   z-index: 10;
   box-shadow: none;
-  // overflow: hidden;
 }
 .smf-navbar-brand {
   width: 100%;
@@ -72,13 +66,16 @@ $navbar-divider-background-color: red;
       opacity: 0.8;
     }
   }
-  .rotated {
-    transform: translate(18px, -33px) rotate(16deg);
-    background-color: white;
-    padding-top: 36px;
-    padding-left: 7px;
-    width: 100px;
-    height: 100px;
+  .container-overflow-hidden {
+    .rotated {
+      overflow-y: hidden;
+      transform: translate(18px, -33px) rotate(16deg);
+      background-color: white;
+      padding-top: 36px;
+      padding-left: 3px;
+      width: 100px;
+      height: 100px;
+    }
   }
   // Bulma override
   .smf-burger {
