@@ -42,8 +42,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import "~/assets/scss/main.scss";
-
 $navbar-divider-background-color: red;
 .smf-navbar {
   position: absolute;

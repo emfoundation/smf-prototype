@@ -65,8 +65,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/assets/scss/main.scss";
-
 .fullscreen {
   width: 100% !important;
   height: 100% !important;

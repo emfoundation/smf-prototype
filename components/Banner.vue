@@ -52,8 +52,6 @@ export default {
 
 
 <style lang="scss" scoped>
-@import "~/assets/scss/main.scss";
-
 .banner {
   position: relative;
   min-height: 40vh;

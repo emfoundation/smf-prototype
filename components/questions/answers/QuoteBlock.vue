@@ -26,7 +26,6 @@ export default {
 
 
 <style lang="scss" scoped>
-@import "~/assets/scss/main.scss";
 .answer {
   background-repeat: no-repeat;
   background-size: cover;
