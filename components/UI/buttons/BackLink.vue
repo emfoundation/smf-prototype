@@ -1,20 +1,19 @@
 <template>
-  <nuxt-link :to="link">
-    <div class="back-container has-background-white">
-      <div class="back-button has-text-dark has-text-weight-light ">
-        <i class="fas fa-lg fa-angle-left mr-2"/>
-        <slot>Back</slot>
-      </div>
+  <div class="back-container has-background-white">
+    <div
+      class="back-button has-text-dark has-text-weight-light"
+      @click="goBack()" >
+      <i class="fas fa-lg fa-angle-left mr-2"/>
+      <slot>Back</slot>
     </div>
-  </nuxt-link>
+  </div>
 </template>
 
 <script>
 export default {
-  props: {
-    link: {
-      type: String,
-      required: true
+  methods: {
+    goBack() {
+      window.history.length > 1 ? this.$router.go(-1) : this.$router.go("/");
     }
   }
 };
@@ -35,5 +34,6 @@ export default {
 .back-container:hover {
   transition: $smf-transition;
   background-color: darkgrey !important;
+  cursor: pointer;
 }
 </style>

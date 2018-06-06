@@ -4,7 +4,6 @@
       :title="title"
       :subtitle="subtitle"
       :image="bannerImage"
-      back-to="/"
     />
     <intro-text
       heading="Why all the big questions?.."
