@@ -32,7 +32,7 @@
                 :key="chapter.id"
                 :class="chapterIndex == index ? 'is-current': ''"
                 class="pagination-link chapter-nav-link is-marginless"
-                @click="chapterIndex = index">
+                @click="showChapter(index)">
                 <div>
                   <span class="is-size-5">
                     {{ index + 1 }}
@@ -58,19 +58,10 @@
         </div>
       </div>
       <div class="wrap">
-
-        <h3 class="title is-5 mb-2 has-text-weight-bold mt-3">Chapter {{ chapterIndex + 1 }} of {{ chapters.length }}:</h3>
-        <h3 class="title">{{ currentChapter.title }}</h3>
-        <embedded-content
-          :file="currentAsset.file"
-          :link="currentAsset.link"
-        />
-        <p class="main-text mb-5">{{ currentChapter.description }}</p>
-
-        <section v-if="currentAsset.tags.length > 0">
-          <h4 class="mb-2">This is about...</h4>
-          <AssetTags :tags="currentAsset.tags"/>
-        </section>
+        <h3 class="title is-5 mb-2 has-text-weight-bold mt-3">
+          Chapter {{ chapterIndex + 1 }} of {{ chapters.length }}:
+        </h3>
+        <nuxt-child />
       </div>
     </div>
     <div
@@ -82,40 +73,36 @@
 </template>
 
 <script>
-import AssetTags from "~/components/assets/AssetTags";
 import Banner from "~/components/Banner";
-import EmbeddedContent from "~/components/assets/EmbeddedContent";
-import FullscreenButton from "~/components/UI/buttons/FullscreenButton";
 
 export default {
   components: {
-    AssetTags,
-    Banner,
-    EmbeddedContent,
-    FullscreenButton
+    Banner
   },
   data() {
     return {
-      chapterIndex: 0,
-      isFullscreen: false
+      chapterIndex: 0
     };
   },
   computed: {
     currentChapter() {
       return this.chapters[this.chapterIndex];
-    },
-    currentAssetID() {
-      return this.chapters[this.chapterIndex].asset;
-    },
-    currentAsset() {
-      if (this.currentAssetID) {
-        return this.assets.find(asset => asset.id == this.currentAssetID);
-      }
     }
   },
   methods: {
     getChapterTitle: function(index) {
       return this.chapters[index].title;
+    },
+    showChapter(index) {
+      this.chapterIndex = index;
+      const chapterId = this.chapters[this.chapterIndex].id;
+      this.$router.push({
+        name: "learning-paths-id-chapterId",
+        params: {
+          id: this.learnerJourney.id,
+          chapterId: chapterId
+        }
+      });
     }
   },
   asyncData(context) {
@@ -123,14 +110,6 @@ export default {
       context.$axios.get(
         process.env.API_BASE_URL +
           "/chapters/collection/" +
-          process.env.SMF_COLLECTION_ID +
-          "/learner-journey/" +
-          context.params.id +
-          "/"
-      ),
-      context.$axios.get(
-        process.env.API_BASE_URL +
-          "/assets/collection/" +
           process.env.SMF_COLLECTION_ID +
           "/learner-journey/" +
           context.params.id +
@@ -148,15 +127,11 @@ export default {
 
     return returnedData
       .then(res => {
-        let chapters =
-          res[0].data.constructor === Array ? res[0].data : [res[0].data];
-        let assets =
-          res[1].data.constructor === Array ? res[1].data : [res[1].data];
-        let learnerJourney = res[2].data;
+        let chapters = Array.isArray(res[0].data) ? res[0].data : [res[0].data];
+        let learnerJourney = res[1].data;
 
         return {
           chapters,
-          assets,
           learnerJourney
         };
       })
