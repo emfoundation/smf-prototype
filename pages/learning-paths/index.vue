@@ -4,6 +4,7 @@
       :title="title"
       :subtitle="subtitle"
       :image="bannerImage"
+      back-to="/"
     />
     <intro-text
       heading="What's a learning path?.."
