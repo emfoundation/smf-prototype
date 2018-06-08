@@ -62,6 +62,7 @@ module.exports = {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
+    ['@nuxtjs/google-tag-manager', { id: 'GTM-KQ278ZX' }],
     ['nuxt-sass-resources-loader', '@/assets/scss/_global.scss']
   ],
 
