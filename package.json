@@ -20,6 +20,7 @@
     "nuxt": "^1.0.0"
   },
   "devDependencies": {
+    "@nuxtjs/google-tag-manager": "^2.0.0",
     "babel-eslint": "^8.2.1",
     "eslint": "^4.15.0",
     "eslint-config-prettier": "^2.9.0",
