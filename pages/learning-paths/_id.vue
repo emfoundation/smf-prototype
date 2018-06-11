@@ -4,7 +4,7 @@
       :title="learnerJourney.name"
       back-to="/learning-paths"/>
     <div
-      v-if="currentChapter"
+      v-if="chapters.length > 0"
       class="mb-5">
       <div class="chapter-nav-background mb-3">
         <div class="wrap pt-0 pb-0">
@@ -15,7 +15,7 @@
             <a
               :disabled="chapterIndex === 0"
               class="pagination-previous is-marginless chapter-nav-previous"
-              @click=" chapterIndex > 0 ? chapterIndex -= 1 : 0">
+              @click="prevChapter(chapterIndex)">
               <span class="icon">
                 <i class="fas fa-angle-left"/>
               </span>
@@ -30,9 +30,9 @@
               <div
                 v-for="(chapter,index) in chapters"
                 :key="chapter.id"
-                :class="chapterIndex == index ? 'is-current': ''"
+                :class="chapterIndex === index ? 'is-current': ''"
                 class="pagination-link chapter-nav-link is-marginless"
-                @click="showChapter(index)">
+                @click.stop.prevent="showChapter(index)">
                 <div>
                   <span class="is-size-5">
                     {{ index + 1 }}
@@ -48,7 +48,7 @@
             <a
               :disabled="chapterIndex > chapters.length -2"
               class="pagination-next is-marginless chapter-nav-next"
-              @click=" chapterIndex < chapters.length - 1 ? chapterIndex += 1 : 0">
+              @click="nextChapter(chapterIndex)">
               <span class="icon">
                 <i class="fas fa-angle-right"/>
               </span>
@@ -84,18 +84,29 @@ export default {
       chapterIndex: 0
     };
   },
-  computed: {
-    currentChapter() {
-      return this.chapters[this.chapterIndex];
+  head() {
+    return {
+      title: this.getChapterTitle(this.chapterIndex)
+    };
+  },
+  watch: {
+    $route(to, from) {
+      this.setChapterIndex(to.params.chapterId);
     }
   },
+  created() {
+    this.setChapterIndex(this.currentChapterId);
+  },
   methods: {
-    getChapterTitle: function(index) {
-      return this.chapters[index].title;
+    getChapterTitle(index) {
+      return this.chapters[index] ? this.chapters[index].title : "Chapter";
+    },
+    setChapterIndex(currentChapterId) {
+      let chapter = this.chapters.find(el => +el.id === +currentChapterId);
+      this.chapterIndex = this.chapters.indexOf(chapter);
     },
     showChapter(index) {
-      this.chapterIndex = index;
-      const chapterId = this.chapters[this.chapterIndex].id;
+      const chapterId = this.chapters[index].id;
       this.$router.push({
         name: "learning-paths-id-chapterId",
         params: {
@@ -103,6 +114,18 @@ export default {
           chapterId: chapterId
         }
       });
+    },
+    nextChapter(index) {
+      if (index < this.chapters.length - 1) {
+        this.chapterIndex += 1;
+        this.showChapter(this.chapterIndex);
+      }
+    },
+    prevChapter(index) {
+      if (index > 0) {
+        this.chapterIndex -= 1;
+        this.showChapter(this.chapterIndex);
+      }
     }
   },
   asyncData(context) {
@@ -132,7 +155,8 @@ export default {
 
         return {
           chapters,
-          learnerJourney
+          learnerJourney,
+          currentChapterId: context.params.chapterId
         };
       })
       .catch(console.error);
