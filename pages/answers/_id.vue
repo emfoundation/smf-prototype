@@ -69,7 +69,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .date-uploaded {
   margin: 3% 0;
 }
