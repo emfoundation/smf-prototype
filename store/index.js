@@ -16,24 +16,19 @@ const createStore = () => {
     },
     actions: {
       nuxtServerInit(vuexContext, context) {
-        // let getRequests = [
-        //   this.$axios.get("http://staging.circulareconomy.space/api/tags/"),
-        //   this.$axios.get(
-        //     "http://staging.circulareconomy.space/api/learner-journeys/"
-        //   )
-        // ];
-        //
-        // let returnedData = Promise.all(getRequests)
-        //
-        // return returnedData
-        //   .then( res => {
-        //     let
-        //   })
+        let getRequests = [
+          this.$axios.get("http://staging.circulareconomy.space/api/tags/"),
+          this.$axios.get(
+            "http://staging.circulareconomy.space/api/learner-journeys/"
+          )
+        ];
 
-        return this.$axios
-          .get("http://staging.circulareconomy.space/api/tags/")
+        let returnedData = Promise.all(getRequests);
+
+        return returnedData
           .then(res => {
-            vuexContext.commit("setTags", res.data);
+            vuexContext.commit("setTags", res[0].data);
+            vuexContext.commit("setLearnerJourneys", res[1].data);
           })
           .catch(e => context.error(e));
       }
@@ -41,6 +36,9 @@ const createStore = () => {
     getters: {
       loadedTags(state) {
         return state.tags;
+      },
+      loadedLearnerJourneys(state) {
+        return state.learnerJourneys;
       }
     }
   });
