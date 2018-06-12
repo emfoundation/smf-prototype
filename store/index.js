@@ -16,19 +16,19 @@ const createStore = () => {
     },
     actions: {
       nuxtServerInit(vuexContext, context) {
-        let getRequests = [
-          this.$axios.get("http://staging.circulareconomy.space/api/tags/"),
-          this.$axios.get(
-            "http://staging.circulareconomy.space/api/learner-journeys/"
-          )
-        ];
-
-        let returnedData = Promise.all(getRequests)
-
-        return returnedData
-          .then( res => {
-            let 
-          })
+        // let getRequests = [
+        //   this.$axios.get("http://staging.circulareconomy.space/api/tags/"),
+        //   this.$axios.get(
+        //     "http://staging.circulareconomy.space/api/learner-journeys/"
+        //   )
+        // ];
+        //
+        // let returnedData = Promise.all(getRequests)
+        //
+        // return returnedData
+        //   .then( res => {
+        //     let
+        //   })
 
         return this.$axios
           .get("http://staging.circulareconomy.space/api/tags/")
