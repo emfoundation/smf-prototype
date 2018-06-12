@@ -31,11 +31,10 @@ export default {
       bannerImage: "https://placeimg.com/1000/300/arch"
     };
   },
-  asyncData(context) {
-    return context.$axios
-      .$get(process.env.API_BASE_URL + "learner-journeys/")
-      .then(res => ({ learningPaths: res }))
-      .catch(console.error);
+  computed: {
+    learningPaths() {
+      return this.$store.getters.loadedLearnerJourneys;
+    }
   }
 };
 </script>
