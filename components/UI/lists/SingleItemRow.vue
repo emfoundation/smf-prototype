@@ -64,8 +64,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~/assets/scss/main.scss";
-
 .item {
   overflow: hidden;
   background-size: cover;

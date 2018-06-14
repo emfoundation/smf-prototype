@@ -38,8 +38,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~/assets/scss/main.scss";
-
 .back-container {
   position: absolute;
   bottom: 0;
