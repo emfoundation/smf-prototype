@@ -3,7 +3,7 @@
     <banner
       :title="question.name"
       :subtitle="answer.question_context"
-      :back-to="'/questions/' + $route.query.q" />
+    />
     <div class="wrap">
       <h3 class="title">{{ answer.title }}</h3>
       <embedded-content

@@ -44,7 +44,7 @@ export default {
     },
     backTo: {
       type: String,
-      required: true
+      default: ""
     }
   }
 };

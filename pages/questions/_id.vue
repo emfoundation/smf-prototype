@@ -2,7 +2,6 @@
   <section class="hero">
     <banner
       :title="name"
-      back-to="/questions"
     />
     <intro-text
       :text="introText"

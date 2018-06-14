@@ -2,7 +2,8 @@
   <div>
     <banner
       :title="learnerJourney.name"
-      back-to="/learning-paths"/>
+      back-to="/learning-paths"
+    />
     <div
       v-if="chapters.length > 0"
       class="mb-5">
