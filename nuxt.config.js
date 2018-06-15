@@ -23,6 +23,15 @@ module.exports = {
   */
   loading: { color: '#383838' },
   /*
+  ** Customize routing behavior
+  */
+  router: {
+    // always scroll back to top when navigating
+    scrollBehavior: function(to, from, savedPosition) {
+      return { x: 0, y: 0 };
+    }
+  },
+  /*
   ** Build configuration
   */
   build: {

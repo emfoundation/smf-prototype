@@ -15,7 +15,7 @@
             aria-label="pagination">
             <a
               :disabled="chapterIndex === 0"
-              class="pagination-previous is-marginless chapter-nav-previous"
+              class="pagination-previous is-marginless is-hidden-tablet chapter-nav-previous"
               @click="prevChapter(chapterIndex)">
               <span class="icon">
                 <i class="fas fa-angle-left"/>
@@ -48,13 +48,12 @@
             </ul>
             <a
               :disabled="chapterIndex > chapters.length -2"
-              class="pagination-next is-marginless chapter-nav-next"
+              class="pagination-next is-marginless is-hidden-tablet chapter-nav-next"
               @click="nextChapter(chapterIndex)">
               <span class="icon">
                 <i class="fas fa-angle-right"/>
               </span>
             </a>
-
           </nav>
         </div>
       </div>
@@ -62,7 +61,45 @@
         <h3 class="title is-5 mb-2 has-text-weight-bold mt-3">
           Chapter {{ chapterIndex + 1 }} of {{ chapters.length }}:
         </h3>
-        <nuxt-child />
+        <nuxt-child :key="$route.path" />
+        <div class="chapter-nav-background mt-5">
+          <div class="pt-0 pb-0">
+            <nav class="pagination is-centered is-large">
+              <a
+                :disabled="chapterIndex === 0"
+                class="pagination-previous is-marginless chapter-nav-previous chapter-prev-next-box"
+                @click="prevChapter(chapterIndex)">
+                <span class="icon">
+                  <i class="fas fa-angle-left"/>
+                </span>
+              </a>
+              <div class="pagination-list chapter-prev-next">
+                <div
+                  :class="{ 'is-disabled': chapterIndex === 0 }"
+                  class="chapter-prev-next-box pagination-link is-marginless">
+                  <span class="is-size-5 has-text-weight-bold">
+                    Previous <span class="is-hidden-mobile">Chapter</span>
+                  </span>
+                </div>
+                <div
+                  :class="{ 'is-disabled': chapterIndex > chapters.length -2 }"
+                  class="chapter-prev-next-box pagination-link is-marginless">
+                  <span class="is-size-5 has-text-weight-bold">
+                    Next <span class="is-hidden-mobile">Chapter</span>
+                  </span>
+                </div>
+              </div>
+              <a
+                :disabled="chapterIndex > chapters.length -2"
+                class="pagination-next is-marginless chapter-nav-next chapter-prev-next-box"
+                @click="nextChapter(chapterIndex)">
+                <span class="icon">
+                  <i class="fas fa-angle-right"/>
+                </span>
+              </a>
+            </nav>
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -194,13 +231,27 @@ export default {
 .chapter-nav-info {
   display: none;
 }
+.chapter-prev-next {
+  justify-content: space-between !important;
+  flex-grow: 1 !important;
+}
+.chapter-prev-next-box {
+  border-radius: 0;
+  border-color: white;
+  color: white;
+  background: $emf;
+  &.is-disabled {
+    opacity: 0.5;
+  }
+}
+a.chapter-prev-next-box {
+  &:hover {
+    background: $primary;
+  }
+}
 @include tablet() {
   .main-text {
     width: 80%;
-  }
-  .pagination-previous,
-  .pagination-next {
-    display: none;
   }
   .chapter-nav-link {
     display: block;
