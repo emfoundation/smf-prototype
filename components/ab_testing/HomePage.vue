@@ -4,8 +4,7 @@
     <div class="columns hero-body home-body p-0">
       <section
         :style="{ backgroundImage: 'url(' + leftColContent.backgroundImage + ')' }"
-        class="column left-col"
-      >
+        class="column left-col">
         <div class="overlay">
           <div class="call-to-action wrap">
             <nuxt-link :to="leftColContent.link">
