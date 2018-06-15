@@ -1,8 +1,14 @@
 <template>
   <div>
     <home-page
+      v-if="ab === 'a'"
       :left-col-content="learningPathContent"
       :right-col-content="questionsContent"
+    />
+    <home-page
+      v-else
+      :left-col-content="questionsContent"
+      :right-col-content="learningPathContent"
     />
   </div>
 </template>
@@ -34,7 +40,9 @@ export default {
         titleBold: "Yourself",
         text:
           "Find out what you want to know by choosing the questions that interest you the most.",
-        buttonText: "Explore"
+        buttonText: "Explore",
+        backgroundImage:
+          "https://emf-assets-dev.s3.amazonaws.com/media/22/Landing-Explore-Web.jpg"
       }
     };
   },

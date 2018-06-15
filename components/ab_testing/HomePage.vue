@@ -3,42 +3,47 @@
     class="hero home">
     <div class="columns hero-body home-body p-0">
       <section
+        :style="{ backgroundImage: 'url(' + leftColContent.backgroundImage + ')' }"
         class="column left-col"
-        :style="
-        background-image:url( {{ leftColContent.backgroundImage }} )">
-        <div class="call-to-action wrap">
-          <nuxt-link :to="leftColContent.link">
-            <div class="home-box">
-              <h1 class="title is-2 pb-4 has-text-white has-text-weight-normal">{{ leftColContent.title }}<strong>{{ leftColContent.titleBold }}</strong></h1>
-              <p class="subtitle has-text-white">{{ leftColContent.text }}</p>
+      >
+        <div class="overlay">
+          <div class="call-to-action wrap">
+            <nuxt-link :to="leftColContent.link">
+              <div class="home-box">
+                <h1 class="title is-2 pb-4 has-text-white has-text-weight-normal">{{ leftColContent.title }}<strong>{{ leftColContent.titleBold }}</strong></h1>
+                <p class="subtitle has-text-white">{{ leftColContent.text }}</p>
+              </div>
+            </nuxt-link>
+            <text-circle-button
+              :link="leftColContent.link"
+              text-colour="light">{{ leftColContent.buttonText }}</text-circle-button>
+          </div>
+          <div class="circle is-hidden-mobile">
+            <div class="subtitle is-4">
+              Please <br >Pick
             </div>
-          </nuxt-link>
-          <text-circle-button
-            :link="leftColContent.link"
-            text-colour="light">{{ leftColContent.buttonText }}</text-circle-button>
-        </div>
-        <div class="circle is-hidden-mobile">
-          <div class="subtitle is-4">
-            Please <br >Pick
           </div>
         </div>
       </section>
 
-      <section class="column right-col">
-        <div class="call-to-action wrap">
-          <nuxt-link :to="rightColContent.link" >
-            <div class="home-box">
-              <h1 class="title is-2 pb-4 has-text-white has-text-weight-normal">{{ rightColContent.title }} <strong>{{ rightColContent.titleBold }}</strong></h1>
-              <p class="subtitle has-text-white">{{ rightColContent.text }}</p>
-            </div>
-          </nuxt-link>
-          <text-circle-button
-            :link="rightColContent.link"
-            text-colour="light"
-            circle-colour="secondary"
-            class="tablet-pulled-right">{{ rightColContent.buttonText }}</text-circle-button>
+      <section
+        :style="{ backgroundImage: 'url(' + rightColContent.backgroundImage + ')' }"
+        class="column right-col">
+        <div class="overlay">
+          <div class="call-to-action wrap">
+            <nuxt-link :to="rightColContent.link" >
+              <div class="home-box">
+                <h1 class="title is-2 pb-4 has-text-white has-text-weight-normal">{{ rightColContent.title }} <strong>{{ rightColContent.titleBold }}</strong></h1>
+                <p class="subtitle has-text-white">{{ rightColContent.text }}</p>
+              </div>
+            </nuxt-link>
+            <text-circle-button
+              :link="rightColContent.link"
+              text-colour="light"
+              circle-colour="secondary"
+              class="tablet-pulled-right">{{ rightColContent.buttonText }}</text-circle-button>
+          </div>
         </div>
-
       </section>
 
     </div>
@@ -67,33 +72,39 @@ export default {
 
 <style lang="scss" scoped>
 // Mobile-first classes
-.home {
-  background-size: cover;
-}
 .home-body {
   height: 100%;
+}
+.column {
+  background-size: cover;
 }
 .left-col,
 .right-col {
   display: flex;
   justify-content: center;
-  transition: $smf-transition;
   padding-bottom: 0;
   strong {
     font-weight: 900;
   }
+  .overlay {
+    padding-top: 8rem !important;
+    transition: $smf-transition;
+  }
 }
 .left-col {
-  background-color: rgba($emf, 0.8);
-  padding-top: 8rem !important;
-  &:hover {
-    background-color: rgba($emf, 0.95);
+  .overlay {
+    background-color: rgba($emf, 0.8);
+    &:hover {
+      background-color: rgba($emf, 0.95);
+    }
   }
 }
 .right-col {
-  background-color: rgba($primary, 0.8);
-  &:hover {
-    background-color: rgba($primary, 0.95);
+  .overlay {
+    background-color: rgba($primary, 0.8);
+    &:hover {
+      background-color: rgba($primary, 0.95);
+    }
   }
 }
 
@@ -102,9 +113,14 @@ export default {
   .home {
     height: 100vh;
   }
+  .column {
+    padding: 0;
+  }
   .left-col,
   .right-col {
-    padding-top: 10rem !important;
+    .overlay {
+      padding-top: 10rem !important;
+    }
     .call-to-action {
       padding-top: 8rem;
     }
