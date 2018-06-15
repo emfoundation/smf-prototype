@@ -31,11 +31,10 @@ export default {
       bannerImage: "https://placeimg.com/1000/300/arch"
     };
   },
-  asyncData(context) {
-    return context.$axios
-      .$get(process.env.API_BASE_URL + "questions/")
-      .then(res => ({ questions: res }))
-      .catch(console.error);
+  computed: {
+    questions() {
+      return this.$store.getters.loadedQuestions;
+    }
   }
 };
 </script>
