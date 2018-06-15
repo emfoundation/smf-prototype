@@ -1,8 +1,6 @@
 <template>
   <div>
-    <header>
-      <the-nav/>
-    </header>
+    <the-nav/>
     <nuxt />
     <footer class="smf-footer pt-3 has-background-black has-text-white is-size-6">
       <div class="wrap">

@@ -40,7 +40,7 @@ export default {
 <style lang="scss" scoped>
 .back-container {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   width: 100px;
   padding: 0.75rem;
   text-align: center;
@@ -51,5 +51,10 @@ export default {
   transition: $smf-transition;
   background-color: darkgrey !important;
   cursor: pointer;
+}
+@include tablet() {
+  .back-container {
+    bottom: 0;
+  }
 }
 </style>

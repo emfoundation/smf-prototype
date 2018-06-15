@@ -19,10 +19,9 @@
       <answer-block :answers="lastAnswerBlock" />
     </div>
     <div
-      v-else>
-      <p>
-        Answers coming soon!
-      </p>
+      v-else
+      class="wrap mb-5 empty-page">
+      <h2 class="title is-4 is-italic has-text-centered">Answers coming soon!</h2>
     </div>
 
   </section>

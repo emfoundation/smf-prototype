@@ -1,7 +1,7 @@
 <template>
   <section
     class="hero home">
-    <div class="columns hero-body home-body p-0">
+    <div class="columns is-gapless hero-body home-body p-0">
       <section
         :style="{ backgroundImage: 'url(' + leftColContent.backgroundImage + ')' }"
         class="column left-col">
@@ -44,7 +44,6 @@
           </div>
         </div>
       </section>
-
     </div>
   </section>
 </template>
@@ -74,8 +73,12 @@ export default {
 .home-body {
   height: 100%;
 }
+// .columns {
+//   margin: 0;
+// }
 .column {
   background-size: cover;
+  // padding: 0;
 }
 .left-col,
 .right-col {
@@ -86,7 +89,7 @@ export default {
     font-weight: 900;
   }
   .overlay {
-    padding-top: 8rem !important;
+    padding-top: 4rem !important;
     transition: $smf-transition;
   }
 }

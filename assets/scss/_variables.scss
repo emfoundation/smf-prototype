@@ -1,6 +1,7 @@
 ///////// VARIABLES //////////
 // Colour Pallette //
 $primary: #1C9BD6;
+$primary-invert: findColorInvert($primary);
 $secondary: #333;
 $emf: #495062;
 $light-grey: #F4F4F4;
@@ -22,3 +23,10 @@ $text: $secondary;
 $navbar-height: 4rem;
 $pagination-current-background-color: $primary;
 $pagination-current-border-color: white;
+
+$section-padding: 0;
+
+$addColors: (
+    "primary": ($primary, $primary-invert)
+);
+$colors: map-merge($colors, $addColors);

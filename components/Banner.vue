@@ -55,10 +55,10 @@ export default {
 .banner {
   position: relative;
   min-height: 40vh;
-  border-bottom: $smf-border;
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
+  margin-bottom: 5px;
 }
 .banner-body {
   height: 100%;

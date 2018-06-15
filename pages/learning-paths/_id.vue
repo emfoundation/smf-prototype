@@ -25,14 +25,14 @@
               <div
                 class="pagination-link chapter-nav-link is-marginless chapter-part">
                 <span class="is-size-5 has-text-weight-bold">
-                  Chapter:
+                  Chapter
                 </span>
               </div>
               <div
                 v-for="(chapter,index) in chapters"
                 :key="chapter.id"
                 :class="chapterIndex === index ? 'is-current': ''"
-                class="pagination-link chapter-nav-link is-marginless"
+                class="pagination-link chapter-nav-link is-marginless is-hidden-mobile"
                 @click.stop.prevent="showChapter(index)">
                 <div>
                   <span class="is-size-5">
@@ -76,16 +76,22 @@
               <div class="pagination-list chapter-prev-next">
                 <div
                   :class="{ 'is-disabled': chapterIndex === 0 }"
-                  class="chapter-prev-next-box pagination-link is-marginless">
+                  class="chapter-prev-next-box pagination-link is-marginless is-hidden-mobile">
                   <span class="is-size-5 has-text-weight-bold">
-                    Previous <span class="is-hidden-mobile">Chapter</span>
+                    Previous Chapter
+                  </span>
+                </div>
+                <div
+                  class="pagination-link chapter-nav-link is-marginless chapter-part is-hidden-tablet">
+                  <span class="is-size-5 has-text-weight-bold">
+                    Chapter
                   </span>
                 </div>
                 <div
                   :class="{ 'is-disabled': chapterIndex > chapters.length -2 }"
-                  class="chapter-prev-next-box pagination-link is-marginless">
+                  class="chapter-prev-next-box pagination-link is-marginless is-hidden-mobile">
                   <span class="is-size-5 has-text-weight-bold">
-                    Next <span class="is-hidden-mobile">Chapter</span>
+                    Next Chapter
                   </span>
                 </div>
               </div>
@@ -105,7 +111,7 @@
     <div
       v-else
       class="wrap mb-5 empty-page">
-      <h1 class="title is-4 is-italic has-text-centered">Sorry, this Learning Path has no Chapters! Please come back later...</h1>
+      <h2 class="title is-4 is-italic has-text-centered">Sorry, this Learning Path has no Chapters! Please come back later...</h2>
     </div>
   </div>
 </template>
@@ -233,7 +239,7 @@ export default {
 }
 .chapter-prev-next {
   justify-content: space-between !important;
-  flex-grow: 1 !important;
+  // flex-grow: 1 !important;
 }
 .chapter-prev-next-box {
   border-radius: 0;

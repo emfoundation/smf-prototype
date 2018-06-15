@@ -1,46 +1,52 @@
 <template>
-  <nav
-    class="navbar smf-navbar"
-    role="navigation"
-    aria-label="main-navigation">
-    <div class="navbar-brand smf-navbar-brand">
-      <nuxt-link
-        to="/"
-        class="navbar-item logo-item">
-        <div class="emf-logo"/>
-        <!-- <img
-          src="~/static/images/emf-logo.png"
-          alt="The Ellen MacArthur Foundation Logo"
-          class="emf-logo"> -->
-      </nuxt-link>
-      <nuxt-link
-        to="/search"
-        class="navbar-item navbar-search has-text-white">
-        <span class="icon is-size-5">
-          <i class="fas fa-lg fa-search"/>
-        </span>
-      </nuxt-link>
-      <div class="container-overflow-hidden">
-        <div class="rotated">
-          <nuxt-link
-            to="/about"
-            class="navbar-item navbar-burger smf-burger is-large has-text-dark has-text-weight-semibold"
-            aria-label="about"
-            aria-expanded="false">
-            <slot>About</slot>
-            <i class="fas fa-lg fa-angle-right ml-2 mr-2"/>
-          </nuxt-link>
+  <header class="smf-navbar-wrap">
+    <nav
+      class="navbar smf-navbar"
+      role="navigation"
+      aria-label="main-navigation">
+      <div class="navbar-brand smf-navbar-brand">
+        <nuxt-link
+          to="/"
+          class="navbar-item logo-item">
+          <div class="emf-logo"/>
+          <!-- <img
+            src="~/static/images/emf-logo.png"
+            alt="The Ellen MacArthur Foundation Logo"
+            class="emf-logo"> -->
+        </nuxt-link>
+        <nuxt-link
+          to="/search"
+          class="navbar-item navbar-search has-text-white">
+          <span class="icon is-size-5">
+            <i class="fas fa-lg fa-search"/>
+          </span>
+        </nuxt-link>
+        <div class="container-overflow-hidden">
+          <div class="rotated">
+            <nuxt-link
+              to="/about"
+              class="navbar-item navbar-burger smf-burger is-large has-text-dark has-text-weight-semibold"
+              aria-label="about"
+              aria-expanded="false">
+              <slot>About</slot>
+              <i class="fas fa-lg fa-angle-right ml-2 mr-2"/>
+            </nuxt-link>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 </template>
 
 <style lang="scss" scoped>
 $navbar-divider-background-color: red;
-.smf-navbar {
+.smf-navbar-wrap {
   position: absolute;
   width: 100%;
+  overflow-x: hidden;
+  height: 100px;
+}
+.smf-navbar {
   background-color: transparent;
   z-index: 10;
   box-shadow: none;
