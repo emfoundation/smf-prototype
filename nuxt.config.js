@@ -22,6 +22,7 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: "#383838" },
+
   /*
   ** Customize routing behavior
   */
@@ -31,11 +32,12 @@ module.exports = {
       return { x: 0, y: 0 };
     }
   },
+
   /*
   ** Build configuration
   */
   build: {
-    // turn this on the start the analyzer on build
+    // turn this on to start the analyzer on build
     // analyze: true,
     /*
     ** Run ESLint on save

@@ -23,12 +23,16 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       tags: [],
+      homePageAb: "",
       learnerJourneys: [],
       questions: []
     },
     mutations: {
       setTags(state, tags) {
         state.tags = tags;
+      },
+      setHomePageAb(state, homePageAb) {
+        state.homePageAb = homePageAb;
       },
       setLearnerJourneys(state, learnerJourneys) {
         state.learnerJourneys = shuffle(learnerJourneys);
@@ -39,6 +43,11 @@ const createStore = () => {
     },
     actions: {
       nuxtServerInit(vuexContext, context) {
+        // init AB value for homepage testing
+        Math.random() > 0.5
+          ? vuexContext.commit("setHomePageAb", "a")
+          : vuexContext.commit("setHomePageAb", "b");
+
         let getRequests = [
           this.$axios.get("http://staging.circulareconomy.space/api/tags/"),
           this.$axios.get(
@@ -61,6 +70,9 @@ const createStore = () => {
     getters: {
       loadedTags(state) {
         return state.tags;
+      },
+      loadedHomePageAb(state) {
+        return state.homePageAb;
       },
       loadedLearnerJourneys(state) {
         return state.learnerJourneys;
