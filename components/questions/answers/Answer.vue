@@ -38,7 +38,6 @@ export default {
 }
 .answer-body {
   transition: $smf-transition;
-  height: 350px;
   @include tablet() {
     height: 400px;
   }
