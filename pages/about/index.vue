@@ -55,8 +55,8 @@ export default {
   },
   data: function() {
     return {
-      title: "About Us",
-      bannerImage: "https://placeimg.com/1000/300/arch"
+      title: "About this Learning Tool",
+      bannerImage: ""
     };
   }
 };
@@ -96,21 +96,24 @@ export default {
   }
 }
 #image-1 {
-  background: url("https://placeimg.com/300/200/nature") no-repeat center center;
+  background: url("https://emf-assets-dev.s3.amazonaws.com/media/22/About-EMF-Web.jpg")
+    no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 #image-2 {
-  background: url("https://placeimg.com/300/200/nature") no-repeat center center;
+  background: url("https://emf-assets-dev.s3.amazonaws.com/media/22/About-CEL-Web.jpg")
+    no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 #image-3 {
-  background: url("https://placeimg.com/300/200/nature") no-repeat center center;
+  background: url("https://emf-assets-dev.s3.amazonaws.com/media/22/About-MFC-Web.jpg")
+    no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

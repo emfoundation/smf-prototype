@@ -6,9 +6,6 @@
       :image="bannerImage"
       back-to="/"
     />
-    <intro-text
-      heading="What's a learning path?.."
-      text="Nullam nec semper urna. Fusce eu dui et arcu ullamcorper tincidunt et quis erat. Suspendisse feugiat ligula at fermentum ultrices. Nunc in nunc fermentum, viverra augue vel, auctor sapien. Donec sed turpis porttitor, tempor nunc lobortis, suscipit nisi. Nullam quis justo vel purus gravida vestibulum nec rutrum nunc. Morbi aliquam eget arcu sit amet hendrerit. Aenean non massa nisl. In ut arcu at odio tincidunt mollis vitae id lectus. " />
     <single-item-row :items="learningPaths" />
   </div>
 </template>
@@ -27,8 +24,10 @@ export default {
   data() {
     return {
       title: "Let us Guide You",
-      subtitle: "Pick a Learning Path",
-      bannerImage: "https://placeimg.com/1000/300/arch"
+      subtitle:
+        "As a global thought leader in the circular economy, in this section we guide you through the latest and most relevant content for those working within the fashion industry who want to learn what the circular economy is all about.",
+      bannerImage:
+        "https://emf-assets-dev.s3.amazonaws.com/media/22/Learning-Paths-Banner-Web.jpg"
     };
   },
   computed: {
