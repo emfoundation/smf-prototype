@@ -49,7 +49,10 @@ export default {
 .circle {
   transition: $smf-transition;
   background: $emf;
-  @include circle(30px);
+  @include circle(20px);
+  @include tablet() {
+    @include circle(30px);
+  }
 }
 .circle-button {
   &:hover {

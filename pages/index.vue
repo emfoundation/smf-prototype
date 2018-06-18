@@ -14,13 +14,11 @@
 </template>
 
 <script>
-import TextCircleButton from "~/components/UI/buttons/TextCircleButton";
 import HomePage from "~/components/ab_testing/HomePage";
 
 export default {
   components: {
-    HomePage,
-    TextCircleButton
+    HomePage
   },
   data: function() {
     return {

@@ -7,7 +7,7 @@
       />
     </section>
     <section class="section">
-      <div class="container">
+      <div class="container is-fluid smf-container">
         <div class="columns">
           <div class="column wrap text-left is-half">
             <h3 class="title is-4">The Ellen MacArthur Foundation</h3>
@@ -25,7 +25,7 @@
             class="column is-paddingless is-half">
             <div class="triangle-left"/>
           </div>
-          <div class="column wrap text-right has-text-right is-half">
+          <div class="column wrap text-right has-text-right-tablet is-half">
             <h3 class="title is-4">Circular Economy Learning</h3>
             <p>We at the Ellen MacArthur Foundation are currently developing an <a href="https://www.ellenmacarthurfoundation.org/programmes/education/schmidt-macarthur-fellowship/application">exciting new initiative</a> to take circular economy learning to a wide audience, using our knowledge base and expertise to provide global reach. This tool has been designed as a prototype of our online learning platform and provides you, the learner, with the option to follow a curated path through the learning material or to browse the content freely.</p>
           </div>
@@ -63,6 +63,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.smf-container {
+  margin: 0;
+}
 .columns {
   .column {
     &.text-left {

@@ -73,12 +73,11 @@ export default {
 .home-body {
   height: 100%;
 }
-// .columns {
-//   margin: 0;
-// }
 .column {
   background-size: cover;
-  // padding: 0;
+}
+.home-box {
+  margin-bottom: 1rem;
 }
 .left-col,
 .right-col {
@@ -89,13 +88,13 @@ export default {
     font-weight: 900;
   }
   .overlay {
-    padding-top: 4rem !important;
     transition: $smf-transition;
   }
 }
 .left-col {
   .overlay {
     background-color: rgba($emf, 0.8);
+    padding-top: 4rem !important;
     &:hover {
       background-color: rgba($emf, 0.95);
     }
@@ -141,7 +140,7 @@ export default {
     }
   }
   .home-box {
-    padding-bottom: 2rem;
+    margin-bottom: 2rem;
   }
   .circle {
     $circle-radius: 60px;
