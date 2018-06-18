@@ -5,9 +5,6 @@
       :subtitle="subtitle"
       :image="bannerImage"
     />
-    <intro-text
-      heading="Why all the big questions?.."
-      text="Nullam nec semper urna. Fusce eu dui et arcu ullamcorper tincidunt et quis erat. Suspendisse feugiat ligula at fermentum ultrices. Nunc in nunc fermentum, viverra augue vel, auctor sapien. Donec sed turpis porttitor, tempor nunc lobortis, suscipit nisi. Nullam quis justo vel purus gravida vestibulum nec rutrum nunc. Morbi aliquam eget arcu sit amet hendrerit. Aenean non massa nisl. In ut arcu at odio tincidunt mollis vitae id lectus. " />
     <single-item-row :items="questions" />
   </section>
 
@@ -26,9 +23,11 @@ export default {
   },
   data() {
     return {
-      title: "Big Questions",
-      subtitle: "Pick a Big Question",
-      bannerImage: "https://placeimg.com/1000/300/arch"
+      title: "Explore for yourself",
+      subtitle:
+        "The freedom to explore the topic of the circular economy is yours in this section. Browse through the latest case studies and explore some of the key issues related to the circular economy. It’s up to you where you go!",
+      bannerImage:
+        "https://emf-assets-dev.s3.amazonaws.com/media/22/Questions-Banner-Web.jpg"
     };
   },
   computed: {
