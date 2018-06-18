@@ -6,12 +6,19 @@
     />
     <div class="wrap">
       <h3 class="title">{{ answer.title }}</h3>
+      <p
+        v-if="answer.description"
+        class="main-text mb-5">{{ answer.description }}</p>
       <embedded-content
         :file="
         asset.file"
         :link="asset.link"
       />
-      <p class="main-text mb-5">{{ answer.description }}</p>
+      <div
+        v-if="answer.content"
+        class="rich-content main-text mb-5"
+        v-html="answer.content"/>
+
       <section v-if="asset.tags.length > 0">
         <h4 class="mb-2">This is about...</h4>
         <AssetTags :tags="asset.tags"/>

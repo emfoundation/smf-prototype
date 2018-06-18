@@ -19,7 +19,7 @@ export default {
     return context.$axios
       .get(
         process.env.API_BASE_URL +
-          "/chapters/collection/" +
+          "chapters/collection/" +
           process.env.SMF_COLLECTION_ID +
           "/learner-journey/" +
           context.params.id +

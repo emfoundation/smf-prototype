@@ -1,11 +1,17 @@
 <template>
   <div>
     <h3 class="title">{{ chapter.title }}</h3>
+    <p
+      v-if="chapter.description"
+      class="main-text mb-5">{{ chapter.description }}</p>
     <embedded-content
       :file="asset.file"
       :link="asset.link"
     />
-    <p class="main-text mb-5">{{ chapter.description }}</p>
+    <div 
+      v-if="chapter.content"
+      class="rich-content main-text mb-5"
+      v-html="chapter.content"/>
 
     <section v-if="asset.tags.length > 0">
       <h4 class="mb-2">This is about...</h4>
@@ -33,7 +39,7 @@ export default {
   async asyncData(context) {
     let { data: chapter } = await context.$axios.get(
       process.env.API_BASE_URL +
-        "/chapters/collection/" +
+        "chapters/collection/" +
         process.env.SMF_COLLECTION_ID +
         "/learner-journey/" +
         context.params.id +
@@ -41,7 +47,7 @@ export default {
         context.params.chapterId
     );
     let { data: asset } = await context.$axios.get(
-      process.env.API_BASE_URL + "/assets/" + chapter.asset
+      process.env.API_BASE_URL + "assets/" + chapter.asset
     );
     return {
       chapter,
