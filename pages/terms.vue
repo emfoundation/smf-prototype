@@ -17,6 +17,9 @@
 </template>
 
 <style lang="scss" scoped>
+.terms {
+  min-height: 100vh;
+}
 .terms-content {
   padding-top: 7rem;
   @include tablet() {
