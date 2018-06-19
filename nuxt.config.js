@@ -15,7 +15,8 @@ module.exports = {
         rel: "stylesheet",
         href: "https://use.fontawesome.com/releases/v5.0.10/css/all.css",
         crossorigin: "anonymous"
-      }
+      },
+      { rel: "stylesheet", href: "https://use.typekit.net/rtq3bmi.css" }
     ]
   },
   /*
