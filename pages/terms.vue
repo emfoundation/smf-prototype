@@ -1,6 +1,6 @@
 <template>
   <div class="terms has-background-emf">
-    <section class="terms-content">
+    <section class="terms-content wrap">
       <div class="terms-heading ">
         <h2 class="title is-2 has-text-white">Terms <span class="has-text-primary">&</span> Conditions</h2>
       </div>
@@ -18,12 +18,12 @@
 
 <style lang="scss" scoped>
 .terms-content {
-  padding: 5rem 2rem 2rem 2rem;
+  padding-top: 7rem;
   @include tablet() {
-    padding: 10rem 30% 5rem 10rem;
+    width: 80%;
   }
   @include desktop() {
-    padding: 10rem 30% 5rem 10rem;
+    width: 70%;
   }
 
   .terms-heading {
