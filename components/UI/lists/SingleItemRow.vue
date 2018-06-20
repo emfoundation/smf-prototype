@@ -8,7 +8,7 @@
       class="hero is-medium item">
       <div class="columns item-body wrap">
         <div class="column is-half left-column">
-          <h2 class="title is-1 has-text-weight-normal">{{ item.name }}</h2>
+          <h2 class="title is-size-1-desktop is-size-2-tablet is-size-3-mobile has-text-weight-normal">{{ item.name }}</h2>
           <div
             v-if="item.parts"
             class="info">
@@ -71,7 +71,6 @@ export default {
 }
 .item-body {
   transition: $smf-transition;
-  // padding: 3rem 3rem;
 }
 .duration {
   display: inline-block;
@@ -125,6 +124,10 @@ export default {
   }
 }
 @include tablet() {
+  .item-body {
+    padding-top: 7rem;
+    padding-bottom: 8rem;
+  }
   .left-border {
     border-left: 2px solid white;
   }
