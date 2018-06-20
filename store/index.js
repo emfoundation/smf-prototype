@@ -25,7 +25,25 @@ const createStore = () => {
       tags: [],
       homePageAb: "",
       learnerJourneys: [],
-      questions: []
+      questions: [],
+      formats: {
+        IM: "Image",
+        VI: "Video",
+        PR: "Presentation",
+        LN: "Link",
+        AU: "Audio",
+        DO: "Document",
+        OT: "Other"
+      },
+      formatToIcon: {
+        IM: "image",
+        VI: "video",
+        PR: "file-powerpoint",
+        LN: "link",
+        AU: "headphones",
+        DO: "file",
+        OT: "file"
+      }
     },
     mutations: {
       setTags(state, tags) {
@@ -79,6 +97,12 @@ const createStore = () => {
       },
       loadedQuestions(state) {
         return state.questions;
+      },
+      loadedFormats(state) {
+        return state.formats;
+      },
+      loadedFormatToIcons(state) {
+        return state.formatToIcon;
       }
     }
   });
