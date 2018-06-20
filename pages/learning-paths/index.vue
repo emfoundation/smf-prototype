@@ -25,7 +25,7 @@ export default {
     return {
       title: "Let us Guide You",
       subtitle:
-        "As a global thought leader in the circular economy, in this section we guide you through the latest and most relevant content for those working within the fashion industry who want to learn what the circular economy is all about.",
+        "As a global thought leader in the circular economy, in this section we guide you through the latest and most relevant content for those working within the fashion industry that want to learn what the circular economy is all about.",
       bannerImage:
         "https://emf-assets-dev.s3.amazonaws.com/media/22/Learning-Paths-Banner-Web.jpg"
     };

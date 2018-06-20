@@ -22,12 +22,15 @@
   }
 }
 .text-wrap {
-@include tablet() {
-    width: 80%;
+  @include tablet() {
+      width: 80%;
+  }
+  @include fullhd() {
+      width: 60%;
+  }
 }
-@include fullhd() {
-    width: 60%;
-}
+.clear-float {
+  clear: both;
 }
 .no-hover {
   pointer-events: none;

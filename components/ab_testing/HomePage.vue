@@ -31,7 +31,7 @@
         <div class="overlay">
           <div class="call-to-action wrap">
             <nuxt-link :to="rightColContent.link" >
-              <div class="home-box">
+              <div class="home-box has-text-right-tablet">
                 <h1 class="title is-2 pb-4 has-text-white has-text-weight-normal">{{ rightColContent.title }} <strong>{{ rightColContent.titleBold }}</strong></h1>
                 <p class="subtitle has-text-white">{{ rightColContent.text }}</p>
               </div>
@@ -41,6 +41,7 @@
               text-colour="light"
               circle-colour="secondary"
               class="tablet-pulled-right">{{ rightColContent.buttonText }}</text-circle-button>
+            <div class="clear-float"/>
           </div>
         </div>
       </section>
@@ -112,7 +113,8 @@ export default {
 // Tablet size and above
 @include tablet() {
   .home {
-    height: 100vh;
+    min-height: 100vh;
+    // margin-bottom: 2rem;
   }
   .column {
     padding: 0;
@@ -123,7 +125,7 @@ export default {
       padding-top: 10rem !important;
     }
     .call-to-action {
-      padding-top: 8rem;
+      padding-top: 5rem;
     }
   }
   .left-col {
