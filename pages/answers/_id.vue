@@ -3,6 +3,7 @@
     <banner
       :title="question.name"
       :subtitle="answer.question_context"
+      :image="question.thumbnail"
     />
     <div class="wrap">
       <h3 class="title">{{ answer.title }}</h3>

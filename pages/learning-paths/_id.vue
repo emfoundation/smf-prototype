@@ -2,6 +2,7 @@
   <div>
     <banner
       :title="learnerJourney.name"
+      :image="learnerJourney.thumbnail"
       back-to="/learning-paths"
     />
     <div
