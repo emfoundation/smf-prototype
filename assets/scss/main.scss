@@ -21,6 +21,9 @@
     padding: 5rem 9rem;
   }
 }
+.no-hover {
+  pointer-events: none;
+}
 // add bulma overrides elements here
 .container {
     padding: 0.75rem;

@@ -39,7 +39,7 @@ $navbar-divider-background-color: red;
 .smf-navbar-wrap {
   position: absolute;
   width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
   height: 100px;
 }
 .smf-navbar {
