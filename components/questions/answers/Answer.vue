@@ -3,7 +3,7 @@
     <div
       :style="{ backgroundImage: 'url(' + answer.thumbnail + ')' }"
       class="answer overlay-light">
-      <div class="answer-body pt-6 pr-6 pb-6 pl-6 card">
+      <div class="answer-body card">
         <figure class="format">
           <span class="icon is-medium format-icon-border">
             <i
@@ -58,16 +58,7 @@ export default {
 }
 .answer-body {
   transition: $smf-transition;
-  @include tablet() {
-    height: 400px;
-  }
-  @include desktop() {
-    height: 330px;
-  }
-}
-.answer-link {
-  position: absolute;
-  bottom: 2rem;
+  padding: 1.5rem;
 }
 .overlay-light {
   .answer-body {
@@ -95,5 +86,21 @@ export default {
 .format-text {
   display: inline-block;
   margin-left: 7px;
+}
+
+@include tablet() {
+  .answer-body {
+    height: 400px;
+  }
+  .answer-link {
+    position: absolute;
+    bottom: 2rem;
+  }
+}
+@include desktop() {
+  .answer-body {
+    height: 330px;
+    padding: 3rem;
+  }
 }
 </style>
