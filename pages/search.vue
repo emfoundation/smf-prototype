@@ -2,7 +2,7 @@
   <div class="search has-background-emf">
     <section class="search-content wrap">
       <div class="search-heading">
-        <h2 class="title is-1 has-text-white"><span class="has-text-primary has-text-weight-normal">Thanks</span> for the interest</h2>
+        <h2 class="title is-1 has-text-white"><span class="has-text-primary has-text-weight-normal">Thanks</span> for your interest</h2>
       </div>
       <h3 class="title is-3 has-text-weight-normal has-text-white">Search coming soon</h3>
       <nuxt-link
