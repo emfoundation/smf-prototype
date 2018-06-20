@@ -11,7 +11,7 @@
         asset.file"
         :link="asset.link"
       />
-      <p class="main-text mb-5">{{ answer.description }}</p>
+      <p class="text-wrap mb-5">{{ answer.description }}</p>
       <section v-if="asset.tags.length > 0">
         <h4 class="mb-2">This is about...</h4>
         <AssetTags :tags="asset.tags"/>
@@ -71,15 +71,5 @@ export default {
 <style lang="scss" scoped>
 .date-uploaded {
   margin: 3% 0;
-}
-@include tablet() {
-  .main-text {
-    width: 80%;
-  }
-}
-@include fullhd() {
-  .main-text {
-    width: 60%;
-  }
 }
 </style>

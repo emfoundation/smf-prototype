@@ -21,6 +21,14 @@
     padding: 5rem 9rem;
   }
 }
+.text-wrap {
+@include tablet() {
+    width: 80%;
+}
+@include fullhd() {
+    width: 60%;
+}
+}
 .no-hover {
   pointer-events: none;
 }
