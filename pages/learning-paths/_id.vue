@@ -273,7 +273,7 @@ a.chapter-prev-next-box {
       z-index: 2;
       position: absolute;
       top: 52px;
-      left: -216px;
+      left: -218px;
       width: 486px;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
