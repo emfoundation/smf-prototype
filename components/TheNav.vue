@@ -9,10 +9,6 @@
           to="/"
           class="navbar-item logo-item">
           <div class="emf-logo"/>
-          <!-- <img
-            src="~/static/images/emf-logo.png"
-            alt="The Ellen MacArthur Foundation Logo"
-            class="emf-logo"> -->
         </nuxt-link>
         <nuxt-link
           to="/search"
@@ -25,7 +21,7 @@
           <div class="rotated">
             <nuxt-link
               to="/about"
-              class="navbar-item navbar-burger smf-burger is-large has-text-dark has-text-weight-semibold"
+              class="navbar-item navbar-burger smf-burger is-large has-text-dark is-size-5 has-text-weight-semibold"
               aria-label="about"
               aria-expanded="false">
               <slot>About</slot>
@@ -53,7 +49,8 @@ $navbar-divider-background-color: red;
 }
 .smf-navbar-brand {
   width: 100%;
-  padding-left: 2vw;
+  padding-left: 10px;
+  padding-right: 10px;
   height: 4rem;
   .logo-item {
     padding-bottom: 0;
@@ -73,12 +70,12 @@ $navbar-divider-background-color: red;
   .container-overflow-hidden {
     .rotated {
       overflow-y: hidden;
-      transform: translate(18px, -33px) rotate(16deg);
+      transform: translate(35px, -33px) rotate(16deg);
       background-color: white;
-      padding-top: 36px;
-      padding-left: 3px;
-      width: 100px;
-      height: 100px;
+      padding-top: 39px;
+      padding-left: 12px;
+      width: 140px;
+      height: 107px;
     }
   }
   // Bulma override
