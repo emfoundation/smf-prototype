@@ -14,7 +14,7 @@
             {{ getFormatDisplayName }}
           </figcaption>
         </figure>
-        <h3 class="is-size-4 mb-2 has-text-black has-text-weight-bold">{{ answer.title }}</h3>
+        <h3 class="answer-title is-size-4 mb-2 has-text-black has-text-weight-bold">{{ answer.title }}</h3>
         <p class="mb-5 answer-text">{{ answer.tile_description }}</p>
         <text-circle-button
           :link="{ path: '/answers/' + answer.id, query: { q: $route.params.id }}"
@@ -59,6 +59,9 @@ export default {
 .answer-body {
   transition: $smf-transition;
   padding: 1.5rem;
+}
+.answer-title {
+  line-height: 30px;
 }
 .overlay-light {
   .answer-body {
