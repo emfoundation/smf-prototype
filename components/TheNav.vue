@@ -21,11 +21,11 @@
           <div class="rotated">
             <nuxt-link
               to="/about"
-              class="navbar-item navbar-burger smf-burger is-large has-text-dark is-size-5 has-text-weight-semibold"
+              class="navbar-about navbar-item navbar-burger smf-burger is-large is-size-5 has-text-weight-semibold"
               aria-label="about"
               aria-expanded="false">
               <slot>About</slot>
-              <i class="fas fa-lg fa-angle-right ml-2 mr-2"/>
+              <i class="about-arrow fas fa-lg fa-angle-right ml-2 mr-2"/>
             </nuxt-link>
           </div>
         </div>
@@ -76,6 +76,20 @@ $navbar-divider-background-color: red;
       padding-left: 12px;
       width: 140px;
       height: 107px;
+    }
+  }
+  .navbar-about,
+  .about-arrow {
+    transition: $smf-transition;
+    color: $secondary;
+
+    &:hover {
+      transition: $smf-transition;
+      color: lighten($secondary, 20%);
+      .about-arrow {
+        transition: $smf-transition;
+        color: $primary;
+      }
     }
   }
   // Bulma override

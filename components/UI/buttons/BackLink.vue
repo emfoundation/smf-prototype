@@ -2,7 +2,7 @@
   <div v-if="link">
     <nuxt-link :to="link">
       <div class="back-container has-background-white">
-        <div class="back-button has-text-dark has-text-weight-light ">
+        <div class="back-button has-text-weight-light ">
           <i class="fas fa-lg fa-angle-left mr-2"/>
           <slot>Back</slot>
         </div>
