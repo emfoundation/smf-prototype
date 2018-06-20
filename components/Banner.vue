@@ -9,7 +9,7 @@
           <h1 class="title is-size-1-desktop has-text-weight-bold">
             {{ title }}
           </h1>
-          <h2 class="subtitle is-4">
+          <h2 class="subtitle is-4 is-size-6-mobile">
             {{ subtitle }}
           </h2>
         </div>
@@ -69,16 +69,12 @@ export default {
   min-height: inherit;
 }
 .subtitle {
+  margin: 20px 2%;
   margin-top: 20px !important;
-  margin-left: 2%;
-  margin-right: 2%;
-}
-.back-alignment {
-  margin-left: 1.5rem;
 }
 @include tablet() {
   .subtitle {
-    margin: 20px 15%;
+    margin: 35px 1rem;
   }
   .back-alignment {
     margin-left: 2.5rem;
