@@ -38,10 +38,11 @@ export default {
         "/learner-journey/" +
         context.params.id +
         "/" +
-        context.params.chapterId
+        context.params.chapterId +
+        "/"
     );
     let { data: asset } = await context.$axios.get(
-      process.env.API_BASE_URL + "/assets/" + chapter.asset
+      process.env.API_BASE_URL + "/assets/" + chapter.asset + "/"
     );
     return {
       chapter,
