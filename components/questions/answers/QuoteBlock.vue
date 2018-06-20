@@ -1,11 +1,18 @@
 <template>
   <div class="columns is-variable is-1">
-    <div class="column pt-0">
+    <div class="column pt-0 pb-2">
       <div
-        :style="{ backgroundImage: 'url(' + quote.thumbnail + ')' }"
         class="overlay-blue answer">
-        <div class="pt-6 pr-6 pb-8 pl-6 card answer-body">
-          <h3 class="is-size-4 has-text-weight-bold is-italic mb-2 answer-text">"{{ quote.text }}"</h3>
+        <div class="pt-6 pr-6 pb-8 pl-6 card answer-body has-text-white">
+          <div>
+            <i class="fas fa-quote-left fa-2x"/>
+          </div>
+          <h3 class="is-size-4 mb-2 has-text-weight-bold answer-text">
+            {{ quote.text }}
+          </h3>
+          <div class="icon is-large quote-right">
+            <i class="fas fa-quote-right fa-2x"/>
+          </div>
           <p class="mb-2 answer-text">{{ quote.source }}</p>
         </div>
       </div>
@@ -31,8 +38,12 @@ export default {
   background-size: cover;
 }
 .answer-body {
-  height: 300px;
+  // height: 300px;
   transition: $smf-transition;
+}
+.answer-text {
+  margin-left: 2.5rem;
+  line-height: 40px;
 }
 .overlay-blue {
   .answer-body {
@@ -45,9 +56,7 @@ export default {
     color: white;
   }
 }
-.quote-mark {
-  font-size: 100px;
-  font-weight: 900;
-  font-style: italic;
+.quote-right {
+  margin-left: 50%;
 }
 </style>

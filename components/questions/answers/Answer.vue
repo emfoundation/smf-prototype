@@ -1,5 +1,5 @@
 <template>
-  <div class="column pt-0">
+  <div class="column pt-0 pb-1">
     <div
       :style="{ backgroundImage: 'url(' + answer.thumbnail + ')' }"
       class="answer overlay-light">
