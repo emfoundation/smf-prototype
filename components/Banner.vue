@@ -1,7 +1,7 @@
 <template>
   <section
     :style="{ backgroundImage: 'url(' + image + ')' }"
-    class="hero is-dark is-primary banner">
+    class="hero is-dark banner">
     <div class="overlay-dark">
       <div
         class="hero-body banner-body has-text-white">
@@ -65,7 +65,7 @@ export default {
   padding-top: 80px;
 }
 .overlay-dark {
-  background: rgba($primary, 0.6);
+  background: rgba($emf, 0.9);
   min-height: inherit;
 }
 .subtitle {
