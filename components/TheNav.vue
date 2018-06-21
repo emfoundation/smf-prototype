@@ -21,7 +21,7 @@
           <div class="rotated">
             <nuxt-link
               to="/about"
-              class="navbar-about navbar-item navbar-burger smf-burger is-large is-size-5 has-text-weight-semibold"
+              class="navbar-about navbar-item navbar-burger smf-burger is-large is-size-5-tablet has-text-weight-semibold"
               aria-label="about"
               aria-expanded="false">
               <slot>About</slot>
@@ -61,8 +61,8 @@ $navbar-divider-background-color: red;
     background-repeat: no-repeat;
     opacity: 1;
     transition: $smf-transition;
-    width: 55px;
-    height: 53px;
+    width: 40px;
+    height: 40px;
     &:hover {
       opacity: 0.8;
     }
@@ -70,12 +70,12 @@ $navbar-divider-background-color: red;
   .container-overflow-hidden {
     .rotated {
       overflow-y: hidden;
-      transform: translate(35px, -33px) rotate(16deg);
+      transform: translate(26px, -33px) rotate(16deg);
       background-color: white;
       padding-top: 39px;
-      padding-left: 12px;
-      width: 140px;
-      height: 107px;
+      padding-left: 3px;
+      width: 100px;
+      height: 100px;
     }
   }
   .navbar-about,
@@ -92,6 +92,7 @@ $navbar-divider-background-color: red;
       }
     }
   }
+
   // Bulma override
   .smf-burger {
     transform: rotate(-16deg);
@@ -113,7 +114,7 @@ $navbar-divider-background-color: red;
   .navbar-search {
     justify-self: right;
     margin-left: auto;
-    width: $navbar-height;
+    width: 2rem;
     .icon {
       margin-left: auto;
       margin-right: auto;
@@ -126,6 +127,17 @@ $navbar-divider-background-color: red;
       background-image: url("~/assets/images/emf-logo.png");
       width: 206px;
       height: 53px;
+    }
+    .container-overflow-hidden {
+      .rotated {
+        overflow-y: hidden;
+        transform: translate(35px, -33px) rotate(16deg);
+        background-color: white;
+        padding-top: 39px;
+        padding-left: 12px;
+        width: 140px;
+        height: 107px;
+      }
     }
   }
 }

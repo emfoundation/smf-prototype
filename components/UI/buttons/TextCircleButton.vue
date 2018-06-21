@@ -4,7 +4,7 @@
     class="circle-button">
     <div
       :class="[{'is-small': isSmall }, textColour, circleColour]">
-      <div class="subtitle has-text-weight-bold">
+      <div class="subtitle is-size-6-mobile has-text-weight-bold">
         <span class="link-text">
           <slot/>
         </span>
