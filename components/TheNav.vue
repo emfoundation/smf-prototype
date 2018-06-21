@@ -123,6 +123,8 @@ $navbar-divider-background-color: red;
 }
 @include tablet() {
   .smf-navbar-brand {
+    padding-left: 15px;
+    padding-right: 15px;
     .emf-logo {
       background-image: url("~/assets/images/emf-logo.png");
       width: 206px;
