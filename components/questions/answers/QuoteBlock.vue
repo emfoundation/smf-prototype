@@ -3,7 +3,7 @@
     <div class="column pt-0 pb-2">
       <div
         class="overlay-blue answer">
-        <div class="pt-6 pr-6 pb-8 pl-6 card answer-body has-text-white">
+        <div class="answer-body card has-text-white">
           <div>
             <i class="fas fa-quote-left fa-2x"/>
           </div>
@@ -38,11 +38,10 @@ export default {
   background-size: cover;
 }
 .answer-body {
-  // height: 300px;
   transition: $smf-transition;
+  padding: 1.5rem;
 }
 .answer-text {
-  margin-left: 2.5rem;
   line-height: 40px;
 }
 .overlay-blue {
@@ -58,5 +57,13 @@ export default {
 }
 .quote-right {
   margin-left: 50%;
+}
+@include tablet() {
+  .answer-body {
+    padding: 3rem;
+  }
+  .answer-text {
+    margin-left: 2.5rem;
+  }
 }
 </style>
