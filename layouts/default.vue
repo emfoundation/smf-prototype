@@ -2,6 +2,7 @@
   <div>
     <the-nav/>
     <nuxt />
+    <back-to-top-button/>
     <footer class="smf-footer pt-3 has-background-black has-text-white is-size-6">
       <div class="wrap">
         Charity Registration No.: 1130306, OSCR Registration No.: SC043120, Company No.: 6897785
@@ -14,10 +15,12 @@
 
 <script>
 import TheNav from "~/components/TheNav.vue";
+import BackToTopButton from "~/components/UI/buttons/BackToTopButton";
 
 export default {
   components: {
-    TheNav
+    TheNav,
+    BackToTopButton
   }
 };
 </script>
