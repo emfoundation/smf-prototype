@@ -144,6 +144,9 @@ export default {
     min-height: 100vh;
     // margin-bottom: 2rem;
   }
+  .home-title {
+    margin-bottom: 2rem;
+  }
   .column {
     padding: 0;
   }
