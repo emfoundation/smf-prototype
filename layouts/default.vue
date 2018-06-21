@@ -2,7 +2,7 @@
   <div>
     <the-nav/>
     <nuxt />
-    <footer class="smf-footer has-background-black has-text-white is-size-6">
+    <footer class="smf-footer has-background-black has-text-white is-size-6-tablet is-size-7-mobile">
       <div class="wrap pt-5 pb-5">
         <nuxt-link
           class="has-text-primary"
