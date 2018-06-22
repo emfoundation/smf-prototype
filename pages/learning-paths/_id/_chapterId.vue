@@ -1,11 +1,21 @@
 <template>
   <div>
     <h3 class="title">{{ chapter.title }}</h3>
+    <p
+      v-if="chapter.description"
+      class="text-wrap mb-5">
+      {{ chapter.description }}
+    </p>
     <embedded-content
       :file="asset.file"
       :link="asset.link"
     />
-    <p class="text-wrap mb-5">{{ chapter.description }}</p>
+    <div
+      v-if="chapter.content"
+      class="text-wrap">
+      <rich-text
+        :content="chapter.content"/>
+    </div>
 
     <section v-if="asset.tags.length > 0">
       <h4 class="mb-2">This is about...</h4>
@@ -18,12 +28,14 @@
 import AssetTags from "~/components/assets/AssetTags";
 import EmbeddedContent from "~/components/assets/EmbeddedContent";
 import FullscreenButton from "~/components/UI/buttons/FullscreenButton";
+import RichText from "~/components/UI/blocks/RichText";
 
 export default {
   components: {
     AssetTags,
     EmbeddedContent,
-    FullscreenButton
+    FullscreenButton,
+    RichText
   },
   data() {
     return {
@@ -33,7 +45,7 @@ export default {
   async asyncData(context) {
     let { data: chapter } = await context.$axios.get(
       process.env.API_BASE_URL +
-        "/chapters/collection/" +
+        "chapters/collection/" +
         process.env.SMF_COLLECTION_ID +
         "/learner-journey/" +
         context.params.id +

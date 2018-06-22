@@ -67,11 +67,9 @@ const createStore = () => {
           : vuexContext.commit("setHomePageAb", "b");
 
         let getRequests = [
-          this.$axios.get("http://staging.circulareconomy.space/api/tags/"),
-          this.$axios.get(
-            "http://staging.circulareconomy.space/api/learner-journeys/"
-          ),
-          this.$axios.get("http://staging.circulareconomy.space/api/questions/")
+          this.$axios.get(process.env.API_BASE_URL + "tags/"),
+          this.$axios.get(process.env.API_BASE_URL + "learner-journeys/"),
+          this.$axios.get(process.env.API_BASE_URL + "questions/")
         ];
 
         let returnedData = Promise.all(getRequests);

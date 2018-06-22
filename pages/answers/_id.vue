@@ -7,12 +7,21 @@
     />
     <div class="wrap">
       <h3 class="title">{{ answer.title }}</h3>
+      <p
+        v-if="answer.description"
+        class="text-wrap mb-5">{{ answer.description }}</p>
       <embedded-content
         :file="
         asset.file"
         :link="asset.link"
       />
-      <p class="text-wrap mb-5">{{ answer.description }}</p>
+      <div
+        v-if="answer.content"
+        class="text-wrap">
+        <rich-text
+          :content="answer.content"/>
+      </div>
+
       <section v-if="asset.tags.length > 0">
         <h4 class="mb-2">This is about...</h4>
         <AssetTags :tags="asset.tags"/>
@@ -25,13 +34,15 @@ import AssetTags from "~/components/assets/AssetTags";
 import Banner from "~/components/Banner";
 import EmbeddedContent from "~/components/assets/EmbeddedContent";
 import FullscreenButton from "~/components/UI/buttons/FullscreenButton";
+import RichText from "~/components/UI/blocks/RichText";
 
 export default {
   components: {
     AssetTags,
     Banner,
     EmbeddedContent,
-    FullscreenButton
+    FullscreenButton,
+    RichText
   },
   data() {
     return {

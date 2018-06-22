@@ -180,17 +180,14 @@ export default {
     let getRequests = [
       context.$axios.get(
         process.env.API_BASE_URL +
-          "/chapters/collection/" +
+          "chapters/collection/" +
           process.env.SMF_COLLECTION_ID +
           "/learner-journey/" +
           context.params.id +
           "/"
       ),
       context.$axios.get(
-        process.env.API_BASE_URL +
-          "/learner-journeys/" +
-          context.params.id +
-          "/"
+        process.env.API_BASE_URL + "learner-journeys/" + context.params.id + "/"
       )
     ];
 
