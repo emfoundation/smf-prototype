@@ -8,10 +8,11 @@
       :file="asset.file"
       :link="asset.link"
     />
-    <div 
-      v-if="chapter.content"
-      class="rich-content main-text mb-5"
-      v-html="chapter.content"/>
+    <div
+      v-if="chapter.content">
+      <rich-text
+        :content="chapter.content"/>
+    </div>
 
     <section v-if="asset.tags.length > 0">
       <h4 class="mb-2">This is about...</h4>
@@ -24,12 +25,14 @@
 import AssetTags from "~/components/assets/AssetTags";
 import EmbeddedContent from "~/components/assets/EmbeddedContent";
 import FullscreenButton from "~/components/UI/buttons/FullscreenButton";
+import RichText from "~/components/UI/blocks/RichText";
 
 export default {
   components: {
     AssetTags,
     EmbeddedContent,
-    FullscreenButton
+    FullscreenButton,
+    RichText
   },
   data() {
     return {
