@@ -15,9 +15,10 @@
         :link="asset.link"
       />
       <div
-        v-if="answer.content"
-        class="rich-content main-text mb-5"
-        v-html="answer.content"/>
+        v-if="answer.content">
+        <rich-text
+          :content="answer.content"/>
+      </div>
 
       <section v-if="asset.tags.length > 0">
         <h4 class="mb-2">This is about...</h4>
@@ -31,13 +32,15 @@ import AssetTags from "~/components/assets/AssetTags";
 import Banner from "~/components/Banner";
 import EmbeddedContent from "~/components/assets/EmbeddedContent";
 import FullscreenButton from "~/components/UI/buttons/FullscreenButton";
+import RichText from "~/components/UI/blocks/RichText";
 
 export default {
   components: {
     AssetTags,
     Banner,
     EmbeddedContent,
-    FullscreenButton
+    FullscreenButton,
+    RichText
   },
   data() {
     return {
