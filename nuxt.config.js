@@ -3,19 +3,50 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: "smf",
+    title: "CE Learning",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "SMF Prototype" }
+      { hid: "description", name: "description", content: "SMF Prototype" },
+      {
+        hid: "msapplication-TileColor",
+        name: "msapplication-TileColor",
+        content: "#da532c"
+      },
+      { name: "msapplication-config", content: "/browserconfig.xml" },
+      { name: "theme-color", content: "#ffffff" }
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        rel: "apple-touch-icon",
+        sizes: "144x144",
+        href: "/apple-touch-icon.png"
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "/favicon-32x32.png"
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "/favicon-16x16.png"
+      },
+      { rel: "manifest", href: "/site.webmanifest" },
+      {
+        rel: "mask-icon",
+        href: "/safari-pinned-tab.svg",
+        color: "#1c9bd6"
+      },
+      { rel: "shortcut icon", href: "/favicon.ico" },
       {
         rel: "stylesheet",
         href: "https://use.fontawesome.com/releases/v5.0.10/css/all.css",
         crossorigin: "anonymous"
-      }
+      },
+      { rel: "stylesheet", href: "https://use.typekit.net/rtq3bmi.css" }
     ]
   },
   /*

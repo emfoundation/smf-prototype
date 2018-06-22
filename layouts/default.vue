@@ -2,8 +2,13 @@
   <div>
     <the-nav/>
     <nuxt />
-    <footer class="smf-footer pt-3 has-background-black has-text-white is-size-6">
-      <div class="wrap">
+    <footer class="smf-footer has-background-black has-text-white is-size-6-tablet is-size-7-mobile">
+      <div class="wrap pt-5 pb-5">
+        <nuxt-link
+          class="has-text-primary"
+          to="/terms">View our Terms & Conditions</nuxt-link>
+        <br >
+        <br >
         Charity Registration No.: 1130306, OSCR Registration No.: SC043120, Company No.: 6897785
         <br >
         © Copyright 2017 Ellen MacArthur Foundation. All Rights Reserved

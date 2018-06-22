@@ -25,3 +25,8 @@
 .container {
     padding: 0.75rem;
 }
+
+// Bulma extensions
+.has-background-emf {
+  background-color: $emf !important;
+}
