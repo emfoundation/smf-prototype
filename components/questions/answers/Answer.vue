@@ -3,14 +3,26 @@
     <div
       :style="{ backgroundImage: 'url(' + answer.thumbnail + ')' }"
       class="answer overlay-light">
-      <div class="answer-body pt-6 pr-6 pb-8 pl-6 card">
-        <h3 class="is-size-3 mb-2 answer-text answer-title">{{ answer.title }}</h3>
+      <div class="answer-body card">
+        <figure class="format">
+          <span class="icon is-medium format-icon-border">
+            <i
+              :class="'fa-' + getFormatIconName"
+              class="fas"/>
+          </span>
+          <figcaption class="format-text is-size-7 has-text-primary has-text-centered">
+            {{ getFormatDisplayName }}
+          </figcaption>
+        </figure>
+        <h3 class="answer-title is-size-4 mb-2 has-text-black has-text-weight-bold">{{ answer.title }}</h3>
         <p class="mb-5 answer-text">{{ answer.tile_description }}</p>
         <text-circle-button
           :link="{ path: '/answers/' + answer.id, query: { q: $route.params.id }}"
           :is-primary="true"
-          :is-small="true">View</text-circle-button>
-          <!-- <p>{{ answer.format }}</p> -->
+          :is-small="true"
+          class="answer-link">
+          View
+        </text-circle-button>
       </div>
     </div>
   </div>
@@ -27,6 +39,14 @@ export default {
       type: Object,
       required: true
     }
+  },
+  computed: {
+    getFormatDisplayName() {
+      return this.$store.getters.loadedFormats[this.answer.format];
+    },
+    getFormatIconName() {
+      return this.$store.getters.loadedFormatToIcons[this.answer.format];
+    }
   }
 };
 </script>
@@ -38,18 +58,10 @@ export default {
 }
 .answer-body {
   transition: $smf-transition;
-  @include tablet() {
-    height: 400px;
-  }
-  @include desktop() {
-    height: 300px;
-  }
-}
-.answer-text {
-  color: black;
+  padding: 1.5rem;
 }
 .answer-title {
-  font-weight: 900;
+  line-height: 30px;
 }
 .overlay-light {
   .answer-body {
@@ -59,18 +71,39 @@ export default {
     }
   }
 }
-// .overlay-dark {
-//   .answer-body {
-//     background: rgba(0, 0, 0, 0.6);
-//     &:hover {
-//       background: rgba(0, 0, 0, 0.9);
-//     }
-//   }
-//   .arrow {
-//     color: white;
-//   }
-//   .answer-text {
-//     color: white;
-//   }
-// }
+.format {
+  margin-bottom: 15px;
+}
+.format-icon {
+  position: relative;
+  top: 0.2rem;
+  color: $primary;
+}
+.format-icon-border {
+  position: relative;
+  top: 0.2rem;
+  border: 1px solid $primary;
+  border-radius: 50%;
+  color: $primary;
+}
+.format-text {
+  display: inline-block;
+  margin-left: 7px;
+}
+
+@include tablet() {
+  .answer-body {
+    height: 400px;
+  }
+  .answer-link {
+    position: absolute;
+    bottom: 2rem;
+  }
+}
+@include desktop() {
+  .answer-body {
+    height: 330px;
+    padding: 3rem;
+  }
+}
 </style>
