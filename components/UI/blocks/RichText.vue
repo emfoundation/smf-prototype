@@ -1,7 +1,7 @@
 <template>
   <div
     class="rich-content mb-5"
-    v-html="content"/>
+    v-html="removePTags(content)"/>
 </template>
 
 <script>
@@ -10,6 +10,11 @@ export default {
     content: {
       type: String,
       required: true
+    }
+  },
+  methods: {
+    removePTags: function(str) {
+      return str.replace("<p><img>", "<img>").replace("</img></p>", "</img>");
     }
   }
 };
@@ -28,6 +33,12 @@ export default {
   }
   p {
     margin: 1rem 0 1rem 0;
+    @include tablet() {
+      width: 80%;
+    }
+    @include fullhd() {
+      width: 60%;
+    }
   }
   @include tablet() {
     .wrap-left {
