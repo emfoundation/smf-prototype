@@ -2,6 +2,7 @@
   <div>
     <the-nav/>
     <nuxt />
+    <back-to-top-button/>
     <footer class="smf-footer has-background-black has-text-white is-size-6-tablet is-size-7-mobile">
       <div class="wrap pt-5 pb-5">
         <nuxt-link
@@ -19,10 +20,12 @@
 
 <script>
 import TheNav from "~/components/TheNav.vue";
+import BackToTopButton from "~/components/UI/buttons/BackToTopButton";
 
 export default {
   components: {
-    TheNav
+    TheNav,
+    BackToTopButton
   }
 };
 </script>

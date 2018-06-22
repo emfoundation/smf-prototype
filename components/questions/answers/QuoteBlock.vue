@@ -1,12 +1,19 @@
 <template>
   <div class="columns is-variable is-1">
-    <div class="column pt-0">
+    <div class="column pt-0 pb-2">
       <div
-        :style="{ backgroundImage: 'url(' + quote.thumbnail + ')' }"
         class="overlay-blue answer">
-        <div class="pt-6 pr-6 pb-8 pl-6 card answer-body">
-          <h3 class="is-size-4 has-text-weight-bold is-italic mb-2 answer-text">"{{ quote.text }}"</h3>
-          <p class="mb-2 answer-text">{{ quote.source }}</p>
+        <div class="answer-body card has-text-white">
+          <div>
+            <i class="fas fa-quote-left fa-3x"/>
+          </div>
+          <h3 class="mb-2 quote-text answer-text">
+            {{ quote.text }}
+          </h3>
+          <div class="icon is-large quote-right">
+            <i class="fas fa-quote-right fa-3x"/>
+          </div>
+          <p class="mb-2 answer-text has-text-weight-normal">{{ quote.source }}</p>
         </div>
       </div>
     </div>
@@ -31,8 +38,11 @@ export default {
   background-size: cover;
 }
 .answer-body {
-  height: 300px;
   transition: $smf-transition;
+  padding: 1.5rem;
+}
+.answer-text {
+  line-height: 40px;
 }
 .overlay-blue {
   .answer-body {
@@ -45,9 +55,19 @@ export default {
     color: white;
   }
 }
-.quote-mark {
-  font-size: 100px;
+.quote-text {
+  font-size: 1.75rem;
   font-weight: 900;
-  font-style: italic;
+}
+.quote-right {
+  margin-left: 50%;
+}
+@include tablet() {
+  .answer-body {
+    padding: 3rem;
+  }
+  .answer-text {
+    margin-left: 3.5rem;
+  }
 }
 </style>

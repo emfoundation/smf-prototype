@@ -8,7 +8,7 @@
       class="hero is-medium item">
       <div class="columns item-body wrap">
         <div class="column is-half left-column">
-          <h2 class="title is-1 has-text-weight-normal">{{ item.name }}</h2>
+          <h2 class="item-title title is-size-2-desktop is-size-3-mobile">{{ item.name }}</h2>
           <div
             v-if="item.parts"
             class="info">
@@ -71,7 +71,10 @@ export default {
 }
 .item-body {
   transition: $smf-transition;
-  // padding: 3rem 3rem;
+}
+.item-title {
+  margin-bottom: 0;
+  font-weight: 600;
 }
 .duration {
   display: inline-block;
@@ -86,10 +89,9 @@ export default {
   padding-top: 1px;
 }
 .dot {
-  height: 15px;
-  width: 15px;
+  $dot-radius: 5px;
+  @include circle($dot-radius);
   border: 1px solid white;
-  border-radius: 7.5px;
   margin-right: 5px;
   display: inline-block;
 }
@@ -125,6 +127,13 @@ export default {
   }
 }
 @include tablet() {
+  .item-body {
+    padding-top: 7rem;
+    padding-bottom: 8rem;
+  }
+  .item-title {
+    margin-bottom: 1.5rem;
+  }
   .left-border {
     border-left: 2px solid white;
   }
@@ -138,6 +147,10 @@ export default {
   }
   .right-column {
     padding-left: 3rem;
+  }
+  .dot {
+    $dot-radius: 7.5px;
+    @include circle($dot-radius);
   }
 }
 </style>

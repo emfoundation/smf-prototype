@@ -2,6 +2,7 @@
   <div>
     <banner
       :title="learnerJourney.name"
+      :image="learnerJourney.thumbnail"
       back-to="/learning-paths"
     />
     <div
@@ -23,7 +24,7 @@
             </a>
             <ul class="pagination-list chapter-nav">
               <div
-                class="pagination-link chapter-nav-link is-marginless chapter-part">
+                class="chapter-nav-text-style no-hover pagination-link chapter-nav-link is-marginless chapter-part">
                 <span class="is-size-5 has-text-weight-bold">
                   Chapter
                 </span>
@@ -39,9 +40,11 @@
                     {{ index + 1 }}
                   </span>
                 </div>
+                <div class="current-arrow"/>
                 <div class="container chapter-nav-info pt-2">
-                  <div class="">
-                    {{ getChapterTitle(index) }}
+                  <div class="has-text-left pl-5">
+                    <p class="is-size-6 has-text-weight-bold">Chapter {{ chapterIndex + 1 }} of {{ chapters.length }}:</p>
+                    <p class="is-size-6">{{ getChapterTitle(index) }}</p>
                   </div>
                 </div>
               </div>
@@ -57,7 +60,8 @@
           </nav>
         </div>
       </div>
-      <div class="wrap">
+      <div class="chapter-nav-triangle"/>
+      <div class="wrap main-content">
         <h3 class="title is-5 mb-2 has-text-weight-bold mt-3">
           Chapter {{ chapterIndex + 1 }} of {{ chapters.length }}:
         </h3>
@@ -217,13 +221,13 @@ export default {
 }
 .chapter-nav-background {
   height: 52px;
-  background-color: $light-grey;
+  background-color: $chapter-grey;
   border: 3px solid transparent;
 }
 .chapter-nav-link {
   border-radius: 0;
   border-color: white;
-  background-color: $light-grey;
+  background-color: $chapter-grey;
   display: none;
 }
 .chapter-nav-link.is-current,
@@ -256,6 +260,9 @@ a.chapter-prev-next-box {
   }
 }
 @include tablet() {
+  .main-content {
+    padding-top: 1.5rem;
+  }
   .main-text {
     width: 80%;
   }
@@ -265,24 +272,62 @@ a.chapter-prev-next-box {
       min-height: 70px;
       z-index: 2;
       position: absolute;
-      top: 52px;
-      left: -216px;
+      top: 51px;
+      left: -218px;
       width: 486px;
-
-      background-color: $secondary;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      background-color: $emf;
     }
     &:hover {
-      background-color: $secondary;
+      background-color: $emf;
       color: white;
       .chapter-nav-info {
         display: block;
       }
     }
   }
+  .is-current {
+    color: white;
+    background-color: $primary;
+    .current-arrow {
+      z-index: -1;
+      margin-top: 7px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10px 15px 0 15px;
+      border-color: $primary transparent transparent transparent;
+    }
+  }
+  // Bit of a hack to get the "Chapter" block to look correct.
+  .chapter-nav-text-style {
+    width: 247px;
+    margin-left: -145px !important;
+    padding-left: 136px;
+    background-color: $emf;
+    color: white;
+    border-bottom: 0px solid $emf;
+  }
+  .chapter-nav-triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 167px 0 0;
+    border-color: $emf transparent transparent transparent;
+  }
+}
+@include desktop() {
+  .chapter-nav-triangle {
+    border-width: 50px 200px 0 0;
+  }
 }
 @include fullhd() {
   .main-text {
     width: 60%;
+  }
+  .chapter-nav-triangle {
+    border-width: 50px 250px 0 0;
   }
 }
 </style>

@@ -1,15 +1,15 @@
 <template>
   <section
     :style="{ backgroundImage: 'url(' + image + ')' }"
-    class="hero is-dark is-primary banner">
+    class="hero is-dark banner">
     <div class="overlay-dark">
       <div
         class="hero-body banner-body has-text-white">
-        <div class="container has-text-centered">
+        <div class="banner-container container has-text-centered">
           <h1 class="title is-size-1-desktop has-text-weight-bold">
             {{ title }}
           </h1>
-          <h2 class="subtitle is-4">
+          <h2 class="subtitle is-5 is-size-6-mobile">
             {{ subtitle }}
           </h2>
         </div>
@@ -65,20 +65,22 @@ export default {
   padding-top: 80px;
 }
 .overlay-dark {
-  background: rgba($primary, 0.6);
+  background: rgba($emf, 0.9);
   min-height: inherit;
 }
 .subtitle {
+  margin: 30px 2%;
   margin-top: 20px !important;
-  margin-left: 2%;
-  margin-right: 2%;
 }
-.back-alignment {
-  margin-left: 1.5rem;
+.banner-container {
+  padding: 0;
 }
 @include tablet() {
+  .banner-container {
+    padding: 0.75rem;
+  }
   .subtitle {
-    margin: 20px 15%;
+    margin: 35px 1.5rem;
   }
   .back-alignment {
     margin-left: 2.5rem;

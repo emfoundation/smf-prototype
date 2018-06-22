@@ -5,7 +5,7 @@
       :file="asset.file"
       :link="asset.link"
     />
-    <p class="main-text mb-5">{{ chapter.description }}</p>
+    <p class="text-wrap mb-5">{{ chapter.description }}</p>
 
     <section v-if="asset.tags.length > 0">
       <h4 class="mb-2">This is about...</h4>
@@ -38,10 +38,11 @@ export default {
         "/learner-journey/" +
         context.params.id +
         "/" +
-        context.params.chapterId
+        context.params.chapterId +
+        "/"
     );
     let { data: asset } = await context.$axios.get(
-      process.env.API_BASE_URL + "/assets/" + chapter.asset
+      process.env.API_BASE_URL + "/assets/" + chapter.asset + "/"
     );
     return {
       chapter,

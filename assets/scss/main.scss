@@ -21,6 +21,20 @@
     padding: 5rem 9rem;
   }
 }
+.text-wrap {
+  @include tablet() {
+      width: 80%;
+  }
+  @include fullhd() {
+      width: 60%;
+  }
+}
+.clear-float {
+  clear: both;
+}
+.no-hover {
+  pointer-events: none;
+}
 // add bulma overrides elements here
 .container {
     padding: 0.75rem;

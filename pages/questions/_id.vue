@@ -2,6 +2,7 @@
   <section class="hero">
     <banner
       :title="name"
+      :image="thumbnail"
     />
     <intro-text
       :text="introText"
@@ -62,6 +63,7 @@ export default {
           source: res[0].data.quote_source,
           thumbnail: res[0].data.thumbnail ? res[0].data.thumbnail : ""
         };
+        let thumbnail = res[0].data.thumbnail;
         let answers = res[1].data;
         answers.forEach(
           answer =>
@@ -73,6 +75,7 @@ export default {
           introTitle,
           introText,
           quote,
+          thumbnail,
           answers
         };
       })

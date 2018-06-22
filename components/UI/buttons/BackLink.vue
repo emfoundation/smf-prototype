@@ -2,7 +2,7 @@
   <div v-if="link">
     <nuxt-link :to="link">
       <div class="back-container has-background-white">
-        <div class="back-button has-text-dark has-text-weight-light ">
+        <div class="back-button has-text-weight-light ">
           <i class="fas fa-lg fa-angle-left mr-2"/>
           <slot>Back</slot>
         </div>
@@ -13,7 +13,7 @@
     v-else
     class="back-container has-background-white">
     <div
-      class="back-button has-text-dark has-text-weight-light"
+      class="back-button has-text-weight-light"
       @click="goBack()" >
       <i class="fas fa-lg fa-angle-left mr-2"/>
       <slot>Back</slot>
@@ -46,10 +46,11 @@ export default {
   text-align: center;
   transition: $smf-transition;
   background-color: white;
+  color: black;
 }
 .back-container:hover {
   transition: $smf-transition;
-  background-color: darkgrey !important;
+  color: $primary;
   cursor: pointer;
 }
 @include tablet() {
