@@ -36,7 +36,7 @@ export default {
       float: left;
     }
     .wrap-right {
-      margin: 0;
+      margin: 0 0 0 1rem;
       width: initial;
       float: right;
     }
