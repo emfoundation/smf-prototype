@@ -43,6 +43,7 @@
         </div>
       </div>
     </section>
+    <div class="clear-float"/>
   </div>
 </template>
 
@@ -65,6 +66,7 @@ export default {
 <style lang="scss" scoped>
 .smf-container {
   margin: 0;
+  padding-bottom: 0;
 }
 .columns {
   margin-bottom: 18px;
@@ -96,6 +98,9 @@ export default {
       border-color: transparent transparent transparent #fffbff;
     }
   }
+}
+.columns:last-child {
+  margin-bottom: 0;
 }
 #image-1 {
   background: url("https://emf-assets-dev.s3.amazonaws.com/media/22/About-EMF-Web.jpg")

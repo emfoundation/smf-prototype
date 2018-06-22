@@ -8,7 +8,7 @@
       class="hero is-medium item">
       <div class="columns item-body wrap">
         <div class="column is-half left-column">
-          <h2 class="item-title title is-size-1-desktop is-size-2-tablet is-size-3-mobile has-text-weight-normal">{{ item.name }}</h2>
+          <h2 class="item-title title is-size-2-desktop is-size-3-mobile">{{ item.name }}</h2>
           <div
             v-if="item.parts"
             class="info">
@@ -74,6 +74,7 @@ export default {
 }
 .item-title {
   margin-bottom: 0;
+  font-weight: 600;
 }
 .duration {
   display: inline-block;

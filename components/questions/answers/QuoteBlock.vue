@@ -5,15 +5,15 @@
         class="overlay-blue answer">
         <div class="answer-body card has-text-white">
           <div>
-            <i class="fas fa-quote-left fa-2x"/>
+            <i class="fas fa-quote-left fa-3x"/>
           </div>
-          <h3 class="is-size-4 mb-2 has-text-weight-bold answer-text">
+          <h3 class="mb-2 quote-text answer-text">
             {{ quote.text }}
           </h3>
           <div class="icon is-large quote-right">
-            <i class="fas fa-quote-right fa-2x"/>
+            <i class="fas fa-quote-right fa-3x"/>
           </div>
-          <p class="mb-2 answer-text">{{ quote.source }}</p>
+          <p class="mb-2 answer-text has-text-weight-normal">{{ quote.source }}</p>
         </div>
       </div>
     </div>
@@ -55,6 +55,10 @@ export default {
     color: white;
   }
 }
+.quote-text {
+  font-size: 1.75rem;
+  font-weight: 900;
+}
 .quote-right {
   margin-left: 50%;
 }
@@ -63,7 +67,7 @@ export default {
     padding: 3rem;
   }
   .answer-text {
-    margin-left: 2.5rem;
+    margin-left: 3.5rem;
   }
 }
 </style>

@@ -17,7 +17,7 @@
               :link="leftColContent.link"
               text-colour="light">{{ leftColContent.buttonText }}</text-circle-button>
           </div>
-          <div class="pick-circle">
+          <div class="pick-circle is-hidden-mobile">
             <div class="subtitle is-size-6-mobile is-size-4-tablet">
               Please <br >Pick
             </div>
@@ -121,22 +121,23 @@ export default {
     }
   }
   .call-to-action {
-    padding-top: 3rem;
+    // padding-top: 3rem;
   }
 }
-.pick-circle {
-  $circle-radius: 35px;
 
-  position: absolute;
-  background-color: white;
-  text-align: center;
-  bottom: -$circle-radius + 5px;
-  left: calc(
-    50% - #{$circle-radius}
-  ); // Interpolated variable - see https://github.com/sass/sass/issues/818
-  padding-top: $circle-radius / 2;
-  @include circle($circle-radius);
-}
+// .pick-circle {
+//   $circle-radius: 35px;
+
+//   position: absolute;
+//   background-color: white;
+//   text-align: center;
+//   bottom: -$circle-radius + 5px;
+//   left: calc(
+//     50% - #{$circle-radius}
+//   ); // Interpolated variable - see https://github.com/sass/sass/issues/818
+//   padding-top: $circle-radius / 2;
+//   @include circle($circle-radius);
+// }
 
 // Tablet size and above
 @include tablet() {
