@@ -26,18 +26,20 @@ export default {
     width: 100%;
     margin: 1.5rem 0 1.5rem 0;
   }
-  .wrap-left {
-    margin: 0 1rem 0 0;
-    width: initial;
-    float: left;
-  }
-  .wrap-right {
-    margin: 0;
-    width: initial;
-    float: right;
-  }
   p {
     margin: 1rem 0 1rem 0;
+  }
+  @include tablet() {
+    .wrap-left {
+      margin: 0 1rem 0 0;
+      width: initial;
+      float: left;
+    }
+    .wrap-right {
+      margin: 0;
+      width: initial;
+      float: right;
+    }
   }
 }
 </style>
