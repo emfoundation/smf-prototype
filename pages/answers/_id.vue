@@ -16,8 +16,7 @@
         :link="asset.link"
       />
       <div
-        v-if="answer.content"
-        class="text-wrap">
+        v-if="answer.content">
         <rich-text
           :content="answer.content"/>
       </div>
