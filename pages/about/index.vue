@@ -4,6 +4,7 @@
       <banner
         :title="title"
         :image="bannerImage"
+        :subtitle="subtitle"
       />
     </section>
     <section class="section">
@@ -22,7 +23,7 @@
         <div class="columns reverse-stack-mobile">
           <div class="column wrap text-right has-text-right-tablet is-half">
             <h3 class="title is-size-4-mobile is-size-4-tablet">Circular Economy Learning</h3>
-            <p>We at the Ellen MacArthur Foundation are currently developing an <a href="https://www.ellenmacarthurfoundation.org/programmes/education/schmidt-macarthur-fellowship/application">exciting new initiative</a> to take circular economy learning to a wide audience, using our knowledge base and expertise to provide global reach. This tool has been designed as a prototype of our online learning platform and provides you, the learner, with the option to follow a curated path through the learning material or to browse the content freely.</p>
+            <p>We at the Ellen MacArthur Foundation are currently developing an <a href="https://www.ellenmacarthurfoundation.org/programmes/education/schmidt-macarthur-fellowship/application">exciting new initiative</a> to take circular economy learning to a wide audience, using our knowledge base and expertise to provide global reach. This tool has been designed as a prototype of our online learning platform and provides you, the learner, with the option to follow a curated path through the learning material or to browse the content freely. </p>
           </div>
           <div
             id="image-2"
@@ -33,7 +34,7 @@
         <div class="columns">
           <div class="column wrap text-left is-half">
             <h3 class="title is-size-4-mobile is-size-4-tablet">Make Fashion Circular</h3>
-            <p>In May 2017, the Ellen MacArthur Foundation launched <a href="https://www.ellenmacarthurfoundation.org/programmes/systemic-initiatives/make-fashion-circular">Make Fashion Circular</a> at the Copenhagen Fashion Summit. The initiative brings together organisations from across the industry, including brands, cities, philanthropists, NGOs and innovators to collaborate and create a new textiles economy, aligned with the principles of the circular economy.</p>
+            <p>In May 2017, the Ellen MacArthur Foundation launched <a href="https://www.ellenmacarthurfoundation.org/programmes/systemic-initiatives/make-fashion-circular">Make Fashion Circular</a> at the Copenhagen Fashion Summit. The initiative brings together organisations from across the industry, including leading fashion brands, cities, philanthropists, NGOs and innovators to collaborate and create a new textiles economy, aligned with the principles of the circular economy. </p>
           </div>
           <div
             id="image-3"
@@ -57,7 +58,10 @@ export default {
   data: function() {
     return {
       title: "About this Learning Tool",
-      bannerImage: ""
+      subtitle:
+        "Find out more about this prototype learning platform developed by the Ellen MacArthur Foundation as part of a new initiative taking circular economy learning to a wide audience.",
+      bannerImage:
+        "https://emf-assets-dev.s3.amazonaws.com/media/22/About-Banner-Web.jpg"
     };
   }
 };
