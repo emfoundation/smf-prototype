@@ -76,6 +76,9 @@ export default {
   padding: 0;
 }
 @include tablet() {
+  .banner {
+    min-height: 315px;
+  }
   .banner-container {
     padding: 0.75rem;
   }
