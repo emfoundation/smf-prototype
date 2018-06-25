@@ -60,7 +60,8 @@ export default {
       title: "About this Learning Tool",
       subtitle:
         "Find out more about this prototype learning platform developed by the Ellen MacArthur Foundation as part of a new initiative taking circular economy learning to a wide audience.",
-      bannerImage: ""
+      bannerImage:
+        "https://emf-assets-dev.s3.amazonaws.com/media/22/About-Banner-Web.jpg"
     };
   }
 };
