@@ -11,8 +11,7 @@
       :link="asset.link"
     />
     <div
-      v-if="chapter.content"
-      class="text-wrap">
+      v-if="chapter.content">
       <rich-text
         :content="chapter.content"/>
     </div>

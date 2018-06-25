@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     removePTags: function(str) {
-      return str.replace("<p><img>", "<img>").replace("</img></p>", "</img>");
+      return str.replace(/<p><img/g, "<img").replace(/\/><\/p>/g, "/>");
     }
   }
 };
