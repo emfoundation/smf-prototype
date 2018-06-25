@@ -16,7 +16,7 @@
             aria-label="pagination">
             <a
               :disabled="chapterIndex === 0"
-              class="pagination-previous is-marginless is-hidden-tablet chapter-nav-previous"
+              class="pagination-previous is-marginless is-hidden-desktop chapter-nav-previous"
               @click="prevChapter(chapterIndex)">
               <span class="icon">
                 <i class="fas fa-angle-left"/>
@@ -33,7 +33,7 @@
                 v-for="(chapter,index) in chapters"
                 :key="chapter.id"
                 :class="chapterIndex === index ? 'is-current': ''"
-                class="pagination-link chapter-nav-link is-marginless is-hidden-mobile"
+                class="pagination-link chapter-nav-link is-marginless is-hidden-touch"
                 @click.stop.prevent="showChapter(index)">
                 <div>
                   <span class="is-size-5">
@@ -51,7 +51,7 @@
             </ul>
             <a
               :disabled="chapterIndex > chapters.length -2"
-              class="pagination-next is-marginless is-hidden-tablet chapter-nav-next"
+              class="pagination-next is-marginless is-hidden-desktop chapter-nav-next"
               @click="nextChapter(chapterIndex)">
               <span class="icon">
                 <i class="fas fa-angle-right"/>
@@ -80,20 +80,20 @@
               <div class="pagination-list chapter-prev-next">
                 <div
                   :class="{ 'is-disabled': chapterIndex === 0 }"
-                  class="chapter-prev-next-box pagination-link is-marginless is-hidden-mobile">
+                  class="chapter-prev-next-box pagination-link is-marginless is-hidden-touch">
                   <span class="is-size-5 has-text-weight-bold">
                     Previous Chapter
                   </span>
                 </div>
                 <div
-                  class="pagination-link chapter-nav-link is-marginless chapter-part is-hidden-tablet">
+                  class="pagination-link chapter-nav-link is-marginless chapter-part is-hidden-desktop">
                   <span class="is-size-5 has-text-weight-bold">
                     Chapter
                   </span>
                 </div>
                 <div
                   :class="{ 'is-disabled': chapterIndex > chapters.length -2 }"
-                  class="chapter-prev-next-box pagination-link is-marginless is-hidden-mobile">
+                  class="chapter-prev-next-box pagination-link is-marginless is-hidden-touch">
                   <span class="is-size-5 has-text-weight-bold">
                     Next Chapter
                   </span>
@@ -257,6 +257,26 @@ a.chapter-prev-next-box {
   }
 }
 @include tablet() {
+  // Bulma override to display tablet version correctly
+  .pagination-list {
+    order: 2;
+    flex-grow: 0;
+  }
+  .pagination-next,
+  .pagination-previous {
+    flex-grow: 1;
+  }
+}
+@include desktop() {
+  // Bulma override to display tablet version correctly
+  .pagination-list {
+    flex-grow: 1;
+  }
+  .pagination-next,
+  .pagination-previous {
+    flex-grow: 0;
+  }
+
   .main-content {
     padding-top: 1.5rem;
   }
@@ -313,8 +333,7 @@ a.chapter-prev-next-box {
     border-width: 50px 167px 0 0;
     border-color: $emf transparent transparent transparent;
   }
-}
-@include desktop() {
+
   .chapter-nav-triangle {
     border-width: 50px 200px 0 0;
   }

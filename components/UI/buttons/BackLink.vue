@@ -11,10 +11,9 @@
   </div>
   <div
     v-else
-    class="back-container has-background-white">
-    <div
-      class="back-button has-text-weight-light"
-      @click="goBack()" >
+    class="back-container has-background-white"
+    @click="goBack()">
+    <div class="back-button has-text-weight-light">
       <i class="fas fa-lg fa-angle-left mr-2"/>
       <slot>Back</slot>
     </div>
