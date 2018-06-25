@@ -179,6 +179,9 @@ export default {
   .pick-circle {
     $circle-radius: 60px;
 
+    position: absolute;
+    background-color: white;
+    text-align: center;
     top: 7rem;
     left: calc(
       100% - #{$circle-radius}
