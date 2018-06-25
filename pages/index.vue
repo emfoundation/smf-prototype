@@ -27,7 +27,7 @@ export default {
         title: "Let us ",
         titleBold: "Guide You",
         text:
-          "In this section we guide you through the latest and most relevant content for the fashion industry that want to learn what the circular economy is all about.",
+          "In this section we guide you through the latest and most relevant content for those in the fashion industry who want to learn about the circular economy.",
         buttonText: "Yes Please",
         backgroundImage:
           "https://emf-assets-dev.s3.amazonaws.com/media/22/Landing-Guide-You-Web.jpg"
