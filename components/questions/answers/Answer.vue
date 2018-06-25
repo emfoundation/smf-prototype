@@ -14,7 +14,9 @@
             {{ getFormatDisplayName }}
           </figcaption>
         </figure>
-        <h3 class="answer-title is-size-4 mb-2 has-text-black has-text-weight-bold">{{ answer.title }}</h3>
+        <nuxt-link
+          :to="{ path: '/answers/' + answer.id, query: { q: $route.params.id }}"
+          class="answer-title is-size-4 mb-2 has-text-black has-text-weight-bold">{{ answer.title }}</nuxt-link>
         <p class="mb-5 answer-text">{{ answer.tile_description }}</p>
         <text-circle-button
           :link="{ path: '/answers/' + answer.id, query: { q: $route.params.id }}"
