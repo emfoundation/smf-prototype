@@ -3,8 +3,8 @@
     <nuxt-link :to="link">
       <div class="back-container has-background-white">
         <div class="back-button has-text-weight-light ">
-          <i class="fas fa-lg fa-angle-left mr-2"/>
-          <slot>Back</slot>
+          <span class="va-m"><i class="fas fa-lg fa-angle-left mr-2"/></span>
+          <span><slot>Back</slot></span>
         </div>
       </div>
     </nuxt-link>
@@ -14,8 +14,8 @@
     class="back-container has-background-white"
     @click="goBack()">
     <div class="back-button has-text-weight-light">
-      <i class="fas fa-lg fa-angle-left mr-2"/>
-      <slot>Back</slot>
+      <span class="va-m"><i class="fas fa-lg fa-angle-left mr-2"/></span>
+      <span><slot>Back</slot></span>
     </div>
   </div>
 </template>
@@ -51,6 +51,9 @@ export default {
   transition: $smf-transition;
   color: $primary;
   cursor: pointer;
+}
+.va-m {
+  vertical-align: middle;
 }
 @include tablet() {
   .back-container {

@@ -86,4 +86,9 @@ export default {
   border-radius: 15px;
   font-size: 0.8rem;
 }
+.is-small {
+  .link-text {
+    vertical-align: middle;
+  }
+}
 </style>
