@@ -57,6 +57,7 @@ export default {
 <style lang="scss" scoped>
 .answer {
   background-size: cover;
+  background-position: center;
 }
 .answer-body {
   transition: $smf-transition;
