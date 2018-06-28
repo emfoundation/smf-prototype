@@ -228,6 +228,9 @@ export default {
   display: none;
   cursor: pointer;
 }
+.chapter-nav-link.is-current {
+  cursor: default;
+}
 .chapter-nav-link.is-current,
 .chapter-nav-link.chapter-part {
   display: block;
