@@ -9,7 +9,7 @@
           <slot/>
         </span>
         <span
-          class="icon circle ml-4">
+          class="icon circle">
           <i class="fas fa-chevron-right arrow"/>
         </span>
       </div>
@@ -49,6 +49,7 @@ export default {
 .circle {
   transition: $smf-transition;
   background: $emf;
+  margin-left: 1rem;
   @include circle(20px);
   @include tablet() {
     @include circle(30px);
@@ -85,5 +86,11 @@ export default {
   width: 30px;
   border-radius: 15px;
   font-size: 0.8rem;
+  margin-left: 0.15rem;
+}
+.is-small {
+  .link-text {
+    vertical-align: middle;
+  }
 }
 </style>

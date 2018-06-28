@@ -43,7 +43,7 @@
                 <div class="current-arrow"/>
                 <div class="container chapter-nav-info pt-2">
                   <div class="has-text-left pl-5">
-                    <p class="is-size-6 has-text-weight-bold">Chapter {{ chapterIndex + 1 }} of {{ chapters.length }}:</p>
+                    <p class="is-size-6 has-text-weight-bold">Chapter {{ index + 1 }} of {{ chapters.length }}:</p>
                     <p class="is-size-6">{{ getChapterTitle(index) }}</p>
                   </div>
                 </div>
@@ -226,6 +226,10 @@ export default {
   border-color: white;
   background-color: $chapter-grey;
   display: none;
+  cursor: pointer;
+}
+.chapter-nav-link.is-current {
+  cursor: default;
 }
 .chapter-nav-link.is-current,
 .chapter-nav-link.chapter-part {

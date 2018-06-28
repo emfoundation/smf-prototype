@@ -39,6 +39,13 @@
 .container {
     padding: 0.75rem;
 }
+.title,
+.subtitle,
+.hero.is-light,
+.hero.is-light
+.title {
+  color: $text;
+}
 
 // Bulma extensions
 .has-background-emf {

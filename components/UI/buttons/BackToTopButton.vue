@@ -1,13 +1,10 @@
 <template>
   <div
     v-scroll="onScroll"
+    :class="{ 'is-active': isVisible }"
+    class="to-top-btn icon"
     @click="toTop">
-    <div
-      :class="{ 'is-active': isVisible}"
-      class="to-top-btn icon">
-      <i class="fas fa-lg fa-chevron-up has-text-white"/>
-    </div>
-    <div/>
+    <i class="fas fa-lg fa-chevron-up has-text-white"/>
   </div>
 </template>
 
@@ -57,6 +54,7 @@ export default {
   $btn-radius: 30px;
   @include circle($btn-radius);
 
+  cursor: pointer;
   transition: $smf-transition;
   background-color: $secondary;
   opacity: 0;
