@@ -117,6 +117,6 @@ module.exports = {
   */
   plugins: [
     { src: "~plugins/filters.js" },
-    { src: "~/plugins/hotjar.js", ssr: false}
+    { src: "~/plugins/hotjar.js", ssr: false }
   ]
 };

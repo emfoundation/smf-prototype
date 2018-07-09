@@ -7,7 +7,7 @@
       <h3 class="title is-3 has-text-weight-normal has-text-white">Search coming soon</h3>
       <nuxt-link
         to="/"
-        class="button is-rounded is-outlined is-inverted title is-4 has-text-weight-normal">Take me back!
+        class="title button is-rounded is-outlined is-4 has-text-weight-normal">Take me back!
       </nuxt-link>
 
     </section>
