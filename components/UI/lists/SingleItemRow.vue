@@ -22,7 +22,7 @@
               </span>
               <span
                 v-if="item.parts > 1"
-                class="is-size-6 has-text-weight-bold ml-2 mr-5 mb-1">{{ item.parts }} parts</span>
+                class="is-size-6 has-text-weight-bold ml-2 mr-5 mb-1">{{ item.parts }} Chapters</span>
             </div>
             <div class="duration pb-1">
               <i class="fas fa-clock has-text-weight-normal is-size-2"/>

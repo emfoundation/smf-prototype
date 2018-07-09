@@ -12,7 +12,9 @@
         <div class="columns">
           <div class="column wrap text-left is-half">
             <h3 class="title is-size-4-mobile is-size-4-tablet">The Ellen MacArthur Foundation</h3>
-            <p>The <a href="https://www.ellenmacarthurfoundation.org/">Ellen MacArthur Foundation</a> was established in 2010 with the aim of accelerating the transition to the circular economy. Since its creation the charity has emerged as a global thought leader, establishing the circular economy on the agenda of decision makers across business, government and academia.</p>
+            <p>The <a
+              href="https://www.ellenmacarthurfoundation.org/"
+              target="_blank">Ellen MacArthur Foundation</a> was established in 2010 with the aim of accelerating the transition to the circular economy. Since its creation the charity has emerged as a global thought leader, establishing the circular economy on the agenda of decision makers across business, government and academia.</p>
           </div>
           <div
             id="image-1"
@@ -23,7 +25,9 @@
         <div class="columns reverse-stack-mobile">
           <div class="column wrap text-right has-text-right-tablet is-half">
             <h3 class="title is-size-4-mobile is-size-4-tablet">Circular Economy Learning</h3>
-            <p>We at the Ellen MacArthur Foundation are currently developing an <a href="https://www.ellenmacarthurfoundation.org/programmes/education/schmidt-macarthur-fellowship/application">exciting new initiative</a> to take circular economy learning to a wide audience, using our knowledge base and expertise to provide global reach. This tool has been designed as a prototype of our online learning platform and provides you, the learner, with the option to follow a curated path through the learning material or to browse the content freely. </p>
+            <p>We at the Ellen MacArthur Foundation are currently developing an <a
+              href="https://www.ellenmacarthurfoundation.org/programmes/education/schmidt-macarthur-fellowship/application"
+              target="_blank">exciting new initiative</a> to take circular economy learning to a wide audience, using our knowledge base and expertise to provide global reach. This tool has been designed as a prototype of our online learning platform and provides you, the learner, with the option to follow a curated path through the learning material or to browse the content freely. </p>
           </div>
           <div
             id="image-2"
@@ -34,7 +38,9 @@
         <div class="columns">
           <div class="column wrap text-left is-half">
             <h3 class="title is-size-4-mobile is-size-4-tablet">Make Fashion Circular</h3>
-            <p>In May 2017, the Ellen MacArthur Foundation launched <a href="https://www.ellenmacarthurfoundation.org/programmes/systemic-initiatives/make-fashion-circular">Make Fashion Circular</a> at the Copenhagen Fashion Summit. The initiative brings together organisations from across the industry, including leading fashion brands, cities, philanthropists, NGOs and innovators to collaborate and create a new textiles economy, aligned with the principles of the circular economy. </p>
+            <p>In May 2017, the Ellen MacArthur Foundation launched <a 
+              href="https://www.ellenmacarthurfoundation.org/programmes/systemic-initiatives/make-fashion-circular" 
+              target="_blank">Make Fashion Circular</a> at the Copenhagen Fashion Summit. The initiative brings together organisations from across the industry, including leading fashion brands, cities, philanthropists, NGOs and innovators to collaborate and create a new textiles economy, aligned with the principles of the circular economy. </p>
           </div>
           <div
             id="image-3"
