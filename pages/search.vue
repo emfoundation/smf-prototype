@@ -7,7 +7,7 @@
       <h3 class="title is-3 has-text-weight-normal has-text-white">Search coming soon</h3>
       <nuxt-link
         to="/"
-        class="title is-4 has-text-weight-normal has-text-primary">Take me back!
+        class="button is-rounded is-outlined is-inverted title is-4 has-text-weight-normal">Take me back!
       </nuxt-link>
 
     </section>
@@ -15,6 +15,16 @@
 </template>
 
 <style lang="scss" scoped>
+.button {
+  color: white;
+  background-color: #495062;
+  border-width: 2px;
+  &:hover {
+    color: black !important;
+    background-color: white;
+    border-color: white;
+  }
+}
 .search {
   min-height: 100vh;
 }
