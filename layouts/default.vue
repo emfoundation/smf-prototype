@@ -15,17 +15,20 @@
         © Copyright 2017 Ellen MacArthur Foundation. All Rights Reserved
       </div>
     </footer>
+    <beta-logo-desktop/>
   </div>
 </template>
 
 <script>
 import TheNav from "~/components/TheNav.vue";
 import BackToTopButton from "~/components/UI/buttons/BackToTopButton";
+import BetaLogoDesktop from "~/components/UI/BetaLogoDesktop";
 
 export default {
   components: {
     TheNav,
-    BackToTopButton
+    BackToTopButton,
+    BetaLogoDesktop
   }
 };
 </script>
