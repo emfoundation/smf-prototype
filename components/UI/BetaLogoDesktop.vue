@@ -1,5 +1,5 @@
 <template>
-  <div class="beta-logo-container">
+  <div class="beta-logo-container is-hidden-mobile">
     <p class="has-text-weight-bold">CE Learning Beta</p>
   </div>
 </template>
@@ -7,23 +7,25 @@
 <script>
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .beta-logo-container {
-  bottom: 0;
-  left: 0;
   position: fixed;
-  height: 0px;
-  width: 0px;
-  border-style: solid;
-  border-width: 58px 62px 58px 62px;
-  border-color: transparent transparent $primary $primary;
+  left: 0;
+  bottom: 0;
+  width: 90px;
+  height: 84px;
+  background-image: url("~/assets/images/beta-logo-full.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  opacity: 0.75;
   p {
     position: relative;
-    left: -49px;
-    bottom: -11px;
-    font-size: 0.78em;
+    top: 48px;
+    left: 15px;
+    width: 20px;
+    font-size: 0.6em;
     line-height: 1;
-    color: $chapter-grey;
+    color: white;
   }
 }
 </style>

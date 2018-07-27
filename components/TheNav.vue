@@ -10,6 +10,11 @@
           class="navbar-item logo-item">
           <div class="emf-logo"/>
         </nuxt-link>
+        <div class="beta-logo-container is-hidden-tablet has-background-primary">
+          <img
+            src="~/assets/images/beta-logo-nav.png"
+            alt="beta-logo">
+        </div>
         <nuxt-link
           to="/search"
           class="navbar-item navbar-search has-text-white">
@@ -65,6 +70,16 @@ $navbar-divider-background-color: red;
     height: 40px;
     &:hover {
       opacity: 0.8;
+    }
+  }
+  .beta-logo-container {
+    height: 45px;
+    margin-left: 20px;
+    padding: 10px 15px 8px 15px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    img {
+      width: 100%;
     }
   }
   .container-overflow-hidden {
