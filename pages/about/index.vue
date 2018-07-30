@@ -25,7 +25,7 @@
         <div class="columns reverse-stack-mobile">
           <div class="column wrap text-right has-text-right-tablet is-half">
             <h3 class="title is-size-4-mobile is-size-4-tablet">Circular Economy Learning</h3>
-            <p>We at the Ellen MacArthur Foundation are currently developing an <a
+            <p>The Foundation are currently developing an <a
               href="https://www.ellenmacarthurfoundation.org/programmes/education/schmidt-macarthur-fellowship/application"
               target="_blank">exciting new initiative</a> to take circular economy learning to a wide audience, using our knowledge base and expertise to provide global reach. This tool has been designed as a prototype of our online learning platform and provides you, the learner, with the option to follow a curated path through the learning material or to browse the content freely. </p>
           </div>
