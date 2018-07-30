@@ -19,7 +19,7 @@
           </div>
           <div class="pick-circle is-hidden-mobile">
             <div class="subtitle is-size-6-mobile is-size-4-tablet">
-              Please<br >Pick
+              Please<br >choose
             </div>
           </div>
         </div>

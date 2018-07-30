@@ -25,7 +25,7 @@ export default {
       learningPathContent: {
         link: "/learning-paths",
         title: "Let us ",
-        titleBold: "Guide You",
+        titleBold: "guide you",
         text:
           "In this section we guide you through the latest and most relevant content for those in the fashion industry who want to learn about the circular economy.",
         buttonText: "Yes Please",
@@ -35,7 +35,7 @@ export default {
       questionsContent: {
         link: "/questions",
         title: "Explore for ",
-        titleBold: "Yourself",
+        titleBold: "yourself",
         text:
           "If you prefer to browse at your own pace - then this section is for you.  Whatever sparks your interest, you choose the direction you’d like to go in.",
         buttonText: "Explore",
