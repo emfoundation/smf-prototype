@@ -4,19 +4,51 @@
       <div class="terms-heading ">
         <h2 class="title is-2 has-text-white">Terms <span class="has-text-primary">&</span> Conditions</h2>
       </div>
-      <p class="has-text-white">Nulla tincidunt, libero id rutrum feugiat, tellus libero dignissim eros, non condimentum dolor ligula vitae massa. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut vel mollis leo. Quisque pharetra augue quis ornare blandit. Pellentesque ornare eget purus nec lacinia. Vivamus egestas libero lectus, eu consequat dui suscipit vel. Vivamus consequat nisl nec sagittis molestie. Pellentesque aliquet leo et vehicula posuere.
 
-      Nam nec ex leo. Phasellus vitae porta lacus. Suspendisse imperdiet mi et eros porta venenatis. Maecenas commodo laoreet tortor, nec aliquam est sollicitudin eget. Nunc finibus libero vel nunc gravida, suscipit varius elit tincidunt. Nulla congue risus leo, sit amet pretium nisi fermentum id. Cras justo elit, sagittis sit amet risus et, ullamcorper congue enim. Etiam volutpat accumsan lorem, in accumsan eros laoreet et. In scelerisque dictum posuere. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ultrices facilisis risus, nec lobortis ante consectetur non.
-        <br>
-        <br>
-        Mauris ornare erat nec felis iaculis, quis finibus diam lobortis. Pellentesque tristique, urna sed dictum egestas, quam dui semper est, et mollis purus diam sed metus. Etiam non eleifend elit, elementum pretium turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum tortor nec nisl consequat euismod. Donec lobortis gravida purus, eu rutrum massa posuere at. Proin porttitor elit at felis faucibus gravida a eget mi. Sed gravida mollis mauris eget tristique.
-        <br>
-        Integer molestie neque nec ipsum fringilla, ac vulputate lorem semper. Vivamus sagittis laoreet placerat. Aliquam mi odio, venenatis ullamcorper aliquam nec, gravida eget sem. Aenean ullamcorper metus in interdum convallis. Quisque venenatis hendrerit elementum. Donec tempor risus ac ligula iaculis, non iaculis odio condimentum. Praesent maximus enim ac neque placerat, vestibulum eleifend nunc congue. Morbi non condimentum eros. Duis vitae sagittis felis. Pellentesque sodales porta leo, pretium elementum libero porttitor eget. Donec erat arcu, bibendum eu interdum vel, rhoncus quis leo.</p>
+      <p class="has-text-white">This is a summary of the terms and conditions for the Circular Economy SMF Prototype.  "EMF" or "we" is together the Ellen MacArthur Foundation and Ellen MacArthur Foundation Trading Limited.  By accessing and using our Circular Economy SMF Prototype ('the programme'), you agree to comply with and be bound by the terms and conditions (‘the terms’), which can be found as a pdf at the bottom of this page.  In the event of any discrepancy or inconsistency between this summary and the terms, the terms prevail.</p>
+
+      <p class="has-text-white">We own the content of the programme and you agree that you will only use it as allowed by its terms. You agree that you will keep your information up-to-date at all times.  We might remove material that you have uploaded.</p>
+
+      <p class="has-text-white">You are free to use the material in the programme for internal use within your organisation. You agree not to exploit the information within the programme for commercial advantage in any market.</p>
+
+      <p class="has-text-white">You agree to respect the programme's software and use it appropriately. Abusing the use of the programme or others' materials other than for its intended purpose would be in breach of the terms.
+      You must not upload inappropriate material.  You must not use others' branding without their consent.</p>
+
+      <p class="has-text-white">It is your responsibility to keep any password we supply secure and confidential to you. You must not tell anyone your password and we may terminate your account if you do.  If you think someone else knows your password please let us know as soon as possible.</p>
+
+      <p class="has-text-white">Privacy is extremely important to us. We will hold your data under the terms of our privacy policy. It is extremely important you read and agree to our privacy policy prior to using the programme, which can be found as a pdf at the bottom of this page.</p>
+
+      <p class="has-text-white">Whilst we try our best to keep everything working, up-to-date and error-free, we can’t promise that we'll always be successful. We can't accept responsibility for any errors, changes, viruses or other problems that occur.  We disclaim and limit our legal liability to you in order to protect our organisation.  You are responsible to us if you upload material that you should not, and that causes us a loss.</p>
+
+      <p class="has-text-white">You can ask us to terminate at any time. We can terminate if you seriously breach the terms, if we are asked to do so by an official body or if the licence under which the programme operates is terminated for any reason.</p>
+
+      <p class="has-text-white">The terms set out the agreement between us. We might need to update the terms from time to time. We'll do this by updating the terms in the programme. You need to check the terms regularly to make sure you're aware of the terms on which you are using the programme. We might also change the programme and its functions from time to time.  The terms outline the relationship between you and us and as such you cannot transfer this agreement to someone else. We and the programme operate under English law.</p>
+      <div class="download-block">
+        <div class="buttons has-addons">
+          <div class="button">
+            View full T&C's
+          </div>
+          <div class="button">
+            logo
+          </div>
+        </div>
+        <div class="buttons has-addons">
+          <div class="button">
+            View privacy policy
+          </div>
+          <div class="button">
+            <i class="fas fa-file"/>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </template>
 
 <style lang="scss" scoped>
+p {
+  margin: 1rem 0;
+}
 .terms {
   min-height: 100vh;
 }
@@ -33,6 +65,29 @@
     border-bottom: 1px white solid;
     padding-bottom: 1.5rem;
     margin-bottom: 3rem;
+  }
+}
+.download-block {
+  margin: 2rem 0;
+  .buttons {
+    .button {
+      border: solid 2px white;
+      padding: 1.2rem;
+      i {
+        color: $emf;
+        font-size: 1.5rem;
+      }
+      &:first-of-type {
+        background-color: $emf;
+        color: white;
+        border-top-left-radius: 18px;
+        border-bottom-left-radius: 18px;
+      }
+      &:last-of-type {
+        border-top-right-radius: 18px;
+        border-bottom-right-radius: 18px;
+      }
+    }
   }
 }
 </style>

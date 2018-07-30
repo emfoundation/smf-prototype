@@ -4,6 +4,7 @@ $primary: #1C9BD6;
 $primary-invert: findColorInvert($primary);
 $secondary: #333;
 $emf: #495062;
+$emf-invert: findColorInvert($emf);
 
 $light-grey: #F4F4F4;
 $chapter-grey: #D8D8D8;
@@ -30,6 +31,7 @@ $pagination-current-border-color: white;
 $section-padding: 0;
 
 $addColors: (
-    "primary": ($primary, $primary-invert)
+    "primary": ($primary, $primary-invert),
+    "emf": ($emf, $emf-invert)
 );
 $colors: map-merge($colors, $addColors);
