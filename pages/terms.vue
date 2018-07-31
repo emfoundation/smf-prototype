@@ -24,7 +24,7 @@
 
       <p class="has-text-white">The terms set out the agreement between us. We might need to update the terms from time to time. We'll do this by updating the terms in the programme. You need to check the terms regularly to make sure you're aware of the terms on which you are using the programme. We might also change the programme and its functions from time to time.  The terms outline the relationship between you and us and as such you cannot transfer this agreement to someone else. We and the programme operate under English law.</p>
       <div class="download-block">
-        <div class="buttons has-addons">
+        <div class="buttons has-addons is-pulled-left mr-5">
           <a
             class="button has-text-weight-semibold"
             href="docs/terms-and-conditions.pdf">
@@ -49,8 +49,8 @@
           </a>
         </div>
       </div>
-      <div class="button-container">
-        <back-button label="Take me back!"/>
+      <div class="button-container mt-4">
+        <back-button label="Back"/>
       </div>
     </section>
   </div>
@@ -71,7 +71,7 @@ p {
   margin: 1rem 0;
 }
 .button-container {
-  text-align: center;
+  text-align: right;
   padding-top: 2rem;
 }
 .terms {
