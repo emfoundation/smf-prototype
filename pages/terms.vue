@@ -25,29 +25,54 @@
       <p class="has-text-white">The terms set out the agreement between us. We might need to update the terms from time to time. We'll do this by updating the terms in the programme. You need to check the terms regularly to make sure you're aware of the terms on which you are using the programme. We might also change the programme and its functions from time to time.  The terms outline the relationship between you and us and as such you cannot transfer this agreement to someone else. We and the programme operate under English law.</p>
       <div class="download-block">
         <div class="buttons has-addons">
-          <div class="button">
+          <a
+            class="button has-text-weight-semibold"
+            href="docs/terms-and-conditions.pdf">
             View full T&C's
-          </div>
-          <div class="button">
-            logo
-          </div>
+          </a>
+          <a
+            class="button"
+            href="docs/terms-and-conditions.pdf">
+            <i class="fas fa-file"/>
+          </a>
         </div>
         <div class="buttons has-addons">
-          <div class="button">
+          <a
+            class="button has-text-weight-semibold"
+            href="docs/privacy-policy.pdf">
             View privacy policy
-          </div>
-          <div class="button">
+          </a>
+          <a
+            class="button"
+            href="docs/privacy-policy.pdf">
             <i class="fas fa-file"/>
-          </div>
+          </a>
         </div>
+      </div>
+      <div class="button-container">
+        <back-button label="Take me back!"/>
       </div>
     </section>
   </div>
 </template>
 
+<script>
+import BackButton from "~/components/UI/buttons/BackButton";
+
+export default {
+  components: {
+    BackButton
+  }
+};
+</script>
+
 <style lang="scss" scoped>
 p {
   margin: 1rem 0;
+}
+.button-container {
+  text-align: center;
+  padding-top: 2rem;
 }
 .terms {
   min-height: 100vh;
@@ -70,7 +95,8 @@ p {
 .download-block {
   margin: 2rem 0;
   .buttons {
-    .button {
+    font-size: 1.5rem;
+    a {
       border: solid 2px white;
       padding: 1.2rem;
       i {
@@ -82,6 +108,10 @@ p {
         color: white;
         border-top-left-radius: 18px;
         border-bottom-left-radius: 18px;
+        &:hover {
+          background-color: white;
+          color: $emf;
+        }
       }
       &:last-of-type {
         border-top-right-radius: 18px;
