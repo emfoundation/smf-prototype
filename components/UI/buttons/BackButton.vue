@@ -1,6 +1,6 @@
 <template>
   <div
-    class="title button is-rounded is-outlined is-4 has-text-weight-normal"
+    class="title button is-rounded is-4 has-text-weight-normal"
     @click="goBack">{{ label }}
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
 <style lang="scss" scoped>
 .button {
   color: white;
-  background-color: #495062;
+  background-color: $emf;
   border-width: 2px;
   &:hover {
     color: black !important;

@@ -27,24 +27,28 @@
         <div class="buttons has-addons is-pulled-left mr-5">
           <a
             class="button has-text-weight-semibold"
-            href="docs/terms-and-conditions.pdf">
+            href="docs/Circular Economy Learning Terms and Conditions.pdf"
+            target="_blank">
             View full T&C's
           </a>
           <a
             class="button"
-            href="docs/terms-and-conditions.pdf">
+            href="docs/Circular Economy Learning Terms and Conditions.pdf"
+            target="_blank">
             <i class="fas fa-file"/>
           </a>
         </div>
         <div class="buttons has-addons">
           <a
             class="button has-text-weight-semibold"
-            href="docs/privacy-policy.pdf">
+            href="docs/Circular Economy Learning Privacy Policy.pdf"
+            target="_blank">
             View privacy policy
           </a>
           <a
             class="button"
-            href="docs/privacy-policy.pdf">
+            href="docs/Circular Economy Learning Privacy Policy.pdf"
+            target="_blank">
             <i class="fas fa-file"/>
           </a>
         </div>
