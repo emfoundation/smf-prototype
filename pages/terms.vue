@@ -5,7 +5,7 @@
         <h2 class="title is-2 has-text-white">Terms <span class="has-text-primary">&</span> Conditions</h2>
       </div>
 
-      <p class="has-text-white">This is a summary of the terms and conditions for the Circular Economy SMF Prototype.  "EMF" or "we" is together the Ellen MacArthur Foundation and Ellen MacArthur Foundation Trading Limited.  By accessing and using our Circular Economy SMF Prototype ('the programme'), you agree to comply with and be bound by the terms and conditions (‘the terms’), which can be found as a pdf at the bottom of this page.  In the event of any discrepancy or inconsistency between this summary and the terms, the terms prevail.</p>
+      <p class="has-text-white">This is a summary of the terms and conditions for the Circular Economy Learning Prototype.  "EMF" or "we" is together the Ellen MacArthur Foundation and Ellen MacArthur Foundation Trading Limited.  By accessing and using our Circular Economy Learning Prototype ('the programme'), you agree to comply with and be bound by the terms and conditions (‘the terms’), which can be found as a pdf at the bottom of this page.  In the event of any discrepancy or inconsistency between this summary and the terms, the terms prevail.</p>
 
       <p class="has-text-white">We own the content of the programme and you agree that you will only use it as allowed by its terms. You agree that you will keep your information up-to-date at all times.  We might remove material that you have uploaded.</p>
 
@@ -123,6 +123,17 @@ p {
         border-bottom-right-radius: 18px;
       }
     }
+  }
+}
+@include mobile() {
+  .download-block {
+    .buttons {
+      margin-top: 0.5rem;
+    }
+  }
+  .button-container {
+    text-align: left;
+    padding-top: 2rem;
   }
 }
 </style>
