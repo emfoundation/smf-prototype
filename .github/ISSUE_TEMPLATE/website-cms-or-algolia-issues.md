@@ -11,8 +11,8 @@ Please complete this template as fully as possible. This will help reduce develo
 
 Please select whether this is a CMS issue or an Algolia issue an then complete the relevant details in the correct section below:
 
--[ ] CMS
--[ ] ALGOLIA
+- [ ] CMS
+- [ ] ALGOLIA
 
 # CMS ISSUE
 
@@ -33,8 +33,8 @@ Please provide relevant links to pages not working as expected as well as links 
 
 ### Which Contentful environment you are working in:
 
--[ ] Production
--[ ] Testing
+- [ ] Production
+- [ ] Testing
 
 # ALGOLIA ISSUE
 
@@ -55,6 +55,6 @@ Please provide relevant links to pages not working as expected as well as links 
 
 ### Which Algolia environment you are working in:
 
--[ ] Production
--[ ] Testing (staging)
--[ ] Develop
+- [ ] Production
+- [ ] Testing (staging)
+- [ ] Develop
